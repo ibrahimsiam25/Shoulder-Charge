@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		08AEE2DC2FA0C96200920AED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08AEE2BA2FA0C95F00920AED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08AEE2C12FA0C95F00920AED;
+			remoteInfo = "Shoulder-Charge";
+		};
+		08AEE2E62FA0C96200920AED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08AEE2BA2FA0C95F00920AED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08AEE2C12FA0C95F00920AED;
+			remoteInfo = "Shoulder-Charge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08AEE2C22FA0C95F00920AED /* Shoulder-Charge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shoulder-Charge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08AEE2DB2FA0C96200920AED /* Shoulder-ChargeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shoulder-ChargeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08AEE2E52FA0C96200920AED /* Shoulder-ChargeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shoulder-ChargeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		08AEE2ED2FA0C96200920AED /* Exceptions for "Shoulder-Charge" folder in "Shoulder-Charge" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 08AEE2C12FA0C95F00920AED /* Shoulder-Charge */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		08AEE2C42FA0C95F00920AED /* Shoulder-Charge */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				08AEE2ED2FA0C96200920AED /* Exceptions for "Shoulder-Charge" folder in "Shoulder-Charge" target */,
+			);
+			path = "Shoulder-Charge";
+			sourceTree = "<group>";
+		};
+		08AEE2DE2FA0C96200920AED /* Shoulder-ChargeTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Shoulder-ChargeTests";
+			sourceTree = "<group>";
+		};
+		08AEE2E82FA0C96200920AED /* Shoulder-ChargeUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Shoulder-ChargeUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		08AEE2BF2FA0C95F00920AED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08AEE2D82FA0C96200920AED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08AEE2E22FA0C96200920AED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08AEE2B92FA0C95F00920AED = {
+			isa = PBXGroup;
+			children = (
+				08AEE2C42FA0C95F00920AED /* Shoulder-Charge */,
+				08AEE2DE2FA0C96200920AED /* Shoulder-ChargeTests */,
+				08AEE2E82FA0C96200920AED /* Shoulder-ChargeUITests */,
+				08AEE2C32FA0C95F00920AED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		08AEE2C32FA0C95F00920AED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08AEE2C22FA0C95F00920AED /* Shoulder-Charge.app */,
+				08AEE2DB2FA0C96200920AED /* Shoulder-ChargeTests.xctest */,
+				08AEE2E52FA0C96200920AED /* Shoulder-ChargeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		08AEE2C12FA0C95F00920AED /* Shoulder-Charge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08AEE2EE2FA0C96200920AED /* Build configuration list for PBXNativeTarget "Shoulder-Charge" */;
+			buildPhases = (
+				08AEE2BE2FA0C95F00920AED /* Sources */,
+				08AEE2BF2FA0C95F00920AED /* Frameworks */,
+				08AEE2C02FA0C95F00920AED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				08AEE2C42FA0C95F00920AED /* Shoulder-Charge */,
+			);
+			name = "Shoulder-Charge";
+			packageProductDependencies = (
+			);
+			productName = "Shoulder-Charge";
+			productReference = 08AEE2C22FA0C95F00920AED /* Shoulder-Charge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		08AEE2DA2FA0C96200920AED /* Shoulder-ChargeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08AEE2F32FA0C96200920AED /* Build configuration list for PBXNativeTarget "Shoulder-ChargeTests" */;
+			buildPhases = (
+				08AEE2D72FA0C96200920AED /* Sources */,
+				08AEE2D82FA0C96200920AED /* Frameworks */,
+				08AEE2D92FA0C96200920AED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08AEE2DD2FA0C96200920AED /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				08AEE2DE2FA0C96200920AED /* Shoulder-ChargeTests */,
+			);
+			name = "Shoulder-ChargeTests";
+			packageProductDependencies = (
+			);
+			productName = "Shoulder-ChargeTests";
+			productReference = 08AEE2DB2FA0C96200920AED /* Shoulder-ChargeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		08AEE2E42FA0C96200920AED /* Shoulder-ChargeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08AEE2F62FA0C96200920AED /* Build configuration list for PBXNativeTarget "Shoulder-ChargeUITests" */;
+			buildPhases = (
+				08AEE2E12FA0C96200920AED /* Sources */,
+				08AEE2E22FA0C96200920AED /* Frameworks */,
+				08AEE2E32FA0C96200920AED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08AEE2E72FA0C96200920AED /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				08AEE2E82FA0C96200920AED /* Shoulder-ChargeUITests */,
+			);
+			name = "Shoulder-ChargeUITests";
+			packageProductDependencies = (
+			);
+			productName = "Shoulder-ChargeUITests";
+			productReference = 08AEE2E52FA0C96200920AED /* Shoulder-ChargeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08AEE2BA2FA0C95F00920AED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					08AEE2C12FA0C95F00920AED = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					08AEE2DA2FA0C96200920AED = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 08AEE2C12FA0C95F00920AED;
+					};
+					08AEE2E42FA0C96200920AED = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 08AEE2C12FA0C95F00920AED;
+					};
+				};
+			};
+			buildConfigurationList = 08AEE2BD2FA0C95F00920AED /* Build configuration list for PBXProject "Shoulder-Charge" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 08AEE2B92FA0C95F00920AED;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 08AEE2C32FA0C95F00920AED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08AEE2C12FA0C95F00920AED /* Shoulder-Charge */,
+				08AEE2DA2FA0C96200920AED /* Shoulder-ChargeTests */,
+				08AEE2E42FA0C96200920AED /* Shoulder-ChargeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		08AEE2C02FA0C95F00920AED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08AEE2D92FA0C96200920AED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08AEE2E32FA0C96200920AED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08AEE2BE2FA0C95F00920AED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08AEE2D72FA0C96200920AED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08AEE2E12FA0C96200920AED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08AEE2DD2FA0C96200920AED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08AEE2C12FA0C95F00920AED /* Shoulder-Charge */;
+			targetProxy = 08AEE2DC2FA0C96200920AED /* PBXContainerItemProxy */;
+		};
+		08AEE2E72FA0C96200920AED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08AEE2C12FA0C95F00920AED /* Shoulder-Charge */;
+			targetProxy = 08AEE2E62FA0C96200920AED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08AEE2EF2FA0C96200920AED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XB3Q87QK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Shoulder-Charge/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iti.Shoulder-Charge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		08AEE2F02FA0C96200920AED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XB3Q87QK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Shoulder-Charge/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iti.Shoulder-Charge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		08AEE2F12FA0C96200920AED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9XB3Q87QK8;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		08AEE2F22FA0C96200920AED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9XB3Q87QK8;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		08AEE2F42FA0C96200920AED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XB3Q87QK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iti.Shoulder-ChargeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shoulder-Charge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Shoulder-Charge";
+			};
+			name = Debug;
+		};
+		08AEE2F52FA0C96200920AED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XB3Q87QK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iti.Shoulder-ChargeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shoulder-Charge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Shoulder-Charge";
+			};
+			name = Release;
+		};
+		08AEE2F72FA0C96200920AED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XB3Q87QK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iti.Shoulder-ChargeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Shoulder-Charge";
+			};
+			name = Debug;
+		};
+		08AEE2F82FA0C96200920AED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XB3Q87QK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iti.Shoulder-ChargeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Shoulder-Charge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08AEE2BD2FA0C95F00920AED /* Build configuration list for PBXProject "Shoulder-Charge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08AEE2F12FA0C96200920AED /* Debug */,
+				08AEE2F22FA0C96200920AED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08AEE2EE2FA0C96200920AED /* Build configuration list for PBXNativeTarget "Shoulder-Charge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08AEE2EF2FA0C96200920AED /* Debug */,
+				08AEE2F02FA0C96200920AED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08AEE2F32FA0C96200920AED /* Build configuration list for PBXNativeTarget "Shoulder-ChargeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08AEE2F42FA0C96200920AED /* Debug */,
+				08AEE2F52FA0C96200920AED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08AEE2F62FA0C96200920AED /* Build configuration list for PBXNativeTarget "Shoulder-ChargeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08AEE2F72FA0C96200920AED /* Debug */,
+				08AEE2F82FA0C96200920AED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08AEE2BA2FA0C95F00920AED /* Project object */;
+}
