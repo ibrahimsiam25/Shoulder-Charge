@@ -12,9 +12,14 @@ class SettingsPresenter {
 
     func viewDidLoad() {
         view?.updateThemeSelection(theme: ThemeManager.shared.currentTheme)
+        view?.updateLanguageSelection(language: LocalizationManager.shared.currentAppLanguage)
     }
 
     func userDidSelectTheme(_ theme: AppTheme) {
         ThemeManager.shared.currentTheme = theme
+    }
+
+    func userDidSelectLanguage(_ language: AppLanguage) {
+        LocalizationManager.shared.setLanguage(language)
     }
 }

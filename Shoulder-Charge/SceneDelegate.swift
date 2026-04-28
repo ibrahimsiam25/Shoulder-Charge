@@ -15,13 +15,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let rootVC = storyboard.instantiateInitialViewController()!
-
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = rootVC
-        window?.makeKeyAndVisible()
         ThemeManager.shared.applyTheme(to: window)
+        LocalizationManager.shared.applyLayoutDirection()
+        window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
+        window?.makeKeyAndVisible()
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleLanguageChanged),
+            name: .languageChanged,
+            object: nil
+        )
+    }
+
+    @objc private func handleLanguageChanged() {
+        guard let window else { return }
+        LocalizationManager.shared.applyLayoutDirection()
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft) {
+            window.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

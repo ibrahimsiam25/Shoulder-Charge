@@ -9,12 +9,14 @@ import UIKit
 
 protocol SettingsViewProtocol: AnyObject {
     func updateThemeSelection(theme: AppTheme)
+    func updateLanguageSelection(language: AppLanguage)
 }
 
 class ViewController: UIViewController, SettingsViewProtocol {
     var presenter: SettingsPresenter!
 
     @IBOutlet weak var themeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var languageSegmentedControl: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +25,23 @@ class ViewController: UIViewController, SettingsViewProtocol {
         presenter.viewDidLoad()
     }
 
-    @IBAction func pushToNext(_ sender: Any) {}
-
     @IBAction func themeSegmentChanged(_ sender: UISegmentedControl) {
         let theme = AppTheme.allCases[sender.selectedSegmentIndex]
         presenter.userDidSelectTheme(theme)
     }
 
+    @IBAction func languageSegmentChanged(_ sender: UISegmentedControl) {
+        let language = AppLanguage.allCases[sender.selectedSegmentIndex]
+        presenter.userDidSelectLanguage(language)
+    }
+
     func updateThemeSelection(theme: AppTheme) {
         guard let index = AppTheme.allCases.firstIndex(of: theme) else { return }
         themeSegmentedControl.selectedSegmentIndex = index
+    }
+
+    func updateLanguageSelection(language: AppLanguage) {
+        guard let index = AppLanguage.allCases.firstIndex(of: language) else { return }
+        languageSegmentedControl.selectedSegmentIndex = index
     }
 }

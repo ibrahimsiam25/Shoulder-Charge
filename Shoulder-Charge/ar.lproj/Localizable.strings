@@ -1,0 +1,19 @@
+/* شاشة الإعدادات */
+"settings.title"            = "الإعدادات";
+"settings.theme"            = "المظهر";
+"settings.language"         = "اللغة";
+
+/* خيارات المظهر */
+"settings.theme.system"     = "النظام";
+"settings.theme.light"      = "فاتح";
+"settings.theme.dark"       = "داكن";
+
+/* خيارات اللغة */
+"settings.language.system"  = "النظام";
+"settings.language.english" = "الإنجليزية";
+"settings.language.arabic"  = "العربية";
+
+/* عام */
+"common.done"               = "تم";
+"common.cancel"             = "إلغاء";
+"common.save"               = "حفظ";

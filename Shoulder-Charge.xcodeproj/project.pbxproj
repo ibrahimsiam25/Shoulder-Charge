@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0829F1F72FA0F1E200D4A704 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0829F1F62FA0F1E200D4A704 /* SDWebImage */; };
+		0829F1FA2FA0F20700D4A704 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 0829F1F92FA0F20700D4A704 /* Localize_Swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		08AEE2DC2FA0C96200920AED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0829F1F72FA0F1E200D4A704 /* SDWebImage in Frameworks */,
+				0829F1FA2FA0F20700D4A704 /* Localize_Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +132,8 @@
 			);
 			name = "Shoulder-Charge";
 			packageProductDependencies = (
+				0829F1F62FA0F1E200D4A704 /* SDWebImage */,
+				0829F1F92FA0F20700D4A704 /* Localize_Swift */,
 			);
 			productName = "Shoulder-Charge";
 			productReference = 08AEE2C22FA0C95F00920AED /* Shoulder-Charge.app */;
@@ -205,9 +214,14 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 08AEE2B92FA0C95F00920AED;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0829F1F52FA0F1E200D4A704 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				0829F1F82FA0F20700D4A704 /* XCRemoteSwiftPackageReference "Localize-Swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 08AEE2C32FA0C95F00920AED /* Products */;
 			projectDirPath = "";
@@ -591,6 +605,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0829F1F52FA0F1E200D4A704 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.17.0;
+			};
+		};
+		0829F1F82FA0F20700D4A704 /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Localize-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0829F1F62FA0F1E200D4A704 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0829F1F52FA0F1E200D4A704 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		0829F1F92FA0F20700D4A704 /* Localize_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0829F1F82FA0F20700D4A704 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
+			productName = Localize_Swift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08AEE2BA2FA0C95F00920AED /* Project object */;
 }

@@ -1,0 +1,19 @@
+/* Settings Screen */
+"settings.title"            = "Settings";
+"settings.theme"            = "Theme";
+"settings.language"         = "Language";
+
+/* Theme Options */
+"settings.theme.system"     = "System";
+"settings.theme.light"      = "Light";
+"settings.theme.dark"       = "Dark";
+
+/* Language Options */
+"settings.language.system"  = "System";
+"settings.language.english" = "English";
+"settings.language.arabic"  = "Arabic";
+
+/* Common */
+"common.done"               = "Done";
+"common.cancel"             = "Cancel";
+"common.save"               = "Save";
