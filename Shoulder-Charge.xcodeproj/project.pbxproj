@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0829F1F72FA0F1E200D4A704 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0829F1F62FA0F1E200D4A704 /* SDWebImage */; };
 		0829F1FA2FA0F20700D4A704 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 0829F1F92FA0F20700D4A704 /* Localize_Swift */; };
+		083B9DBF2FA2407F009B9076 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 083B9DBE2FA2407F009B9076 /* Alamofire */; };
+		083B9DC12FA2407F009B9076 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 083B9DC02FA2407F009B9076 /* AlamofireDynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				083B9DBF2FA2407F009B9076 /* Alamofire in Frameworks */,
+				083B9DC12FA2407F009B9076 /* AlamofireDynamic in Frameworks */,
 				0829F1F72FA0F1E200D4A704 /* SDWebImage in Frameworks */,
 				0829F1FA2FA0F20700D4A704 /* Localize_Swift in Frameworks */,
 			);
@@ -134,6 +138,8 @@
 			packageProductDependencies = (
 				0829F1F62FA0F1E200D4A704 /* SDWebImage */,
 				0829F1F92FA0F20700D4A704 /* Localize_Swift */,
+				083B9DBE2FA2407F009B9076 /* Alamofire */,
+				083B9DC02FA2407F009B9076 /* AlamofireDynamic */,
 			);
 			productName = "Shoulder-Charge";
 			productReference = 08AEE2C22FA0C95F00920AED /* Shoulder-Charge.app */;
@@ -221,6 +227,7 @@
 			packageReferences = (
 				0829F1F52FA0F1E200D4A704 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				0829F1F82FA0F20700D4A704 /* XCRemoteSwiftPackageReference "Localize-Swift" */,
+				083B9DBD2FA2407F009B9076 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 08AEE2C32FA0C95F00920AED /* Products */;
@@ -623,6 +630,14 @@
 				minimumVersion = 3.2.0;
 			};
 		};
+		083B9DBD2FA2407F009B9076 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -635,6 +650,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0829F1F82FA0F20700D4A704 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
 			productName = Localize_Swift;
+		};
+		083B9DBE2FA2407F009B9076 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 083B9DBD2FA2407F009B9076 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		083B9DC02FA2407F009B9076 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 083B9DBD2FA2407F009B9076 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
