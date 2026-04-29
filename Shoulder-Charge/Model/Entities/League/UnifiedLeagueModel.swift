@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UnifidLeagueModel {
+struct UnifiedLeagueModel {
     let id: String
     let name: String
     let logoURL: URL?
@@ -21,8 +21,8 @@ protocol LeagueMappable {
 
 
 extension LeagueMappable {
-    func toDisplayModel() -> UnifidLeagueModel {
-        UnifidLeagueModel(
+    func toDisplayModel() -> UnifiedLeagueModel {
+        UnifiedLeagueModel(
             id: leagueKey,
             name: leagueName,
             logoURL: leagueLogoURLString.flatMap { URL(string: $0) }

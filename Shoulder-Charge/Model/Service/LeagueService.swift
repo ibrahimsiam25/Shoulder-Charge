@@ -15,7 +15,7 @@ class LeagueService {
 
     func fetchLeagues(
         sport: SportType,
-        completion: @escaping (Result<[UnifidLeagueModel], Error>) -> Void
+        completion: @escaping (Result<[UnifiedLeagueModel], Error>) -> Void
     ) {
         let endpoint = "\(Constants.baseUrl)\(sport.apiPath)/"
         let parameters: Parameters = [
@@ -39,7 +39,7 @@ class LeagueService {
         _ type: T.Type,
         endpoint: String,
         parameters: Parameters,
-        completion: @escaping (Result<[UnifidLeagueModel], Error>) -> Void
+        completion: @escaping (Result<[UnifiedLeagueModel], Error>) -> Void
     ) {
         AlamofireHelper.shared.request(
             endpoint: endpoint,
