@@ -7,7 +7,7 @@
 
 
 struct BasketballEvent: Decodable, EventMappable {
-    let eventKey: String?
+    let eventKey: Int?
     let eventDate: String?
     let eventTime: String?
     let eventHomeTeam: String?
@@ -26,8 +26,8 @@ struct BasketballEvent: Decodable, EventMappable {
         case eventTime        = "event_time"
         case eventHomeTeam    = "event_home_team"
         case eventAwayTeam    = "event_away_team"
-        case homeTeamLogo     = "event_home_team_logo"   // ⚠️ different key than football
-        case awayTeamLogo     = "event_away_team_logo"   // ⚠️ different key than football
+        case homeTeamLogo     = "event_home_team_logo"
+        case awayTeamLogo     = "event_away_team_logo"   
         case eventFinalResult = "event_final_result"
         case eventStatus      = "event_status"
         case leagueName       = "league_name"

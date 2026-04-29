@@ -8,7 +8,7 @@
 import Foundation
 
 struct UnifiedEventModel {
-    let eventKey: String?
+    let eventKey: Int?
     let date: String?
     let time: String?
     let homeTeam: String?
@@ -23,7 +23,7 @@ struct UnifiedEventModel {
 }
 
 struct UnifiedTeamModel {
-    let teamKey: String?
+    let teamKey: Int?
     let teamName: String?
     let teamLogo: URL?
     let countryName: String?

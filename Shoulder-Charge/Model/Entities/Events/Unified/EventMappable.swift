@@ -8,7 +8,7 @@
 import Foundation
 
 protocol EventMappable {
-    var eventKey: String? { get }
+    var eventKey: Int? { get }
     var eventDate: String? { get }
     var eventTime: String? { get }
     var eventHomeTeam: String? { get }

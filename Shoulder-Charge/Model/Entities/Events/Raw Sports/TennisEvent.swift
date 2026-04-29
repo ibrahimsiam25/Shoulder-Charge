@@ -7,7 +7,7 @@
 
 
 struct TennisEvent: Decodable, EventMappable {
-    let eventKey: String?
+    let eventKey: Int?
     let eventDate: String?
     let eventTime: String?
     let eventHomeTeam: String?
