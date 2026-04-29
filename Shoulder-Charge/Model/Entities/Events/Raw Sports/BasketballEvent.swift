@@ -1,3 +1,11 @@
+//
+//  BasketballEvent.swift
+//  Shoulder-Charge
+//
+//  Created by Eslam Elnady on 29/04/2026.
+//
+
+
 struct BasketballEvent: Decodable, EventMappable {
     let eventKey: String?
     let eventDate: String?

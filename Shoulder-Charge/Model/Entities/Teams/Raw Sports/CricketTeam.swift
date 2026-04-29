@@ -1,3 +1,11 @@
+//
+//  CricketTeam.swift
+//  Shoulder-Charge
+//
+//  Created by Eslam Elnady on 29/04/2026.
+//
+
+
 struct CricketTeam: Decodable, TeamMappable {
     let teamKey: String?
     let teamName: String?

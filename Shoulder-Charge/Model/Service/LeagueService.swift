@@ -14,7 +14,7 @@ class LeagueService {
         sport: SportType,
         completion: @escaping (Result<[UnifidLeagueModel], Error>) -> Void
     ) {
-        let endpoint = "https://apiv2.allsportsapi.com/\(sport.apiPath)/"
+        let endpoint = "\(Constants.baseUrl)\(sport.apiPath)/"
         let parameters: Parameters = [
             "met": "Leagues",
             "APIkey": Constants.apiKey

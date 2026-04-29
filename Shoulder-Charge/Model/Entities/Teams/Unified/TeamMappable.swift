@@ -1,3 +1,12 @@
+//
+//  TeamMappable.swift
+//  Shoulder-Charge
+//
+//  Created by Eslam Elnady on 29/04/2026.
+//
+
+import Foundation
+
 protocol TeamMappable {
     var teamKey: String? { get }
     var teamName: String? { get }
