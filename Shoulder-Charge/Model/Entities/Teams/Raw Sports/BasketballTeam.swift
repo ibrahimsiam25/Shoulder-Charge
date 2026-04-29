@@ -6,8 +6,9 @@
 //
 
 
-struct BasketballTeam: Decodable, TeamMappable {
-    let teamKey: String?
+struct BasketballTeam: Decodable, ParticipantMappable {
+    
+    let teamKey: Int?
     let teamName: String?
     let teamLogo: String?
     let countryName: String?
@@ -19,5 +20,8 @@ struct BasketballTeam: Decodable, TeamMappable {
         case countryName = "team_country"
     }
 
-    var teamLogoString: String? { teamLogo }
+    var participantKey: Int?           { teamKey }
+    var participantName: String?          { teamName }
+    var participantLogoURLString: String? { teamLogo }
+    var participantSubtitle: String?      { countryName }
 }

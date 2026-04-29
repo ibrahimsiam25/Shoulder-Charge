@@ -6,18 +6,21 @@
 //
 
 
-struct CricketTeam: Decodable, TeamMappable {
-    let teamKey: String?
+struct CricketTeam: Decodable, ParticipantMappable {
+    let teamKey: Int?
     let teamName: String?
     let teamLogo: String?
     let countryName: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case teamKey     = "team_key"
         case teamName    = "team_name"
         case teamLogo    = "team_logo"
         case countryName = "team_country"
     }
-
-    var teamLogoString: String? { teamLogo }
+    
+    var participantKey: Int?           { teamKey }
+    var participantName: String?          { teamName }
+    var participantLogoURLString: String? { teamLogo }
+    var participantSubtitle: String?      { countryName }
 }

@@ -63,34 +63,31 @@ class LeagueDetailsService {
 
         fetchEvents(sport: sport, parameters: params, completion: completion)
     }
-
-
-    func fetchTeams(
+    // MARK: - League Participantce (Teams or Players in Tennis)
+    
+    func fetchParticipants(
         sport: SportType,
         leagueId: String,
-        completion: @escaping (Result<[UnifiedTeamModel], Error>?) -> Void
+        completion: @escaping (Result<[LeagueParticipantDisplayModel], Error>) -> Void
     ) {
-        guard sport != .tennis else {
-            completion(nil)
-            return
-        }
-
-        let params = baseParams().merging([
-            "met": Constants.teams,
-            "leagueId": leagueId
-        ]) { $1 }
-
         let endpoint = "\(Constants.baseUrl)\(sport.apiPath)/"
 
         switch sport {
         case .football:
-            fetchTeamModels(FootballTeam.self, endpoint: endpoint, parameters: params, completion: completion)
+            let params = baseParams().merging(["met": Constants.teams, "leagueId": leagueId]) { $1 }
+            fetchParticipantModels(FootballTeam.self, endpoint: endpoint, parameters: params, completion: completion)
+
         case .basketball:
-            fetchTeamModels(BasketballTeam.self, endpoint: endpoint, parameters: params, completion: completion)
+            let params = baseParams().merging(["met": Constants.teams, "leagueId": leagueId]) { $1 }
+            fetchParticipantModels(BasketballTeam.self, endpoint: endpoint, parameters: params, completion: completion)
+
         case .cricket:
-            fetchTeamModels(CricketTeam.self, endpoint: endpoint, parameters: params, completion: completion)
+            let params = baseParams().merging(["met": Constants.teams, "leagueId": leagueId]) { $1 }
+            fetchParticipantModels(CricketTeam.self, endpoint: endpoint, parameters: params, completion: completion)
+
         case .tennis:
-            break
+            let params = baseParams().merging(["met": Constants.players, "leagueId": leagueId]) { $1 }
+            fetchParticipantModels(TennisPlayer.self, endpoint: endpoint, parameters: params, completion: completion)
         }
     }
 
@@ -134,11 +131,11 @@ class LeagueDetailsService {
         }
     }
 
-    private func fetchTeamModels<T: Decodable & TeamMappable>(
+    private func fetchParticipantModels<T: Decodable & ParticipantMappable>(
         _ type: T.Type,
         endpoint: String,
         parameters: Parameters,
-        completion: @escaping (Result<[UnifiedTeamModel], Error>?) -> Void
+        completion: @escaping (Result<[LeagueParticipantDisplayModel], Error>) -> Void
     ) {
         AlamofireHelper.shared.request(
             endpoint: endpoint,
@@ -146,7 +143,7 @@ class LeagueDetailsService {
         ) { (result: Result<APIResponse<[T]>, Error>) in
             switch result {
             case .success(let response):
-                completion(.success(response.result.map { $0.toDisplayModel() }))
+                completion(.success(response.result.map { $0.toParticipantDisplayModel() }))
             case .failure(let error):
                 completion(.failure(error))
             }
