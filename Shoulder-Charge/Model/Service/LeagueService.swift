@@ -10,10 +10,6 @@ import Alamofire
 
 class LeagueService {
     
-    static let shared = LeagueService()
-    private init() {}
-    
-    
     func fetchLeagues(
         sport: SportType,
         completion: @escaping (Result<[UnifidLeagueModel], Error>) -> Void
