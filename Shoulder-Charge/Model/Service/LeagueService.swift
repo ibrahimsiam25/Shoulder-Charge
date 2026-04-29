@@ -9,17 +9,20 @@ import Alamofire
 
 
 class LeagueService {
-    
+
+    static let shared = LeagueService()
+    private init() {}
+
     func fetchLeagues(
         sport: SportType,
         completion: @escaping (Result<[UnifidLeagueModel], Error>) -> Void
     ) {
         let endpoint = "\(Constants.baseUrl)\(sport.apiPath)/"
         let parameters: Parameters = [
-            "met": "Leagues",
+            "met": Constants.leagues,
             "APIkey": Constants.apiKey
         ]
-        
+
         switch sport {
         case .football:
             fetch(FootballLeague.self, endpoint: endpoint, parameters: parameters, completion: completion)
@@ -31,7 +34,7 @@ class LeagueService {
             fetch(TennisLeague.self, endpoint: endpoint, parameters: parameters, completion: completion)
         }
     }
-    
+
     private func fetch<T: Decodable & LeagueMappable>(
         _ type: T.Type,
         endpoint: String,
