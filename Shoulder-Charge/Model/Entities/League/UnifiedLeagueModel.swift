@@ -8,13 +8,13 @@
 import Foundation
 
 struct UnifiedLeagueModel {
-    let id: String
+    let id: Int
     let name: String
     let logoURL: URL?
 }
 
 protocol LeagueMappable {
-    var leagueKey: String { get }
+    var leagueKey: Int { get }
     var leagueName: String { get }
     var leagueLogoURLString: String? { get }
 }
@@ -32,7 +32,7 @@ extension LeagueMappable {
 
 
 struct FootballLeague: Decodable, LeagueMappable {
-    let leagueKey: String
+    let leagueKey: Int
     let leagueName: String
     let leagueLogo: String?
     let countryName: String?
@@ -48,7 +48,7 @@ struct FootballLeague: Decodable, LeagueMappable {
 }
 
 struct BasketballLeague: Decodable, LeagueMappable {
-    let leagueKey: String
+    let leagueKey: Int
     let leagueName: String
     let countryName: String?
 
@@ -62,7 +62,7 @@ struct BasketballLeague: Decodable, LeagueMappable {
 }
 
 struct CricketLeague: Decodable, LeagueMappable {
-    let leagueKey: String
+    let leagueKey: Int
     let leagueName: String
     let leagueYear: String?
 
@@ -76,7 +76,7 @@ struct CricketLeague: Decodable, LeagueMappable {
 }
 
 struct TennisLeague: Decodable, LeagueMappable {
-    let leagueKey: String
+    let leagueKey: Int
     let leagueName: String
     let tournamentType: String?
     let leagueSurface: String?
