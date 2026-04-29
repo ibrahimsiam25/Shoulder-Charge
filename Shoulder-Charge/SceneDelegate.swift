@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         LocalizationManager.shared.applyLayoutDirection()
         window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
         window?.makeKeyAndVisible()
-
+        window?.rootViewController = SplashViewController()
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(handleLanguageChanged),
