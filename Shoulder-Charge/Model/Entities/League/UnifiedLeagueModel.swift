@@ -11,12 +11,14 @@ struct UnifiedLeagueModel {
     let id: Int
     let name: String
     let logoURL: URL?
+    let displaySubTitle: String?
 }
 
 protocol LeagueMappable {
     var leagueKey: Int { get }
     var leagueName: String { get }
     var leagueLogoURLString: String? { get }
+    var displaySubTitle: String? { get }
 }
 
 
@@ -25,7 +27,8 @@ extension LeagueMappable {
         UnifiedLeagueModel(
             id: leagueKey,
             name: leagueName,
-            logoURL: leagueLogoURLString.flatMap { URL(string: $0) }
+            logoURL: leagueLogoURLString.flatMap { URL(string: $0) },
+            displaySubTitle: displaySubTitle
         )
     }
 }
@@ -45,6 +48,7 @@ struct FootballLeague: Decodable, LeagueMappable {
     }
 
     var leagueLogoURLString: String? { leagueLogo }
+    var displaySubTitle: String? {countryName}
 }
 
 struct BasketballLeague: Decodable, LeagueMappable {
@@ -59,6 +63,8 @@ struct BasketballLeague: Decodable, LeagueMappable {
     }
 
     var leagueLogoURLString: String? { nil }
+    var displaySubTitle: String? {countryName}
+
 }
 
 struct CricketLeague: Decodable, LeagueMappable {
@@ -73,20 +79,23 @@ struct CricketLeague: Decodable, LeagueMappable {
     }
 
     var leagueLogoURLString: String? { nil }
+    var displaySubTitle: String? {leagueYear}
 }
 
 struct TennisLeague: Decodable, LeagueMappable {
     let leagueKey: Int
     let leagueName: String
-    let tournamentType: String?
+    let countryName: String?
     let leagueSurface: String?
 
     enum CodingKeys: String, CodingKey {
         case leagueKey      = "league_key"
         case leagueName     = "league_name"
-        case tournamentType = "country_name"
+        case countryName = "country_name"
         case leagueSurface  = "league_surface"
     }
 
     var leagueLogoURLString: String? { nil }
+    var displaySubTitle: String? {countryName}
+
 }
