@@ -21,22 +21,10 @@ final class SplashPresenter: SplashPresenterProtocol {
     }
 
     func startAnimation() {
-      
         view?.animateLogoParts()
 
-      
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) { [weak self] in
-            self?.view?.showCenterLogo()
-        }
-
-  
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) { [weak self] in
             self?.view?.showAppTitle()
-        }
-
-     
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) { [weak self] in
-            self?.view?.navigateToMain()
         }
     }
 }
