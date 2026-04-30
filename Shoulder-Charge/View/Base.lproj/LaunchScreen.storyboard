@@ -15,8 +15,51 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1d-MX-YC1">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="477"/>
+                                <subviews>
+                                    <imageView opaque="NO" alpha="0.0" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="SplashLeft" translatesAutoresizingMaskIntoConstraints="NO" id="g35-rt-RTQ" tag="1001">
+                                        <rect key="frame" x="0.0" y="81.3" width="157.2" height="314.4"/>
+                                    </imageView>
+                                    <imageView opaque="NO" alpha="0.0" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="SplashRight" translatesAutoresizingMaskIntoConstraints="NO" id="L9b-Cp-JQ0" tag="1002">
+                                        <rect key="frame" x="235.8" y="81.3" width="157.2" height="314.4"/>
+                                    </imageView>
+                                    <imageView opaque="NO" alpha="0.0" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="SplashCenter" translatesAutoresizingMaskIntoConstraints="NO" id="t2X-Qx-P4v" tag="1003">
+                                        <rect key="frame" x="39.3" y="81.3" width="314.4" height="314.4"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="t2X-Qx-P4v" firstAttribute="centerX" secondItem="u1d-MX-YC1" secondAttribute="centerX" id="x2p-Z1-0Zg"/>
+                                    <constraint firstItem="t2X-Qx-P4v" firstAttribute="centerY" secondItem="u1d-MX-YC1" secondAttribute="centerY" id="S7Q-yb-pfK"/>
+                                    <constraint firstItem="t2X-Qx-P4v" firstAttribute="width" secondItem="u1d-MX-YC1" secondAttribute="width" multiplier="0.8" id="u0c-k3-AoC"/>
+                                    <constraint firstItem="t2X-Qx-P4v" firstAttribute="height" secondItem="t2X-Qx-P4v" secondAttribute="width" id="H1k-V4-9wR"/>
+                                    <constraint firstItem="g35-rt-RTQ" firstAttribute="trailing" secondItem="t2X-Qx-P4v" secondAttribute="centerX" id="P9Z-3a-LkD"/>
+                                    <constraint firstItem="g35-rt-RTQ" firstAttribute="centerY" secondItem="t2X-Qx-P4v" secondAttribute="centerY" id="n1q-Lt-S8c"/>
+                                    <constraint firstItem="g35-rt-RTQ" firstAttribute="width" secondItem="t2X-Qx-P4v" secondAttribute="width" multiplier="0.5" id="Y6M-xd-9fP"/>
+                                    <constraint firstItem="g35-rt-RTQ" firstAttribute="height" secondItem="t2X-Qx-P4v" secondAttribute="height" id="y1a-A9-1Jw"/>
+                                    <constraint firstItem="L9b-Cp-JQ0" firstAttribute="leading" secondItem="t2X-Qx-P4v" secondAttribute="centerX" id="F2n-YV-JHn"/>
+                                    <constraint firstItem="L9b-Cp-JQ0" firstAttribute="centerY" secondItem="t2X-Qx-P4v" secondAttribute="centerY" id="t0a-nQ-sK9"/>
+                                    <constraint firstItem="L9b-Cp-JQ0" firstAttribute="width" secondItem="t2X-Qx-P4v" secondAttribute="width" multiplier="0.5" id="rE1-C5-7Fr"/>
+                                    <constraint firstItem="L9b-Cp-JQ0" firstAttribute="height" secondItem="t2X-Qx-P4v" secondAttribute="height" id="h5v-Ed-4bQ"/>
+                                </constraints>
+                            </view>
+                            <imageView opaque="NO" alpha="0.0" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="SplashBottom" translatesAutoresizingMaskIntoConstraints="NO" id="G4a-xd-Wdw" tag="1004">
+                                <rect key="frame" x="59.0" y="712.0" width="275.1" height="100"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="u1d-MX-YC1" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="oJ8-rt-cN2"/>
+                            <constraint firstItem="u1d-MX-YC1" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="R8B-1b-1Cq"/>
+                            <constraint firstItem="u1d-MX-YC1" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="B3d-f2-eK0"/>
+                            <constraint firstItem="u1d-MX-YC1" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.56" id="p3R-4y-zqD"/>
+                            <constraint firstItem="G4a-xd-Wdw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="B4r-2u-F1E"/>
+                            <constraint firstItem="G4a-xd-Wdw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-40" id="QqW-M2-kV0"/>
+                            <constraint firstItem="G4a-xd-Wdw" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="s8Q-Ff-2wS"/>
+                            <constraint firstItem="G4a-xd-Wdw" firstAttribute="height" constant="100" id="x1B-7d-PnT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,8 +68,9 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="SplashBottom" width="400" height="100"/>
+        <image name="SplashCenter" width="400" height="400"/>
+        <image name="SplashLeft" width="200" height="400"/>
+        <image name="SplashRight" width="200" height="400"/>
     </resources>
 </document>
