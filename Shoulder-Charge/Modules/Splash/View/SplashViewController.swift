@@ -37,8 +37,10 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.semanticContentAttribute = .forceLeftToRight
         embedLaunchScreen()
         bindLogoImageViews()
+        configureLogoImageViewsForLtr()
         setupUI()
         presenter = SplashPresenter(view: self)
     }
@@ -71,6 +73,7 @@ class SplashViewController: UIViewController {
         launchContentViewController = launchVC
         addChild(launchVC)
         launchVC.view.translatesAutoresizingMaskIntoConstraints = false
+        applyLeftToRightRecursively(on: launchVC.view)
         view.addSubview(launchVC.view)
         NSLayoutConstraint.activate([
             launchVC.view.topAnchor.constraint(equalTo: view.topAnchor),
@@ -86,6 +89,20 @@ class SplashViewController: UIViewController {
         rightLogoImageView = view.viewWithTag(ViewTag.rightLogo) as? UIImageView
         centerLogoImageView = view.viewWithTag(ViewTag.centerLogo) as? UIImageView
         titleImageView = view.viewWithTag(ViewTag.title) as? UIImageView
+    }
+
+    private func configureLogoImageViewsForLtr() {
+        let imageViews: [UIImageView?] = [leftLogoImageView, rightLogoImageView, centerLogoImageView, titleImageView]
+        imageViews.forEach { imageView in
+            imageView?.semanticContentAttribute = .forceLeftToRight
+        }
+    }
+
+    private func applyLeftToRightRecursively(on rootView: UIView) {
+        rootView.semanticContentAttribute = .forceLeftToRight
+        rootView.subviews.forEach { subview in
+            applyLeftToRightRecursively(on: subview)
+        }
     }
 
     private func setInitialLogoTransformsIfNeeded() {
