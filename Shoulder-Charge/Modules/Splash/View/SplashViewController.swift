@@ -140,11 +140,25 @@ class SplashViewController: UIViewController {
               let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
             return
         }
-
-        let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-        window.rootViewController = initialVC
-        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
-    }
+        
+        let isFirstTime = UserDefaults.standard.bool(forKey: Constants.userDefaultsIsFirstTimeUserKey)
+        
+        if isFirstTime {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainNav = storyboard.instantiateViewController(withIdentifier: "MainNavigationController")
+            window.rootViewController = mainNav
+            
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let onboardingVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+            window.rootViewController = onboardingVC
+        }
+        
+        UIView.transition(with: window,
+                          duration: 0.4,
+                          options: .transitionCrossDissolve,
+                          animations: nil,
+                          completion: nil)}
 }
 
 

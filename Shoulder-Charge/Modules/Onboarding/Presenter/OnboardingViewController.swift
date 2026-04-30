@@ -10,27 +10,8 @@ import UIKit
 class OnboardingViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     private var arrContainer = [UIViewController]()
     private var data: [OnboardingSlide] {
-        let slides = [
-            OnboardingSlide(
-                titleWhite: L10n.Onboarding.Slide1.titleWhite,
-                titlePrimary: L10n.Onboarding.Slide1.titlePrimary,
-                description: L10n.Onboarding.Slide1.description,
-                image: "onBoarding_1",
-                currentPage: 0),
-            OnboardingSlide(
-                titleWhite: L10n.Onboarding.Slide2.titleWhite,
-                titlePrimary: L10n.Onboarding.Slide2.titlePrimary,
-                description: L10n.Onboarding.Slide2.description,
-                image: "onBoarding_2",
-                currentPage: 1),
-            OnboardingSlide(
-                titleWhite: L10n.Onboarding.Slide3.titleWhite,
-                titlePrimary: L10n.Onboarding.Slide3.titlePrimary,
-                description: L10n.Onboarding.Slide3.description,
-                image: "onBoarding_3",
-                currentPage: 2)
-        ]
-        return LocalizationManager.shared.currentLanguage == "ar" ? slides.reversed() : slides
+     
+        return LocalizationManager.shared.currentLanguage == "ar" ? Constants.onboardingSlide.reversed() : Constants.onboardingSlide
     }
 
     private var currentIndex: Int {
@@ -106,14 +87,14 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
               let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
             return
         }
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainNav = storyboard.instantiateViewController(withIdentifier: "MainNavigationController")
+        UserDefaults.standard.set(true, forKey: Constants.userDefaultsIsFirstTimeUserKey)
+        let storyboard = self.storyboard
+        let mainNav = storyboard?.instantiateViewController(withIdentifier: "MainNavigationController")
         window.rootViewController = mainNav
         UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
     }
     
-    // MARK: - UIPageViewControllerDataSource
+
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let currentIndex = arrContainer.firstIndex(of: viewController), currentIndex > 0 else {
