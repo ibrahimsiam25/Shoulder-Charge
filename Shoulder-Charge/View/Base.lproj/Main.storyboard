@@ -94,7 +94,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Jht-Io-Qmw">
             <objects>
-                <navigationController id="Ab4-OS-mkh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" id="Ab4-OS-mkh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XGK-Tn-mSd">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
