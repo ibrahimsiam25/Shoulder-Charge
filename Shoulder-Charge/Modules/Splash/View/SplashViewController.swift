@@ -114,16 +114,16 @@ class SplashViewController: UIViewController {
 
    
     private func playCollisionSound() {
-        guard let url = Bundle.main.url(forResource: "test",
+        guard let url = Bundle.main.url(forResource: "splash_sound",
                                         withExtension: "wav") else {
-            print("⚠️ Sound file not found")
+            print(" Sound file not found")
             return
         }
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.play()
         } catch {
-            print("⚠️ Audio error: \(error)")
+            print(" Audio error: \(error)")
         }
     }
 }
@@ -175,9 +175,13 @@ extension SplashViewController: SplashViewProtocol {
     }
 
     func navigateToMain() {
-         let tabBar = UITabBarController()
-         tabBar.modalTransitionStyle   = .crossDissolve
-         tabBar.modalPresentationStyle = .fullScreen
-         present(tabBar, animated: true)
-     }
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
+            return
+        }
+        
+        let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        window.rootViewController = initialVC
+        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+    }
 }
