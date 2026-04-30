@@ -13,7 +13,25 @@
 "settings.language.english" = "English";
 "settings.language.arabic"  = "Arabic";
 
+
 /* Common */
 "common.done"               = "Done";
 "common.cancel"             = "Cancel";
 "common.save"               = "Save";
+"common.appName"            = "Shoulder Charge";
+
+/* Onboarding */
+"onboarding.slide1.titleWhite"   = "Feel The";
+"onboarding.slide1.titlePrimary" = "Charge";
+"onboarding.slide1.description"  = "Unleash your power like CR7";
+
+"onboarding.slide2.titleWhite"   = "Charge The";
+"onboarding.slide2.titlePrimary" = "Court";
+"onboarding.slide2.description"  = "Own the paint. Feel the impact.";
+
+"onboarding.slide3.titleWhite"   = "Charge The";
+"onboarding.slide3.titlePrimary" = "Court";
+"onboarding.slide3.description"  = "Dominate every point with power";
+
+"onboarding.continue"            = "Continue";
+"onboarding.skip"                = "Skip";

@@ -17,6 +17,7 @@
                 <outlet property="skipButton" destination="SkipBtn" id="mJu-Fc-6tF"/>
                 <outlet property="subTitleLbl" destination="7XI-o0-jQS" id="N6c-7N-FEm"/>
                 <outlet property="wihteLbl" destination="Veq-c2-26D" id="Bhe-Ge-cf6"/>
+                <outlet property="LogoLbl" destination="LogoLbl" id="LogoLblConnection"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

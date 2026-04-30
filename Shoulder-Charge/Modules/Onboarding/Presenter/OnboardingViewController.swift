@@ -9,26 +9,29 @@ import UIKit
 
 class OnboardingViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     private var arrContainer = [UIViewController]()
-    private let data = [
-        OnboardingSlide(
-            titleWhite: "Feel The",
-            titlePrimary: "Charge",
-            description: "Unleash your power like CR7",
-            image: "onBoarding_1",
-            currentPage: 0),
-        OnboardingSlide(
-            titleWhite: "Charge The",
-            titlePrimary: "Court",
-            description: "Own the paint. Feel the impact.",
-            image: "onBoarding_2",
-            currentPage: 1),
-        OnboardingSlide(
-            titleWhite: "Charge The",
-            titlePrimary: "Court",
-            description: "Dominate every point with power",
-            image: "onBoarding_3",
-            currentPage: 2)
-    ]
+    private var data: [OnboardingSlide] {
+        let slides = [
+            OnboardingSlide(
+                titleWhite: L10n.Onboarding.Slide1.titleWhite,
+                titlePrimary: L10n.Onboarding.Slide1.titlePrimary,
+                description: L10n.Onboarding.Slide1.description,
+                image: "onBoarding_1",
+                currentPage: 0),
+            OnboardingSlide(
+                titleWhite: L10n.Onboarding.Slide2.titleWhite,
+                titlePrimary: L10n.Onboarding.Slide2.titlePrimary,
+                description: L10n.Onboarding.Slide2.description,
+                image: "onBoarding_2",
+                currentPage: 1),
+            OnboardingSlide(
+                titleWhite: L10n.Onboarding.Slide3.titleWhite,
+                titlePrimary: L10n.Onboarding.Slide3.titlePrimary,
+                description: L10n.Onboarding.Slide3.description,
+                image: "onBoarding_3",
+                currentPage: 2)
+        ]
+        return LocalizationManager.shared.currentLanguage == "ar" ? slides.reversed() : slides
+    }
 
     private var currentIndex: Int {
         guard let currentVC = viewControllers?.first,

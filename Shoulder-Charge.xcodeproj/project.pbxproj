@@ -39,7 +39,6 @@
 		08AEE2ED2FA0C96200920AED /* Exceptions for "Shoulder-Charge" folder in "Shoulder-Charge" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Core/Views/Untitled.swift,
 				Info.plist,
 			);
 			target = 08AEE2C12FA0C95F00920AED /* Shoulder-Charge */;

@@ -13,7 +13,25 @@
 "settings.language.english" = "الإنجليزية";
 "settings.language.arabic"  = "العربية";
 
+
 /* عام */
 "common.done"               = "تم";
 "common.cancel"             = "إلغاء";
 "common.save"               = "حفظ";
+"common.appName"            = "شولدر تشارج";
+
+/* Onboarding */
+"onboarding.slide1.titleWhite"   = "اشعر بـ";
+"onboarding.slide1.titlePrimary" = "القوة";
+"onboarding.slide1.description"  = "أطلق العنان لقوتك مثل الدون";
+
+"onboarding.slide2.titleWhite"   = "سيطر على";
+"onboarding.slide2.titlePrimary" = "الملعب";
+"onboarding.slide2.description"  = "امتلك الساحة. اشعر بالتأثير.";
+
+"onboarding.slide3.titleWhite"   = "سيطر على";
+"onboarding.slide3.titlePrimary" = "المباراة";
+"onboarding.slide3.description"  = "هيمن على كل نقطة بقوة";
+
+"onboarding.continue"            = "استمرار";
+"onboarding.skip"                = "تخطي";
