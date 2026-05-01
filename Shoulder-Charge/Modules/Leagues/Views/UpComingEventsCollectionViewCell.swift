@@ -25,6 +25,10 @@ class UpComingEventsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         setupGradient()
         badgeView.backgroundColor = UIColor(named: "Primary")?.withAlphaComponent(0.2)
+        contentView.layer.cornerRadius = 16
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
+        contentView.clipsToBounds = true
     }
 
     override func layoutSubviews() {
@@ -37,6 +41,7 @@ class UpComingEventsCollectionViewCell: UICollectionViewCell {
         if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
             applyGradientColors()
             badgeView.backgroundColor = UIColor(named: "Primary")?.withAlphaComponent(0.2)
+            contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
         }
     }
 

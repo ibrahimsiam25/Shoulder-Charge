@@ -28,6 +28,8 @@ class LeagueTableViewCell: UITableViewCell {
 
         contentView.layer.cornerRadius = 16
         contentView.clipsToBounds = true
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
 
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.08
@@ -63,6 +65,13 @@ class LeagueTableViewCell: UITableViewCell {
             with: model.logoURL,
             placeholderImage: UIImage(systemName: "sportscourt.circle")
         )
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
