@@ -61,7 +61,12 @@ class LeagueTableViewCell: UITableViewCell {
         leagueImageView.sd_setImage(
             with: model.logoURL,
             placeholderImage: UIImage(systemName: "sportscourt.circle")
-        )
+        ){[weak self] _,_,_,_ in
+            guard let self else { return }
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
+        }
+        
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

@@ -145,9 +145,14 @@ class SplashViewController: UIViewController {
         
         if isFirstTime {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mainNav = storyboard.instantiateViewController(withIdentifier: "MainNavigationController")
-            window.rootViewController = mainNav
-            
+            let nav = storyboard.instantiateViewController(withIdentifier: "MainNavigationController") as! UINavigationController
+            if let leaguesVC = nav.viewControllers.first as? LeaguesViewController {
+                let router = LeaguesRouter()
+                let presenter = LeaguesPresenter(leagueService: LeagueService.shared, view: leaguesVC, router: router)
+                leaguesVC.leaguesPresenter = presenter
+            }
+            window.rootViewController = nav
+
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let onboardingVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
