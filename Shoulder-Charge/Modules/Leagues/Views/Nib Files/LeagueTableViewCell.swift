@@ -58,9 +58,12 @@ class LeagueTableViewCell: UITableViewCell {
     func configure(with model: UnifiedLeagueModel) {
         leagueNameLabel.text = model.name
         subtitleLabel.text = model.displaySubTitle
+        let placeholder = UIImage(systemName: "globe")?
+            .withTintColor(UIColor(named: "Primary") ?? .gray, renderingMode: .alwaysOriginal)
+
         leagueImageView.sd_setImage(
             with: model.logoURL,
-            placeholderImage: UIImage(systemName: "sportscourt.circle")
+            placeholderImage: placeholder
         ){[weak self] _,_,_,_ in
             guard let self else { return }
             self.setNeedsLayout()

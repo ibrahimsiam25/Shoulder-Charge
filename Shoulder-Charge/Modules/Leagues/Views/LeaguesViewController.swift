@@ -26,6 +26,7 @@ class LeaguesViewController: UIViewController {
     func setupUI()  {
         leaguesLabel.text = L10n.Leagues.title
         searchBar.placeholder = L10n.Leagues.searchPlaceholder
+        searchBar.delegate = self
         leaguesTableView.delegate = self
         leaguesTableView.dataSource = self
         leaguesTableView.backgroundView = nil
@@ -72,7 +73,7 @@ extension LeaguesViewController : UITableViewDataSource{
     
 }
 
-// MARK: - UI DELEGATE
+// MARK: - TABLE UI DELEGATE
 
 extension LeaguesViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -82,3 +83,18 @@ extension LeaguesViewController : UITableViewDelegate{
         leaguesPresenter.navigateToLeagueDetails(at: indexPath.row)
     }
 }
+
+// MARK: - SEARCH BAR DELEGATE
+
+extension LeaguesViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        leaguesPresenter.filterLeagues(by: searchText)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        leaguesPresenter.filterLeagues(by: "")
+    }
+}
+

@@ -12,6 +12,7 @@ class LeaguesPresenter : LeaguesPresenterProtocol{
     private var view: LeaguesViewProtocol!
     private var router: LeaguesRouterProtocol!
     private var leagues: [UnifiedLeagueModel] = []
+    private var filteredLeagues: [UnifiedLeagueModel] = []
     
     init(leagueService: LeagueService!, view: LeaguesViewProtocol!, router: LeaguesRouterProtocol!) {
         self.leagueService = leagueService
@@ -27,6 +28,7 @@ class LeaguesPresenter : LeaguesPresenterProtocol{
                 self.view.toggleLoading(false)
                 do {
                     self.leagues = try result.get()
+                    self.filteredLeagues = self.leagues
                     self.view.reloadTableData()
                 } catch let error {
                     print("error while fetching leagues: \(error)")
@@ -35,15 +37,23 @@ class LeaguesPresenter : LeaguesPresenterProtocol{
         }
     }
     func getItemsCount() -> Int {
-        return leagues.count
+        return filteredLeagues.count
     }
-    func getItem(at index: Int) -> UnifiedLeagueModel{
-        return leagues[index]
+    func getItem(at index: Int) -> UnifiedLeagueModel {
+        return filteredLeagues[index]
+    }
+
+    func filterLeagues(by query: String) {
+        if query.trimmingCharacters(in: .whitespaces).isEmpty {
+            filteredLeagues = leagues
+        } else {
+            filteredLeagues = leagues.filter { $0.name.localizedCaseInsensitiveContains(query) }
+        }
+        view.reloadTableData()
     }
     
     func navigateToLeagueDetails(at index: Int) {
-        let leagueId = getItem(at: index).id
-        
+        let leagueId = filteredLeagues[index].id
         router.navigateToLeagueDetails(with: leagueId, from: view)
     }
     
