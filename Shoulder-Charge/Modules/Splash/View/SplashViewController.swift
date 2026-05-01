@@ -148,7 +148,7 @@ class SplashViewController: UIViewController {
             let nav = storyboard.instantiateViewController(withIdentifier: "MainNavigationController") as! UINavigationController
             if let leaguesVC = nav.viewControllers.first as? LeaguesViewController {
                 let router = LeaguesRouter()
-                let presenter = LeaguesPresenter(leagueService: LeagueService.shared, view: leaguesVC, router: router)
+                let presenter = LeaguesPresenter(repository: LeaguesRepository(), view: leaguesVC, router: router)
                 leaguesVC.leaguesPresenter = presenter
             }
             window.rootViewController = nav
