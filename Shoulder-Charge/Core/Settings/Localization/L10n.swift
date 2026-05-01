@@ -68,4 +68,10 @@ enum L10n {
         static var save:   String { "common.save".localized }
         static var appName: String { "common.appName".localized }
     }
+    enum Home {
+        static var soccer: String { "home.soccer".localized }
+        static var basket: String { "home.basket".localized }
+        static var tennis: String { "home.tennis".localized }
+        static var racquet: String { "home.racquet".localized }
+    }
 }
