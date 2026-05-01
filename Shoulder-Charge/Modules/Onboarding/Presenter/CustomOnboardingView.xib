@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomOnboardingView" customModule="Shoulder_Charge" customModuleProvider="target">
             <connections>
+                <outlet property="LogoLbl" destination="LogoLbl" id="LogoLblConnection"/>
                 <outlet property="btn" destination="xKd-dg-7nU" id="mEy-5s-jYW"/>
                 <outlet property="dotContoller" destination="5dn-xB-hdq" id="foi-QJ-tBx"/>
                 <outlet property="imageV" destination="UTn-TJ-s1G" id="xur-xg-jYV"/>
@@ -17,91 +18,90 @@
                 <outlet property="skipButton" destination="SkipBtn" id="mJu-Fc-6tF"/>
                 <outlet property="subTitleLbl" destination="7XI-o0-jQS" id="N6c-7N-FEm"/>
                 <outlet property="wihteLbl" destination="Veq-c2-26D" id="Bhe-Ge-cf6"/>
-                <outlet property="LogoLbl" destination="LogoLbl" id="LogoLblConnection"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="Orl-LC-cyQ">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UTn-TJ-s1G">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoulder Charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LogoLbl">
-                        <rect key="frame" x="16" y="96" width="173" height="26.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                        <color key="textColor" name="Primary"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKd-dg-7nU" customClass="PrimaryButton" customModule="Shoulder_Charge" customModuleProvider="target">
-                        <rect key="frame" x="20" y="758" width="374" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="Btn-ht-Con"/>
-                        </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="Continue"/>
-                    </button>
-                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5dn-xB-hdq">
-                        <rect key="frame" x="170" y="702" width="74" height="26"/>
-                        <color key="pageIndicatorTintColor" name="Text Sec"/>
-                        <color key="currentPageIndicatorTintColor" name="Primary"/>
-                    </pageControl>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unleash your power like CR7" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XI-o0-jQS">
-                        <rect key="frame" x="20" y="650.5" width="374" height="21.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <color key="textColor" name="Surface"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJd-5J-bns">
-                        <rect key="frame" x="20" y="592.5" width="374" height="48"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                        <color key="textColor" name="Primary"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feel The" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veq-c2-26D">
-                        <rect key="frame" x="20" y="544.5" width="374" height="48"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkipBtn">
-                        <rect key="frame" x="322" y="96" width="72" height="31"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="SKIP">
-                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
-                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </buttonConfiguration>
-                    </button>
-                </subviews>
-                <viewLayoutGuide key="safeArea" id="Ag9-9K-cZW"/>
-                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                <constraints>
-                    <constraint firstItem="UTn-TJ-s1G" firstAttribute="leading" secondItem="Orl-LC-cyQ" secondAttribute="leading" id="0uM-bX-r5A"/>
-                    <constraint firstItem="5dn-xB-hdq" firstAttribute="centerX" secondItem="Orl-LC-cyQ" secondAttribute="centerX" id="1YJ-o1-zQw"/>
-                    <constraint firstItem="SkipBtn" firstAttribute="leading" secondItem="LogoLbl" secondAttribute="trailing" constant="133" id="2hf-c4-hg2"/>
-                    <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="Veq-c2-26D" secondAttribute="trailing" constant="20" id="4hL-o8-c7Z"/>
-                    <constraint firstAttribute="trailing" secondItem="UTn-TJ-s1G" secondAttribute="trailing" id="5yN-cL-pK3"/>
-                    <constraint firstItem="7XI-o0-jQS" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="20" id="A8e-gV-Q6M"/>
-                    <constraint firstItem="Ag9-9K-cZW" firstAttribute="bottom" secondItem="xKd-dg-7nU" secondAttribute="bottom" constant="20" id="B6x-Qd-L9n"/>
-                    <constraint firstItem="LogoLbl" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="16" id="BQY-XD-B5h"/>
-                    <constraint firstItem="xKd-dg-7nU" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="20" id="C6x-Qd-L9n"/>
-                    <constraint firstItem="UTn-TJ-s1G" firstAttribute="top" secondItem="Orl-LC-cyQ" secondAttribute="top" id="DEf-Gg-L9n"/>
-                    <constraint firstAttribute="bottom" secondItem="UTn-TJ-s1G" secondAttribute="bottom" id="EGf-Gg-L9n"/>
-                    <constraint firstItem="XJd-5J-bns" firstAttribute="top" secondItem="Veq-c2-26D" secondAttribute="bottom" id="K1e-hR-V2k"/>
-                    <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="XJd-5J-bns" secondAttribute="trailing" constant="20" id="K6x-Qd-L9n"/>
-                    <constraint firstItem="XJd-5J-bns" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="20" id="L6x-Qd-L9n"/>
-                    <constraint firstItem="7XI-o0-jQS" firstAttribute="top" secondItem="XJd-5J-bns" secondAttribute="bottom" constant="10" id="M1e-hR-V2k"/>
-                    <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="7XI-o0-jQS" secondAttribute="trailing" constant="20" id="N6x-Qd-L9n"/>
-                    <constraint firstItem="Veq-c2-26D" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="20" id="O6x-Qd-L9n"/>
-                    <constraint firstItem="5dn-xB-hdq" firstAttribute="top" secondItem="7XI-o0-jQS" secondAttribute="bottom" constant="30" id="P1e-hR-V2k"/>
-                    <constraint firstItem="SkipBtn" firstAttribute="top" secondItem="LogoLbl" secondAttribute="top" id="P3j-ky-UtL"/>
-                    <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="xKd-dg-7nU" secondAttribute="trailing" constant="20" id="R1e-hR-V2k"/>
-                    <constraint firstItem="xKd-dg-7nU" firstAttribute="top" secondItem="5dn-xB-hdq" secondAttribute="bottom" constant="30" id="S1e-hR-V2k"/>
-                    <constraint firstItem="LogoLbl" firstAttribute="top" secondItem="Ag9-9K-cZW" secondAttribute="top" id="kbz-od-qaf"/>
-                    <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="SkipBtn" secondAttribute="trailing" constant="20" id="lfl-5U-PxC"/>
-                </constraints>
-                <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UTn-TJ-s1G">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoulder Charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LogoLbl">
+                    <rect key="frame" x="16" y="96" width="173" height="27"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <color key="textColor" name="Primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKd-dg-7nU" customClass="PrimaryButton" customModule="Shoulder_Charge" customModuleProvider="target">
+                    <rect key="frame" x="20" y="758" width="374" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Btn-ht-Con"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Continue"/>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5dn-xB-hdq">
+                    <rect key="frame" x="170" y="702" width="74" height="26"/>
+                    <color key="pageIndicatorTintColor" name="Text Sec"/>
+                    <color key="currentPageIndicatorTintColor" name="Primary"/>
+                </pageControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unleash your power like CR7" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XI-o0-jQS">
+                    <rect key="frame" x="20" y="650.5" width="374" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" name="Surface"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJd-5J-bns">
+                    <rect key="frame" x="20" y="592.5" width="374" height="48"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                    <color key="textColor" name="Primary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feel The" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veq-c2-26D">
+                    <rect key="frame" x="20" y="544.5" width="374" height="48"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkipBtn">
+                    <rect key="frame" x="322" y="96" width="72" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="SKIP">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Ag9-9K-cZW"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="UTn-TJ-s1G" firstAttribute="leading" secondItem="Orl-LC-cyQ" secondAttribute="leading" id="0uM-bX-r5A"/>
+                <constraint firstItem="5dn-xB-hdq" firstAttribute="centerX" secondItem="Orl-LC-cyQ" secondAttribute="centerX" id="1YJ-o1-zQw"/>
+                <constraint firstItem="SkipBtn" firstAttribute="leading" secondItem="LogoLbl" secondAttribute="trailing" constant="133" id="2hf-c4-hg2"/>
+                <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="Veq-c2-26D" secondAttribute="trailing" constant="20" id="4hL-o8-c7Z"/>
+                <constraint firstAttribute="trailing" secondItem="UTn-TJ-s1G" secondAttribute="trailing" id="5yN-cL-pK3"/>
+                <constraint firstItem="7XI-o0-jQS" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="20" id="A8e-gV-Q6M"/>
+                <constraint firstItem="Ag9-9K-cZW" firstAttribute="bottom" secondItem="xKd-dg-7nU" secondAttribute="bottom" constant="20" id="B6x-Qd-L9n"/>
+                <constraint firstItem="LogoLbl" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="16" id="BQY-XD-B5h"/>
+                <constraint firstItem="xKd-dg-7nU" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="20" id="C6x-Qd-L9n"/>
+                <constraint firstItem="UTn-TJ-s1G" firstAttribute="top" secondItem="Orl-LC-cyQ" secondAttribute="top" id="DEf-Gg-L9n"/>
+                <constraint firstAttribute="bottom" secondItem="UTn-TJ-s1G" secondAttribute="bottom" id="EGf-Gg-L9n"/>
+                <constraint firstItem="XJd-5J-bns" firstAttribute="top" secondItem="Veq-c2-26D" secondAttribute="bottom" id="K1e-hR-V2k"/>
+                <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="XJd-5J-bns" secondAttribute="trailing" constant="20" id="K6x-Qd-L9n"/>
+                <constraint firstItem="XJd-5J-bns" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="20" id="L6x-Qd-L9n"/>
+                <constraint firstItem="7XI-o0-jQS" firstAttribute="top" secondItem="XJd-5J-bns" secondAttribute="bottom" constant="10" id="M1e-hR-V2k"/>
+                <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="7XI-o0-jQS" secondAttribute="trailing" constant="20" id="N6x-Qd-L9n"/>
+                <constraint firstItem="Veq-c2-26D" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="20" id="O6x-Qd-L9n"/>
+                <constraint firstItem="5dn-xB-hdq" firstAttribute="top" secondItem="7XI-o0-jQS" secondAttribute="bottom" constant="30" id="P1e-hR-V2k"/>
+                <constraint firstItem="SkipBtn" firstAttribute="top" secondItem="LogoLbl" secondAttribute="top" id="P3j-ky-UtL"/>
+                <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="xKd-dg-7nU" secondAttribute="trailing" constant="20" id="R1e-hR-V2k"/>
+                <constraint firstItem="xKd-dg-7nU" firstAttribute="top" secondItem="5dn-xB-hdq" secondAttribute="bottom" constant="30" id="S1e-hR-V2k"/>
+                <constraint firstItem="LogoLbl" firstAttribute="top" secondItem="Ag9-9K-cZW" secondAttribute="top" id="kbz-od-qaf"/>
+                <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="SkipBtn" secondAttribute="trailing" constant="20" id="lfl-5U-PxC"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </view>
     </objects>
     <resources>
