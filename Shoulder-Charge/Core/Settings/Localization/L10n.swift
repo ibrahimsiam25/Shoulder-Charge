@@ -34,9 +34,33 @@ enum L10n {
         }
     }
 
+    enum Onboarding {
+        enum Slide1 {
+            static var titleWhite: String { "onboarding.slide1.titleWhite".localized }
+            static var titlePrimary: String { "onboarding.slide1.titlePrimary".localized }
+            static var description: String { "onboarding.slide1.description".localized }
+        }
+
+        enum Slide2 {
+            static var titleWhite: String { "onboarding.slide2.titleWhite".localized }
+            static var titlePrimary: String { "onboarding.slide2.titlePrimary".localized }
+            static var description: String { "onboarding.slide2.description".localized }
+        }
+
+        enum Slide3 {
+            static var titleWhite: String { "onboarding.slide3.titleWhite".localized }
+            static var titlePrimary: String { "onboarding.slide3.titlePrimary".localized }
+            static var description: String { "onboarding.slide3.description".localized }
+        }
+
+        static var continueTitle: String { "onboarding.continue".localized }
+        static var skip: String { "onboarding.skip".localized }
+    }
+
     enum Common {
         static var done:   String { "common.done".localized }
         static var cancel: String { "common.cancel".localized }
         static var save:   String { "common.save".localized }
+        static var appName: String { "common.appName".localized }
     }
 }
