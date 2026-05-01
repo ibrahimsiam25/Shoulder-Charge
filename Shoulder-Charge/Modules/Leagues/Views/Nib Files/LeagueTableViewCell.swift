@@ -14,7 +14,9 @@ class LeagueTableViewCell: UITableViewCell {
     @IBOutlet weak var leagueNameLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
-    private var glowView: UIView?
+
+    private let verticalSpacing: CGFloat = 4
+    private let horizontalPadding: CGFloat = 8
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,40 +24,35 @@ class LeagueTableViewCell: UITableViewCell {
     }
 
     private func setupStyle() {
-        selectionStyle = .none
         backgroundColor = .clear
-        accessoryType = .disclosureIndicator
-
         contentView.layer.cornerRadius = 16
         contentView.clipsToBounds = true
-        contentView.layer.borderWidth = 1
+        contentView.layer.borderWidth = 2
         contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
 
-        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowColor = UIColor(named: "Border")?.cgColor
         layer.shadowOpacity = 0.08
         layer.shadowRadius = 8
         layer.shadowOffset = CGSize(width: 0, height: 2)
-        let glow = UIView()
-        glow.translatesAutoresizingMaskIntoConstraints = false
-        glow.backgroundColor = UIColor(named: "Primary")?.withAlphaComponent(0.2)
-        contentView.insertSubview(glow, belowSubview: leagueImageView)
-        NSLayoutConstraint.activate([
-            glow.centerXAnchor.constraint(equalTo: leagueImageView.centerXAnchor),
-            glow.centerYAnchor.constraint(equalTo: leagueImageView.centerYAnchor),
-            glow.widthAnchor.constraint(equalTo: leagueImageView.widthAnchor, multiplier: 1.25),
-            glow.heightAnchor.constraint(equalTo: glow.widthAnchor)
-        ])
-        glowView = glow
 
         leagueImageView.clipsToBounds = true
-        leagueImageView.contentMode = .scaleAspectFit
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 16).cgPath
-        leagueImageView.layer.cornerRadius = leagueImageView.frame.width / 2
-        glowView?.layer.cornerRadius = (glowView?.frame.width ?? 0) / 2
+
+        contentView.frame = bounds.inset(by: UIEdgeInsets(
+            top: verticalSpacing,
+            left: horizontalPadding,
+            bottom: verticalSpacing,
+            right: horizontalPadding
+        ))
+
+        layer.shadowPath = UIBezierPath(roundedRect: contentView.frame, cornerRadius: 16).cgPath
+
+        let radius = leagueImageView.frame.width / 2
+        leagueImageView.layer.cornerRadius = radius
+        
     }
 
     func configure(with model: UnifiedLeagueModel) {
@@ -71,6 +68,7 @@ class LeagueTableViewCell: UITableViewCell {
         super.traitCollectionDidChange(previousTraitCollection)
         if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
             contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
+
         }
     }
 

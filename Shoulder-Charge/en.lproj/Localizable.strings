@@ -33,5 +33,9 @@
 "onboarding.slide3.titlePrimary" = "Court";
 "onboarding.slide3.description"  = "Dominate every point with power";
 
+/* Leagues Screen */
+"leagues.title"                 = "Leagues";
+"leagues.searchPlaceholder"     = "Search for leagues...";
+
 "onboarding.continue"            = "Continue";
 "onboarding.skip"                = "Skip";

@@ -33,5 +33,9 @@
 "onboarding.slide3.titlePrimary" = "المباراة";
 "onboarding.slide3.description"  = "هيمن على كل نقطة بقوة";
 
+/* شاشة الدوريات */
+"leagues.title"                 = "الدوريات";
+"leagues.searchPlaceholder"     = "ابحث عن دوري...";
+
 "onboarding.continue"            = "استمرار";
 "onboarding.skip"                = "تخطي";

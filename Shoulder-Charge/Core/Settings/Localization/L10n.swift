@@ -57,6 +57,11 @@ enum L10n {
         static var skip: String { "onboarding.skip".localized }
     }
 
+    enum Leagues {
+        static var title:             String { "leagues.title".localized }
+        static var searchPlaceholder: String { "leagues.searchPlaceholder".localized }
+    }
+
     enum Common {
         static var done:   String { "common.done".localized }
         static var cancel: String { "common.cancel".localized }
