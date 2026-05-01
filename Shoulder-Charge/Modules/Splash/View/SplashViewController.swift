@@ -144,9 +144,16 @@ class SplashViewController: UIViewController {
         let isFirstTime = UserDefaults.standard.bool(forKey: Constants.userDefaultsIsFirstTimeUserKey)
         
         if isFirstTime {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mainNav = storyboard.instantiateViewController(withIdentifier: "MainNavigationController")
-            window.rootViewController = mainNav
+            
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                      let window = windowScene.windows.first else { return }
+
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let tabBar = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+
+                window.rootViewController = tabBar
+                window.makeKeyAndVisible()
+        
             
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
