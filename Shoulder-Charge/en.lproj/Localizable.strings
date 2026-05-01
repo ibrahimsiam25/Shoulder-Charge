@@ -39,3 +39,11 @@
 
 "onboarding.continue"            = "Continue";
 "onboarding.skip"                = "Skip";
+
+
+/* Home Screen */
+
+"home.soccer" = "SOCCER";
+"home.basket" = "BASKET";
+"home.tennis" = "TENNIS";
+"home.racquet" = "RACQUET";

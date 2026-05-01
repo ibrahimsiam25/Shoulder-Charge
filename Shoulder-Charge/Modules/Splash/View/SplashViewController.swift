@@ -135,6 +135,7 @@ class SplashViewController: UIViewController {
         }
     }
 
+   
     private func transitionToMain() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
@@ -145,14 +146,9 @@ class SplashViewController: UIViewController {
         
         if isFirstTime {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let nav = storyboard.instantiateViewController(withIdentifier: "MainNavigationController") as! UINavigationController
-            if let leaguesVC = nav.viewControllers.first as? LeaguesViewController {
-                let router = LeaguesRouter()
-                let presenter = LeaguesPresenter(repository: LeaguesRepository(), view: leaguesVC, router: router)
-                leaguesVC.leaguesPresenter = presenter
-            }
-            window.rootViewController = nav
-
+            let tabBar = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+            window.rootViewController = tabBar
+            window.makeKeyAndVisible()
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let onboardingVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
@@ -165,6 +161,7 @@ class SplashViewController: UIViewController {
                           animations: nil,
                           completion: nil)}
 }
+
 
 
 extension SplashViewController: SplashViewProtocol {

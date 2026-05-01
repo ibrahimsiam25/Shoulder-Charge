@@ -29,7 +29,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shoulder Charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LogoLbl">
-                    <rect key="frame" x="16" y="96" width="173" height="27"/>
+                    <rect key="frame" x="16" y="96" width="290" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <color key="textColor" name="Primary"/>
                     <nil key="highlightedColor"/>
@@ -97,6 +97,7 @@
                 <constraint firstItem="SkipBtn" firstAttribute="top" secondItem="LogoLbl" secondAttribute="top" id="P3j-ky-UtL"/>
                 <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="xKd-dg-7nU" secondAttribute="trailing" constant="20" id="R1e-hR-V2k"/>
                 <constraint firstItem="xKd-dg-7nU" firstAttribute="top" secondItem="5dn-xB-hdq" secondAttribute="bottom" constant="30" id="S1e-hR-V2k"/>
+                <constraint firstItem="LogoLbl" firstAttribute="width" secondItem="UTn-TJ-s1G" secondAttribute="width" multiplier="0.7" id="c8V-nY-KlK"/>
                 <constraint firstItem="LogoLbl" firstAttribute="top" secondItem="Ag9-9K-cZW" secondAttribute="top" id="kbz-od-qaf"/>
                 <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="SkipBtn" secondAttribute="trailing" constant="20" id="lfl-5U-PxC"/>
             </constraints>

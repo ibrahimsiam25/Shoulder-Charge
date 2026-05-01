@@ -89,9 +89,9 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
         }
         UserDefaults.standard.set(true, forKey: Constants.userDefaultsIsFirstTimeUserKey)
         let storyboard = self.storyboard
-        let mainNav = storyboard?.instantiateViewController(withIdentifier: "MainNavigationController")
-        window.rootViewController = mainNav
-        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+        let tabBar = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
+        window.rootViewController = tabBar
+        window.makeKeyAndVisible()
     }
     
 
