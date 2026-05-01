@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cfq-WH-dV6">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,7 +65,7 @@
         <!--Home-->
         <scene sceneID="YgK-ep-Mxd">
             <objects>
-                <viewController id="Qd8-7d-WaY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="Qd8-7d-WaY" customClass="HomeViewController" customModule="Shoulder_Charge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XeU-lJ-lkL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,24 +103,51 @@ high-fidelity sports action.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UMl-bl-KEE">
+                                <rect key="frame" x="0.0" y="329" width="393" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vvF-yu-AFq">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ba2-97-ifM">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ONF-jA-ESX">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ao8-Xd-tlk"/>
                         <color key="backgroundColor" name="Surface"/>
                         <constraints>
+                            <constraint firstItem="UMl-bl-KEE" firstAttribute="leading" secondItem="ao8-Xd-tlk" secondAttribute="leading" id="2ba-G5-pzj"/>
                             <constraint firstItem="ao8-Xd-tlk" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F4H-sF-6O9" secondAttribute="trailing" symbolic="YES" id="Cwz-7q-qRc"/>
                             <constraint firstItem="0N9-zi-JI1" firstAttribute="leading" secondItem="F4H-sF-6O9" secondAttribute="leading" id="L22-eU-vzY"/>
                             <constraint firstItem="0N9-zi-JI1" firstAttribute="width" secondItem="XeU-lJ-lkL" secondAttribute="width" multiplier="0.8" id="WB0-B1-AP3"/>
+                            <constraint firstItem="UMl-bl-KEE" firstAttribute="top" secondItem="0N9-zi-JI1" secondAttribute="bottom" constant="24" id="YDX-VN-gcb"/>
                             <constraint firstItem="F4H-sF-6O9" firstAttribute="width" secondItem="XeU-lJ-lkL" secondAttribute="width" multiplier="0.9" id="bMd-2I-SIM"/>
                             <constraint firstItem="ao8-Xd-tlk" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0N9-zi-JI1" secondAttribute="trailing" symbolic="YES" id="c7D-Kh-fsl"/>
                             <constraint firstItem="487-yR-CQq" firstAttribute="width" secondItem="XeU-lJ-lkL" secondAttribute="width" id="ggD-1m-XK4"/>
                             <constraint firstItem="F4H-sF-6O9" firstAttribute="leading" secondItem="ao8-Xd-tlk" secondAttribute="leading" constant="16" id="iBY-Oh-ftd"/>
                             <constraint firstItem="F4H-sF-6O9" firstAttribute="top" secondItem="487-yR-CQq" secondAttribute="bottom" constant="18" id="jdf-hu-kWP"/>
                             <constraint firstItem="0N9-zi-JI1" firstAttribute="top" secondItem="F4H-sF-6O9" secondAttribute="bottom" constant="4" id="qsf-14-bnD"/>
+                            <constraint firstItem="UMl-bl-KEE" firstAttribute="width" secondItem="XeU-lJ-lkL" secondAttribute="width" id="rza-Gd-tY0"/>
                             <constraint firstAttribute="top" secondItem="487-yR-CQq" secondAttribute="top" id="tM3-zm-C9C"/>
+                            <constraint firstItem="ao8-Xd-tlk" firstAttribute="bottom" secondItem="UMl-bl-KEE" secondAttribute="bottom" constant="20" id="taB-zE-1cy"/>
                             <constraint firstItem="487-yR-CQq" firstAttribute="leading" secondItem="XeU-lJ-lkL" secondAttribute="leading" id="vH8-On-MNe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="uCE-XU-XYo"/>
+                    <connections>
+                        <outlet property="collection" destination="UMl-bl-KEE" id="qYZ-LX-6UD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jsv-z7-B3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -300,6 +328,9 @@ high-fidelity sports action.</string>
         <namedColor name="Text Sec">
             <color red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

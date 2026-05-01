@@ -35,3 +35,9 @@
 
 "onboarding.continue"            = "استمرار";
 "onboarding.skip"                = "تخطي";
+
+/* شاشة الرئيسية */
+"home.soccer" = "كرة القدم";
+"home.basket" = "كرة السلة";
+"home.tennis" = "التنس";
+"home.racquet" = "راكيت";
