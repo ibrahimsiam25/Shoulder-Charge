@@ -19,9 +19,9 @@ class LeaguesRouter : LeaguesRouterProtocol{
     }
     
     func navigateToLeagueDetails(with leagueId: Int, sport: SportType, from view: LeaguesViewProtocol) {
-        let detailVC = LeagueDetailsRouter.createModule(leagueId: leagueId, sport: sport)
-        if let vc = view as? UIViewController {
-            vc.navigationController?.pushViewController(detailVC, animated: true)
-        }
+//        let detailVC = LeagueDetailsRouter.createModule(leagueId: leagueId, sport: sport)
+//        if let vc = view as? UIViewController {
+//            vc.navigationController?.pushViewController(detailVC, animated: true)
+//        }
     }
 }
