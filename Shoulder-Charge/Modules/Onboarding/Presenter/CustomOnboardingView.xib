@@ -66,7 +66,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkipBtn">
-                    <rect key="frame" x="322" y="96" width="72" height="31"/>
+                    <rect key="frame" x="338" y="96" width="56" height="31"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="SKIP">
                         <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -79,7 +79,6 @@
             <constraints>
                 <constraint firstItem="UTn-TJ-s1G" firstAttribute="leading" secondItem="Orl-LC-cyQ" secondAttribute="leading" id="0uM-bX-r5A"/>
                 <constraint firstItem="5dn-xB-hdq" firstAttribute="centerX" secondItem="Orl-LC-cyQ" secondAttribute="centerX" id="1YJ-o1-zQw"/>
-                <constraint firstItem="SkipBtn" firstAttribute="leading" secondItem="LogoLbl" secondAttribute="trailing" constant="133" id="2hf-c4-hg2"/>
                 <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="Veq-c2-26D" secondAttribute="trailing" constant="20" id="4hL-o8-c7Z"/>
                 <constraint firstAttribute="trailing" secondItem="UTn-TJ-s1G" secondAttribute="trailing" id="5yN-cL-pK3"/>
                 <constraint firstItem="7XI-o0-jQS" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="20" id="A8e-gV-Q6M"/>
