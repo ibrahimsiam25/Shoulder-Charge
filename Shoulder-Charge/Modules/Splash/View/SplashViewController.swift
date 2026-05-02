@@ -99,14 +99,11 @@ class SplashViewController: UIViewController {
         
         let nextVC: UIViewController
         if isFirstTime {
-            // نأخذ الـ TabBar مباشرة ليكون هو الشاشة التالية في الـ Navigation الحالي
-            nextVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+                 nextVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
         } else {
             nextVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
         }
-        
-        // استبدال الـ Splash بالشاشة التالية بداخل نفس الـ Navigation Controller
-        navigationController?.setViewControllers([nextVC], animated: true)
+           navigationController?.setViewControllers([nextVC], animated: true)
     }
         
       
