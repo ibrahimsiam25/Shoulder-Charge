@@ -146,8 +146,8 @@ class SplashViewController: UIViewController {
         
         if isFirstTime {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabBar = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
-            window.rootViewController = tabBar
+            let mainNav = storyboard.instantiateViewController(withIdentifier: "MainNavigationController")
+            window.rootViewController = mainNav
             window.makeKeyAndVisible()
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

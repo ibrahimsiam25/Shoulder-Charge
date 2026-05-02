@@ -16,7 +16,7 @@
                 <pageViewController storyboardIdentifier="OnboardingViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Cfq-WH-dV6" customClass="OnboardingViewController" customModule="Shoulder_Charge" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWM-6K-qb2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="193" y="125"/>
+            <point key="canvasLocation" x="-570" y="232"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -95,18 +95,18 @@
         <!--Navigation Controller-->
         <scene sceneID="Jht-Io-Qmw">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPv-n8-2Bz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="MainNavigationController" id="Ab4-OS-mkh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XGK-Tn-mSd">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="5Wy-xd-r4z" kind="relationship" relationship="rootViewController" id="XRg-7h-0Xh"/>
+                        <segue destination="8wj-oD-DNN" kind="relationship" relationship="rootViewController" id="rbP-rA-8tK"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JPv-n8-2Bz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-673" y="125"/>
+            <point key="canvasLocation" x="634" y="-230"/>
         </scene>
         <!--Leagues View Controller-->
         <scene sceneID="90j-Om-SEp">
@@ -117,13 +117,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leagues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-bN-D8s">
-                                <rect key="frame" x="20" y="172" width="95" height="28.666666666666657"/>
+                                <rect key="frame" x="20" y="118.00000000000001" width="95" height="28.666666666666671"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" name="Primary"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for leagues..." translatesAutoresizingMaskIntoConstraints="NO" id="nbb-NQ-AlP">
-                                <rect key="frame" x="0.0" y="210.66666666666666" width="393" height="63.999999999999972"/>
+                                <rect key="frame" x="0.0" y="156.66666666666666" width="393" height="64"/>
                                 <color key="barTintColor" name="Background"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -131,7 +131,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T4M-5d-t1j">
-                                <rect key="frame" x="0.0" y="275" width="393" height="509"/>
+                                <rect key="frame" x="0.0" y="221" width="393" height="563"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" name="Background"/>
                             </tableView>
@@ -165,6 +165,7 @@
         <scene sceneID="HSs-Y7-o0Y">
             <objects>
                 <tabBarController storyboardIdentifier="MainTabBarController" id="8wj-oD-DNN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hoF-fc-Yuh"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ims-sP-Uhb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

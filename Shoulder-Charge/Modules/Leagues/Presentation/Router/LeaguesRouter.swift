@@ -8,12 +8,13 @@
 import UIKit
 
 class LeaguesRouter : LeaguesRouterProtocol{
-    static func createModule() -> UIViewController {
+    static func createModule(sportType:SportType) -> UIViewController {
+       
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "LeaguesViewController") as! LeaguesViewController
         let repository = LeaguesRepository()
         let router = LeaguesRouter()
-        let presenter = LeaguesPresenter(repository: repository, view: view, router: router)
+        let presenter = LeaguesPresenter(repository: repository, view: view, router: router,  sportType: sportType)
         view.leaguesPresenter = presenter
         return view
     }
