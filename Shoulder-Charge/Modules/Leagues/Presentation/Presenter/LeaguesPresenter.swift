@@ -56,7 +56,7 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
 
     func navigateToLeagueDetails(at index: Int) {
         let league = filteredLeagues[index]
-        router.navigateToLeagueDetails(with: league.id, sport: league.sport, from: view)
+        router.navigateToLeagueDetails(with: league.id, sport: league.sport, leagueName: league.name, leagueLogo: league.logoURL, from: view)
     }
     func getSprotType()->SportType{
         return sportType

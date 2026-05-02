@@ -19,8 +19,8 @@ class LeaguesRouter : LeaguesRouterProtocol{
         return view
     }
     
-    func navigateToLeagueDetails(with leagueId: Int, sport: SportType, from view: LeaguesViewProtocol) {
-        let detailVC = LeagueDetailsRouter.build(leagueId: "\(leagueId)", sport: sport)
+    func navigateToLeagueDetails(with leagueId: Int, sport: SportType, leagueName: String, leagueLogo: URL?, from view: LeaguesViewProtocol) {
+        let detailVC = LeagueDetailsRouter.build(leagueId: "\(leagueId)", sport: sport, leagueName: leagueName, leagueLogo: leagueLogo)
         if let vc = view as? UIViewController {
             vc.navigationController?.pushViewController(detailVC, animated: true)
         }

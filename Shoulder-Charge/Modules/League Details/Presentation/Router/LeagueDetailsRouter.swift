@@ -9,19 +9,20 @@ protocol LeagueDetailsRouterProtocol {
 }
 class LeagueDetailsRouter {
 
-    static func build(leagueId: String, sport: SportType) -> UIViewController {
+    static func build(leagueId: String, sport: SportType, leagueName: String, leagueLogo: URL?) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(
             withIdentifier: "LeagueDetailsCollectionViewController"
         ) as! LeagueDetailsCollectionViewController
         
         let repository = LeagueDetailsRepository()
-        let router     = LeagueDetailsRouter()
         let presenter  = LeagueDetailsPresenter(
             repository: repository,
             view: view,
             leagueId: leagueId,
-            sport: sport
+            sport: sport,
+            leagueName: leagueName,
+            leagueLogo: leagueLogo
         )
         view.presenter = presenter
         return view
