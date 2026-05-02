@@ -12,7 +12,6 @@
             <connections>
                 <outlet property="LogoLbl" destination="LogoLbl" id="LogoLblConnection"/>
                 <outlet property="btn" destination="xKd-dg-7nU" id="mEy-5s-jYW"/>
-                <outlet property="dotContoller" destination="5dn-xB-hdq" id="foi-QJ-tBx"/>
                 <outlet property="imageV" destination="UTn-TJ-s1G" id="xur-xg-jYV"/>
                 <outlet property="primaryLbl" destination="XJd-5J-bns" id="ihf-G2-2LS"/>
                 <outlet property="skipButton" destination="SkipBtn" id="mJu-Fc-6tF"/>
@@ -42,24 +41,19 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Continue"/>
                 </button>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5dn-xB-hdq">
-                    <rect key="frame" x="170" y="702" width="74" height="26"/>
-                    <color key="pageIndicatorTintColor" name="Text Sec"/>
-                    <color key="currentPageIndicatorTintColor" name="Primary"/>
-                </pageControl>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unleash your power like CR7" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XI-o0-jQS">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Unleash your power like CR7" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XI-o0-jQS">
                     <rect key="frame" x="20" y="650.5" width="374" height="21.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" name="Surface"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJd-5J-bns">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJd-5J-bns">
                     <rect key="frame" x="20" y="592.5" width="374" height="48"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                     <color key="textColor" name="Primary"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feel The" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veq-c2-26D">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Feel The" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veq-c2-26D">
                     <rect key="frame" x="20" y="544.5" width="374" height="48"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,7 +72,6 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="UTn-TJ-s1G" firstAttribute="leading" secondItem="Orl-LC-cyQ" secondAttribute="leading" id="0uM-bX-r5A"/>
-                <constraint firstItem="5dn-xB-hdq" firstAttribute="centerX" secondItem="Orl-LC-cyQ" secondAttribute="centerX" id="1YJ-o1-zQw"/>
                 <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="Veq-c2-26D" secondAttribute="trailing" constant="20" id="4hL-o8-c7Z"/>
                 <constraint firstAttribute="trailing" secondItem="UTn-TJ-s1G" secondAttribute="trailing" id="5yN-cL-pK3"/>
                 <constraint firstItem="7XI-o0-jQS" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="20" id="A8e-gV-Q6M"/>
@@ -93,10 +86,9 @@
                 <constraint firstItem="7XI-o0-jQS" firstAttribute="top" secondItem="XJd-5J-bns" secondAttribute="bottom" constant="10" id="M1e-hR-V2k"/>
                 <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="7XI-o0-jQS" secondAttribute="trailing" constant="20" id="N6x-Qd-L9n"/>
                 <constraint firstItem="Veq-c2-26D" firstAttribute="leading" secondItem="Ag9-9K-cZW" secondAttribute="leading" constant="20" id="O6x-Qd-L9n"/>
-                <constraint firstItem="5dn-xB-hdq" firstAttribute="top" secondItem="7XI-o0-jQS" secondAttribute="bottom" constant="30" id="P1e-hR-V2k"/>
                 <constraint firstItem="SkipBtn" firstAttribute="top" secondItem="LogoLbl" secondAttribute="top" id="P3j-ky-UtL"/>
                 <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="xKd-dg-7nU" secondAttribute="trailing" constant="20" id="R1e-hR-V2k"/>
-                <constraint firstItem="xKd-dg-7nU" firstAttribute="top" secondItem="5dn-xB-hdq" secondAttribute="bottom" constant="30" id="S1e-hR-V2k"/>
+                <constraint firstItem="xKd-dg-7nU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7XI-o0-jQS" secondAttribute="bottom" constant="80" id="S1e-ht-Con"/>
                 <constraint firstItem="LogoLbl" firstAttribute="width" secondItem="UTn-TJ-s1G" secondAttribute="width" multiplier="0.7" id="c8V-nY-KlK"/>
                 <constraint firstItem="LogoLbl" firstAttribute="top" secondItem="Ag9-9K-cZW" secondAttribute="top" id="kbz-od-qaf"/>
                 <constraint firstItem="Ag9-9K-cZW" firstAttribute="trailing" secondItem="SkipBtn" secondAttribute="trailing" constant="20" id="lfl-5U-PxC"/>
@@ -110,9 +102,6 @@
         </namedColor>
         <namedColor name="Surface">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Text Sec">
-            <color red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

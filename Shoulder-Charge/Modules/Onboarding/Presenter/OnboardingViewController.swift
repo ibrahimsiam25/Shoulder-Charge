@@ -10,9 +10,17 @@ import UIKit
 class OnboardingViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     private var arrContainer = [UIViewController]()
     private var data: [OnboardingSlide] {
-     
         return LocalizationManager.shared.currentLanguage == "ar" ? Constants.onboardingSlide.reversed() : Constants.onboardingSlide
     }
+
+    private let pageControl: UIPageControl = {
+        let pc = UIPageControl()
+        pc.translatesAutoresizingMaskIntoConstraints = false
+        pc.pageIndicatorTintColor = UIColor(named: "Text Sec")
+        pc.currentPageIndicatorTintColor = UIColor(named: "Primary")
+        pc.isUserInteractionEnabled = true
+        return pc
+    }()
 
     private var currentIndex: Int {
         guard let currentVC = viewControllers?.first,
@@ -21,6 +29,7 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
         }
         return index
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -37,6 +46,26 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
         if let firstVC = arrContainer.first {
             setViewControllers([firstVC], direction: .forward, animated: false, completion: nil)
         }
+        
+        setupPageControl()
+    }
+
+    private func setupPageControl() {
+        view.addSubview(pageControl)
+        pageControl.numberOfPages = data.count
+        pageControl.currentPage = 0
+        pageControl.addTarget(self, action: #selector(handlePageControlChanged(_:)), for: .valueChanged)
+        
+        NSLayoutConstraint.activate([
+            pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100)
+        ])
+        
+        updatePageIndicators(currentPage: 0)
+    }
+
+    @objc private func handlePageControlChanged(_ sender: UIPageControl) {
+        goToPage(index: sender.currentPage)
     }
 
     private func buildSlides() {
@@ -52,9 +81,6 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
             }
             customView.onSkipTapped = { [weak self] in
                 self?.finishOnboarding()
-            }
-            customView.onPageChanged = { [weak self] targetIndex in
-                self?.goToPage(index: targetIndex)
             }
 
             vc.view.addSubview(customView)
@@ -84,19 +110,22 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
         let current = currentIndex
         guard index != current else { return }
         let direction: UIPageViewController.NavigationDirection = index > current ? .forward : .reverse
-        setViewControllers([arrContainer[index]], direction: direction, animated: true, completion: nil)
+        setViewControllers([arrContainer[index]], direction: direction, animated: true) { [weak self] finished in
+            if finished {
+                self?.pageControl.currentPage = index
+                self?.updatePageIndicators(currentPage: index)
+            }
+        }
     }
 
     private func finishOnboarding() {
         UserDefaults.standard.set(true, forKey: Constants.userDefaultsIsFirstTimeUserKey)
         let storyboard = self.storyboard
         let tabBar = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
-        
-    navigationController?.setViewControllers([tabBar!], animated: true)
-       
+        navigationController?.setViewControllers([tabBar!], animated: true)
     }
-    
 
+  
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let currentIndex = arrContainer.firstIndex(of: viewController), currentIndex > 0 else {
@@ -110,5 +139,43 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
             return nil
         }
         return arrContainer[currentIndex + 1]
+    }
+
+
+
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            let index = currentIndex
+            pageControl.currentPage = index
+            updatePageIndicators(currentPage: index)
+        }
+    }
+
+
+
+    private func updatePageIndicators(currentPage: Int) {
+        guard pageControl.numberOfPages > 0 else { return }
+        let inactiveColor = pageControl.pageIndicatorTintColor ?? .lightGray
+        let activeColor = pageControl.currentPageIndicatorTintColor ?? .white
+        let inactiveImage = makeDotImage(size: CGSize(width: 8, height: 8), color: inactiveColor)
+        let activeImage = makeDotImage(size: CGSize(width: 32, height: 8), color: activeColor)
+        
+        for index in 0..<pageControl.numberOfPages {
+            pageControl.setIndicatorImage(inactiveImage, forPage: index)
+        }
+        if currentPage < pageControl.numberOfPages {
+            pageControl.setIndicatorImage(activeImage, forPage: currentPage)
+        }
+    }
+
+    private func makeDotImage(size: CGSize, color: UIColor) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image { context in
+            let rect = CGRect(origin: .zero, size: size)
+            context.cgContext.setFillColor(color.cgColor)
+            let radius = min(size.width, size.height) / 2
+            let path = UIBezierPath(roundedRect: rect, cornerRadius: radius)
+            path.fill()
+        }.withRenderingMode(.alwaysOriginal)
     }
 }
