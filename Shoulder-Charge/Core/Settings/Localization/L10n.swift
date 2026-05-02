@@ -75,4 +75,12 @@ enum L10n {
         static var tennis: String { "home.tennis".localized }
         static var racquet: String { "home.racquet".localized }
     }
+
+    enum LeagueDetails {
+        static var upcoming: String { "leagueDetails.upcoming".localized }
+        static var finished: String { "leagueDetails.finished".localized }
+        static var teams:    String { "leagueDetails.teams".localized }
+        static var players:  String { "leagueDetails.players".localized }
+        static var title:    String { "leagueDetails.title".localized }
+    }
 }

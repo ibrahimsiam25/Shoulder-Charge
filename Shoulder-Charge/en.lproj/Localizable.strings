@@ -49,3 +49,10 @@
 "home.tennis" = "TENNIS";
 "home.racquet" = "CRICKET";
 
+/* League Details Screen */
+"leagueDetails.upcoming" = "Upcoming Events";
+"leagueDetails.finished" = "Finished Events";
+"leagueDetails.teams"    = "Teams";
+"leagueDetails.players"  = "Players";
+"leagueDetails.title"    = "League Details";
+

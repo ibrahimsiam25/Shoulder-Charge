@@ -17,4 +17,22 @@ enum SportType {
         case .cricket:     return "cricket"
         }
     }
+    
+    var image: String {
+        switch self {
+        case .football:    return "soccer"
+        case .basketball:  return "basket"
+        case .tennis:      return "tennis"
+        case .cricket:     return "cricket"
+        }
+    }
+
+    var title: String {
+        switch self {
+        case .football:    return L10n.Home.soccer
+        case .basketball:  return L10n.Home.basket
+        case .tennis:      return L10n.Home.tennis
+        case .cricket:     return L10n.Home.racquet
+        }
+    }
 }

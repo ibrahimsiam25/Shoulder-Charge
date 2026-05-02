@@ -8,8 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    let images = ["soccer", "basket", "tennis", "cricket"]
-    let names  = [L10n.Home.soccer,L10n.Home.basket,L10n.Home.tennis,L10n.Home.racquet]
+    let sports: [SportType] = [.football, .basketball, .tennis, .cricket]
     @IBOutlet weak var collection: UICollectionView!
 
     override func viewDidLoad() {
@@ -23,6 +22,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             UINib(nibName: "HomeCollectionCell", bundle: nil),
             forCellWithReuseIdentifier: "HomeCollectionCell"
         )
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        super.viewWillAppear(animated)
     }
     
     func createLayout() -> UICollectionViewCompositionalLayout {
@@ -40,24 +44,31 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return sports.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionCell", for: indexPath) as! HomeCollectionCell
-     
+
+        let sport = sports[indexPath.row]
+
         cell.configure(
-            image: UIImage(named: images[indexPath.row]),
-            title: names[indexPath.row]
+            image: UIImage(named: sport.image),
+            title: sport.title
         )
-        
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected:")
+
+        let selectedSport = sports[indexPath.row]
+
+        let leagueView = LeaguesRouter.createModule(sportType: selectedSport)
+
+        navigationController?.pushViewController(leagueView, animated: true)
     }
-    
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) {
             cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)

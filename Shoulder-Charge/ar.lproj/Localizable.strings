@@ -49,3 +49,10 @@
 "home.basket" = "كرة السلة";
 "home.tennis" = "التنس";
 "home.racquet" = "كريكت";
+
+/* شاشة تفاصيل الدوري */
+"leagueDetails.upcoming" = "المباريات القادمة";
+"leagueDetails.finished" = "المباريات المنتهية";
+"leagueDetails.teams"    = "الفرق";
+"leagueDetails.players"  = "اللاعبين";
+"leagueDetails.title"    = "تفاصيل الدوري";

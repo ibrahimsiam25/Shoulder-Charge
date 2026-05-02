@@ -13,13 +13,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        window = UIWindow(windowScene: windowScene)
         ThemeManager.shared.applyTheme(to: window)
         LocalizationManager.shared.applyLayoutDirection()
-        window?.rootViewController = SplashViewController()
-        window?.makeKeyAndVisible()
+        LocalizationManager.shared.swizzleBundleForCurrentLanguage()
+   
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(handleLanguageChanged),
@@ -30,11 +27,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     @objc private func handleLanguageChanged() {
         guard let window else { return }
+      
         LocalizationManager.shared.applyLayoutDirection()
-        let tabBar = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "MainTabBarController")
+
+
+        LocalizationManager.shared.swizzleBundleForCurrentLanguage()
+   
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootNav = storyboard.instantiateViewController(withIdentifier: "RootNav") as! UINavigationController
+        rootNav.isNavigationBarHidden = true
+        let tabBar = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+        rootNav.viewControllers = [tabBar]
+  
+
         UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft) {
-            window.rootViewController = tabBar
+            window.rootViewController = rootNav
         }
     }
 

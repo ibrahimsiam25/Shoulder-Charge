@@ -9,21 +9,23 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
 
     private let repository: LeaguesRepositoryProtocol
     private var view: LeaguesViewProtocol!
-    private var router: LeaguesRouterProtocol!
+    var router: LeaguesRouterProtocol!
     private var leagues: [UnifiedLeagueModel] = []
+    private var sportType:SportType!
     private var filteredLeagues: [UnifiedLeagueModel] = []
 
-    init(repository: LeaguesRepositoryProtocol, view: LeaguesViewProtocol!, router: LeaguesRouterProtocol!) {
+    init(repository: LeaguesRepositoryProtocol, view: LeaguesViewProtocol!, router: LeaguesRouterProtocol!,sportType:SportType) {
         self.repository = repository
         self.view = view
         self.router = router
+        self.sportType = sportType
     }
 
     func viewDidLoad() {
         view.toggleLoading(true)
         Task {
             do {
-                let result = try await repository.getLeagues(sport: .football)
+                let result = try await repository.getLeagues(sport:sportType )
                 leagues = result
                 filteredLeagues = result
                 view.toggleLoading(false)
@@ -54,6 +56,9 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
 
     func navigateToLeagueDetails(at index: Int) {
         let league = filteredLeagues[index]
-        router.navigateToLeagueDetails(with: league.id, sport: league.sport, from: view)
+        router.navigateToLeagueDetails(with: league.id, sport: league.sport, leagueName: league.name, leagueLogo: league.logoURL, from: view)
+    }
+    func getSprotType()->SportType{
+        return sportType
     }
 }

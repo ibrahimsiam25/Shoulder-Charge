@@ -17,6 +17,6 @@ struct EventsResponse<T: Decodable>: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         success = try container.decode(Int.self, forKey: .success)
-        result = try? container.decodeIfPresent(T.self, forKey: .result)
+        result = try container.decodeIfPresent(T.self, forKey: .result)
     }
 }

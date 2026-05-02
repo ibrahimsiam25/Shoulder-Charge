@@ -21,9 +21,11 @@ class SettingsViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillAppear(animated)
         presenter.viewDidLoad()
     }
+
 
     private func setupTableView() {
         settingsTableView.dataSource = self

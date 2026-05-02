@@ -76,9 +76,9 @@ class LeagueDetailsAPIDataSource {
         }
     }
 
-    private var twoWeeksAgo: String    { formattedDate(from: Date().addingTimeInterval(-14 * 24 * 3600)) }
+    private var twoWeeksAgo: String    { formattedDate(from: Calendar.current.date(byAdding: .month, value: -6, to: Date()) ?? Date()) }
     private var today: String          { formattedDate(from: Date()) }
-    private var twoWeeksAhead: String  { formattedDate(from: Date().addingTimeInterval( 14 * 24 * 3600)) }
+    private var twoWeeksAhead: String  { formattedDate(from: Calendar.current.date(byAdding: .month, value: 6, to: Date()) ?? Date()) }
 
     private func formattedDate(from date: Date) -> String {
         let formatter = DateFormatter()

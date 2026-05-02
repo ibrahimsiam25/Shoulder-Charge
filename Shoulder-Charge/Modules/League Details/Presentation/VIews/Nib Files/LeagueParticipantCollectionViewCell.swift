@@ -37,10 +37,10 @@ class LeagueParticipantCollectionViewCell: UICollectionViewCell {
         participantImageView.layer.borderColor = UIColor(named: "Border")?.cgColor
     }
 
-    func configure(name: String, imageURL: URL?) {
-        participantNameLabel.text = name
+    func configure(with model:LeagueParticipantDisplayModel) {
+        participantNameLabel.text = model.name
         participantImageView.sd_setImage(
-            with: imageURL,
+            with: model.logoURL,
             placeholderImage: UIImage(systemName: "person.circle")
         )
     }
