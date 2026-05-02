@@ -41,7 +41,13 @@ class LeagueDetailsCollectionViewController: UICollectionViewController, LeagueD
     }
 
     private func setupNavigationBar() {
-        let appearance = UINavigationBarAppearance()
+        let appearance = LocalizationManager.shared.makeNavigationBarAppearance(
+              backgroundColor: UIColor(named: "Background")
+          )
+          navigationController?.navigationBar.tintColor = UIColor(named: "Primary") ?? .systemGreen
+          navigationController?.navigationBar.standardAppearance = appearance
+          navigationController?.navigationBar.scrollEdgeAppearance = appearance
+          navigationController?.navigationBar.compactAppearance = appearance
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(named: "Background") ?? UIColor(red: 0.08, green: 0.08, blue: 0.08, alpha: 1)
         appearance.shadowColor = .clear

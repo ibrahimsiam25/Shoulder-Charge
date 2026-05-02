@@ -27,18 +27,27 @@ final class LocalizationManager {
     // MARK: - Layout Direction
     func applyLayoutDirection() {
         let isRTL = Locale.characterDirection(forLanguage: currentLanguage) == .rightToLeft
-        let attribute: UISemanticContentAttribute = isRTL ? .forceRightToLeft : .forceLeftToRight
-        UIView.appearance().semanticContentAttribute = attribute
-        UINavigationBar.appearance().semanticContentAttribute = attribute
-        let backChevron = UIImage(systemName: isRTL ? "chevron.forward" : "chevron.backward")
-        UINavigationBar.appearance().backIndicatorImage = backChevron
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backChevron
-        UITabBar.appearance().semanticContentAttribute = attribute
-        UIToolbar.appearance().semanticContentAttribute = attribute
-        UISearchBar.appearance().semanticContentAttribute = attribute;
-        UISegmentedControl.appearance().semanticContentAttribute = attribute
-        UITableView.appearance().semanticContentAttribute = attribute
-        UICollectionView.appearance().semanticContentAttribute = attribute
+          let attribute: UISemanticContentAttribute = isRTL ? .forceRightToLeft : .forceLeftToRight
+          
+          UIView.appearance().semanticContentAttribute = attribute
+          UINavigationBar.appearance().semanticContentAttribute = attribute
+          UITabBar.appearance().semanticContentAttribute = attribute
+          UIToolbar.appearance().semanticContentAttribute = attribute
+          UISearchBar.appearance().semanticContentAttribute = attribute
+          UISegmentedControl.appearance().semanticContentAttribute = attribute
+          UITableView.appearance().semanticContentAttribute = attribute
+          UICollectionView.appearance().semanticContentAttribute = attribute
+
+        
+          let backChevron = UIImage(systemName: isRTL ? "chevron.forward" : "chevron.backward")
+          
+          let navAppearance = UINavigationBarAppearance()
+          navAppearance.configureWithOpaqueBackground()
+          navAppearance.setBackIndicatorImage(backChevron, transitionMaskImage: backChevron)
+          
+          UINavigationBar.appearance().standardAppearance = navAppearance
+          UINavigationBar.appearance().scrollEdgeAppearance = navAppearance
+          UINavigationBar.appearance().compactAppearance = navAppearance
     }
    var localizedBundle: Bundle {
         let lang = currentLanguage
@@ -65,5 +74,19 @@ final class LocalizationManager {
         }
 
         swizzleBundleForCurrentLanguage()
+    }
+    
+    func makeNavigationBarAppearance(backgroundColor: UIColor? = nil) -> UINavigationBarAppearance {
+        let isRTL = Locale.characterDirection(forLanguage: currentLanguage) == .rightToLeft
+        let backChevron = UIImage(systemName: isRTL ? "chevron.forward" : "chevron.backward")
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = backgroundColor
+            ?? UIColor(red: 0.08, green: 0.08, blue: 0.08, alpha: 1)
+        appearance.shadowColor = .clear
+        appearance.setBackIndicatorImage(backChevron, transitionMaskImage: backChevron)
+        
+        return appearance
     }
 }
