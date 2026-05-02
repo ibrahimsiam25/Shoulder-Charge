@@ -19,7 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         ThemeManager.shared.applyTheme(to: window)
         LocalizationManager.shared.applyLayoutDirection()
         LocalizationManager.shared.swizzleBundleForCurrentLanguage()
-        window?.rootViewController = SplashViewController()
+        let storyboard = UIStoryboard(name: "LaunchScreen", bundle: nil)
+        let splashVC = storyboard.instantiateInitialViewController() as! SplashViewController
+        window?.rootViewController = splashVC
         window?.makeKeyAndVisible()
         NotificationCenter.default.addObserver(
             self,

@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="01J-lp-oVM" customClass="SplashViewController" customModule="Shoulder_Charge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,6 +61,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="centerLogoImageView" destination="t2X-Qx-P4v" id="t2X-Qx-P4v-out"/>
+                        <outlet property="leftLogoImageView" destination="g35-rt-RTQ" id="g35-rt-RTQ-out"/>
+                        <outlet property="rightLogoImageView" destination="L9b-Cp-JQ0" id="L9b-Cp-JQ0-out"/>
+                        <outlet property="titleImageView" destination="G4a-xd-Wdw" id="G4a-xd-Wdw-out"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

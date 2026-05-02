@@ -16,31 +16,18 @@ protocol SplashViewProtocol: AnyObject {
 
 class SplashViewController: UIViewController {
 
-    private weak var leftLogoImageView: UIImageView?
-    private weak var rightLogoImageView: UIImageView?
-    private weak var centerLogoImageView: UIImageView?
-    private weak var titleImageView: UIImageView?
+    @IBOutlet private weak var leftLogoImageView: UIImageView!
+    @IBOutlet private weak var rightLogoImageView: UIImageView!
+    @IBOutlet private weak var centerLogoImageView: UIImageView!
+    @IBOutlet private weak var titleImageView: UIImageView!
 
     private var audioPlayer: AVAudioPlayer?
-
     private var presenter: SplashPresenterProtocol!
     private var didSetInitialTransforms = false
-    private var launchContentViewController: UIViewController?
-
-    private enum ViewTag {
-        static let leftLogo = 1001
-        static let rightLogo = 1002
-        static let centerLogo = 1003
-        static let title = 1004
-    }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.semanticContentAttribute = .forceLeftToRight
-        embedLaunchScreen()
-        bindLogoImageViews()
-        configureLogoImageViewsForLtr()
+        applyLeftToRightRecursively(on: view)
         setupUI()
         presenter = SplashPresenter(view: self)
     }
@@ -56,46 +43,13 @@ class SplashViewController: UIViewController {
         scheduleMainTransition()
     }
 
-
     private func setupUI() {
         view.backgroundColor = .black
-        leftLogoImageView?.alpha = 0
-        rightLogoImageView?.alpha = 0
-        centerLogoImageView?.alpha = 0
-        centerLogoImageView?.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        titleImageView?.alpha = 0
-    }
-
-    private func embedLaunchScreen() {
-        let storyboard = UIStoryboard(name: "LaunchScreen", bundle: nil)
-        guard let launchVC = storyboard.instantiateInitialViewController() else { return }
-
-        launchContentViewController = launchVC
-        addChild(launchVC)
-        launchVC.view.translatesAutoresizingMaskIntoConstraints = false
-        applyLeftToRightRecursively(on: launchVC.view)
-        view.addSubview(launchVC.view)
-        NSLayoutConstraint.activate([
-            launchVC.view.topAnchor.constraint(equalTo: view.topAnchor),
-            launchVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            launchVC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            launchVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
-        launchVC.didMove(toParent: self)
-    }
-
-    private func bindLogoImageViews() {
-        leftLogoImageView = view.viewWithTag(ViewTag.leftLogo) as? UIImageView
-        rightLogoImageView = view.viewWithTag(ViewTag.rightLogo) as? UIImageView
-        centerLogoImageView = view.viewWithTag(ViewTag.centerLogo) as? UIImageView
-        titleImageView = view.viewWithTag(ViewTag.title) as? UIImageView
-    }
-
-    private func configureLogoImageViewsForLtr() {
-        let imageViews: [UIImageView?] = [leftLogoImageView, rightLogoImageView, centerLogoImageView, titleImageView]
-        imageViews.forEach { imageView in
-            imageView?.semanticContentAttribute = .forceLeftToRight
-        }
+        leftLogoImageView.alpha = 0
+        rightLogoImageView.alpha = 0
+        centerLogoImageView.alpha = 0
+        centerLogoImageView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        titleImageView.alpha = 0
     }
 
     private func applyLeftToRightRecursively(on rootView: UIView) {
