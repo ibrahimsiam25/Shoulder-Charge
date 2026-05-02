@@ -40,8 +40,21 @@ final class LocalizationManager {
         UITableView.appearance().semanticContentAttribute = attribute
         UICollectionView.appearance().semanticContentAttribute = attribute
     }
+   var localizedBundle: Bundle {
+        let lang = currentLanguage
+        if let path = Bundle.main.path(forResource: lang, ofType: "lproj"),
+           let bundle = Bundle(path: path) {
+            return bundle
+        }
+        return .main
+    }
 
-    // MARK: - Switching
+
+    func swizzleBundleForCurrentLanguage() {
+        Bundle.setLanguage(currentLanguage)
+    }
+
+
 
     func setLanguage(_ appLanguage: AppLanguage) {
         if let code = appLanguage.code {
@@ -50,5 +63,7 @@ final class LocalizationManager {
         } else {
             Localize.resetCurrentLanguageToDefault()
         }
+
+        swizzleBundleForCurrentLanguage()
     }
 }
