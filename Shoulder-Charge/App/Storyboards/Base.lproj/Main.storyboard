@@ -356,7 +356,7 @@ high-fidelity sports action.</string>
                                 <rect key="frame" x="0.0" y="184.33333333333331" width="393" height="550.66666666666674"/>
                                 <color key="backgroundColor" name="Surface"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AppearanceCell" id="c0A-Ap-cel">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AppearanceCell" id="c0A-Ap-cel" customClass="AppearanceCell" customModule="Shoulder_Charge" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.333332061767578" width="353" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c0A-Ap-cel" id="cv0-Ap-cvw">
@@ -391,8 +391,12 @@ high-fidelity sports action.</string>
                                                 <constraint firstAttribute="trailing" secondItem="sw0-Ap-swt" secondAttribute="trailing" constant="16" id="sw0-Ap-tc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="lb0-Ap-lbl" id="app-cel-lbl-out"/>
+                                            <outlet property="appearanceSwitch" destination="sw0-Ap-swt" id="app-cel-swt-out"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LanguageCell" id="c1L-Ln-cel">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LanguageCell" id="c1L-Ln-cel" customClass="LanguageCell" customModule="Shoulder_Charge" customModuleProvider="target">
                                         <rect key="frame" x="20" y="108.33333206176758" width="353" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c1L-Ln-cel" id="cv1-Ln-cvw">
@@ -431,6 +435,10 @@ high-fidelity sports action.</string>
                                                 <constraint firstAttribute="trailing" secondItem="lb2-Ln-dtl" secondAttribute="trailing" constant="8" id="lb2-Ln-tr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="lb1-Ln-lbl" id="lng-cel-lbl-out"/>
+                                            <outlet property="detailLabel" destination="lb2-Ln-dtl" id="lng-cel-dtl-out"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

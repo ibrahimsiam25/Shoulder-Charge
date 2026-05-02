@@ -13,9 +13,6 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var settingsTableView: UITableView!
 
-    private weak var appearanceSwitch: UISwitch?
-    private weak var languageDetailLabel: UILabel?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = SettingsPresenter()
@@ -40,11 +37,11 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController: SettingsViewProtocol {
 
     func updateThemeSwitch(isDark: Bool) {
-        appearanceSwitch?.isOn = isDark
+        settingsTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
     }
 
     func updateLanguageLabel(_ language: AppLanguage) {
-        languageDetailLabel?.text = language.displayName
+        settingsTableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
     }
 }
 
@@ -58,34 +55,12 @@ extension SettingsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AppearanceCell", for: indexPath)
-
-            cell.contentView.subviews.compactMap { $0 as? UILabel }.first?.text = L10n.Settings.appearance
-
-            // Find the switch wherever it lives (accessoryView or contentView).
-            let sw = (cell.accessoryView as? UISwitch)
-                ?? cell.contentView.subviews.compactMap { $0 as? UISwitch }.first
-            if let sw {
-                sw.removeTarget(nil, action: nil, for: .valueChanged)
-                sw.addTarget(self, action: #selector(appearanceSwitchToggled(_:)), for: .valueChanged)
-                sw.isOn = ThemeManager.shared.currentTheme == .dark
-                appearanceSwitch = sw
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AppearanceCell", for: indexPath) as! AppearanceCell
+            cell.configure(with: presenter)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell", for: indexPath)
-            let labels = cell.contentView.subviews.compactMap { $0 as? UILabel }
-            labels.first?.text = L10n.Settings.language
-            labels.dropFirst().first?.text = LocalizationManager.shared.currentAppLanguage.displayName
-            languageDetailLabel = labels.dropFirst().first
-            let isRTL = LocalizationManager.shared.currentLanguage == "ar"
-            let dir: UISemanticContentAttribute = isRTL ? .forceRightToLeft : .forceLeftToRight
-            cell.semanticContentAttribute = dir
-            cell.contentView.semanticContentAttribute = dir
-            labels.forEach {
-                $0.semanticContentAttribute = dir
-                $0.textAlignment = .natural
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell", for: indexPath) as! LanguageCell
+            cell.configure(with: presenter)
             return cell
         }
     }
@@ -103,15 +78,6 @@ extension SettingsViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         guard indexPath.row == 1 else { return }
         showLanguagePicker()
-    }
-}
-
-// MARK: - Actions
-
-extension SettingsViewController {
-
-    @objc private func appearanceSwitchToggled(_ sender: UISwitch) {
-        presenter.userDidToggleTheme(isDark: sender.isOn)
     }
 }
 

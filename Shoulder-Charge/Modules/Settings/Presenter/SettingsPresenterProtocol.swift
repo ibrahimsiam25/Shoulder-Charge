@@ -7,6 +7,8 @@
 protocol SettingsPresenterProtocol {
     func attachView(_ view: SettingsViewProtocol)
     func viewDidLoad()
+    func isDarkTheme() -> Bool
+    func currentAppLanguage() -> AppLanguage
     func userDidToggleTheme(isDark: Bool)
     func userDidSelectLanguage(_ language: AppLanguage)
 }

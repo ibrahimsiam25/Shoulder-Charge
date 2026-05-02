@@ -16,9 +16,16 @@ class SettingsPresenter : SettingsPresenterProtocol{
     }
 
     func viewDidLoad() {
-        let isDark = ThemeManager.shared.currentTheme == .dark
-        view?.updateThemeSwitch(isDark: isDark)
-        view?.updateLanguageLabel(LocalizationManager.shared.currentAppLanguage)
+        view?.updateThemeSwitch(isDark: isDarkTheme())
+        view?.updateLanguageLabel(currentAppLanguage())
+    }
+
+    func isDarkTheme() -> Bool {
+        ThemeManager.shared.currentTheme == .dark
+    }
+
+    func currentAppLanguage() -> AppLanguage {
+        LocalizationManager.shared.currentAppLanguage
     }
 
     func userDidToggleTheme(isDark: Bool) {
