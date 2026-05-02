@@ -4,7 +4,9 @@
 //
 
 import UIKit
-
+protocol LeagueDetailsRouterProtocol {
+    static func createModule(leagueId: Int, sport: SportType) -> UIViewController
+}
 class LeagueDetailsRouter {
 
 //    static func createModule(leagueId: Int, sport: SportType) -> UIViewController {

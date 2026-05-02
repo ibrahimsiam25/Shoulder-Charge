@@ -320,6 +320,31 @@ high-fidelity sports action.</string>
             </objects>
             <point key="canvasLocation" x="2501.5267175572517" y="-535.21126760563379"/>
         </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="gzC-2p-Vqy">
+            <objects>
+                <collectionViewController id="tmu-R0-xwv" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZBn-nc-oXx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BVQ-wF-gwP">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="tmu-R0-xwv" id="nh4-KL-juG"/>
+                            <outlet property="delegate" destination="tmu-R0-xwv" id="LrG-ua-2Su"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fS8-zp-Dzi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3202" y="-526"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="Ksd-Fh-ST0">
             <objects>
