@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    let images = ["soccer", "basket", "tennis", "racquet"]
+    let images = ["soccer", "basket", "tennis", "cricket"]
     let names  = [L10n.Home.soccer,L10n.Home.basket,L10n.Home.tennis,L10n.Home.racquet]
     @IBOutlet weak var collection: UICollectionView!
 
