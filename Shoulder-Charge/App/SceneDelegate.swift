@@ -31,8 +31,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @objc private func handleLanguageChanged() {
         guard let window else { return }
         LocalizationManager.shared.applyLayoutDirection()
+        let tabBar = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "MainTabBarController")
         UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft) {
-            window.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
+            window.rootViewController = tabBar
         }
     }
 
