@@ -8,6 +8,7 @@ protocol LeagueDetailsPresenterProtocol {
     func getPastEventsCount() -> Int
     func getUpcomingEventsCount() -> Int
     func getParticipantsCount() -> Int
+    func getAllPastEvents() -> [UnifiedEventModel]
     func getPastEvent(at index: Int) -> UnifiedEventModel
     func getUpcomingEvent(at index: Int) -> UnifiedEventModel
     func getParticipant(at index: Int) -> LeagueParticipantDisplayModel
