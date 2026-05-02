@@ -1,6 +1,7 @@
 /* Settings Screen */
 "settings.title"            = "Settings";
 "settings.theme"            = "Theme";
+"settings.appearance"       = "Appearance";
 "settings.language"         = "Language";
 
 /* Theme Options */

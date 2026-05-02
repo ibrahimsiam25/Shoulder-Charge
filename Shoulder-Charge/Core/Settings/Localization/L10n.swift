@@ -17,9 +17,10 @@ import Foundation
 enum L10n {
 
     enum Settings {
-        static var title:    String { "settings.title".localized }
-        static var theme:    String { "settings.theme".localized }
-        static var language: String { "settings.language".localized }
+        static var title:       String { "settings.title".localized }
+        static var theme:       String { "settings.theme".localized }
+        static var appearance:  String { "settings.appearance".localized }
+        static var language:    String { "settings.language".localized }
 
         enum Theme {
             static var system: String { "settings.theme.system".localized }

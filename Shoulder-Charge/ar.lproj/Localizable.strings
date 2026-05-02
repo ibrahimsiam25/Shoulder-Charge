@@ -1,6 +1,7 @@
 /* شاشة الإعدادات */
 "settings.title"            = "الإعدادات";
 "settings.theme"            = "المظهر";
+"settings.appearance"       = "المظهر";
 "settings.language"         = "اللغة";
 
 /* خيارات المظهر */
