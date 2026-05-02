@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol SettingsViewProtocol: AnyObject {
-    func updateThemeSwitch(isDark: Bool)
-    func updateLanguageLabel(_ language: AppLanguage)
-}
+class SettingsPresenter : SettingsPresenterProtocol{
 
-class SettingsPresenter {
     weak var view: SettingsViewProtocol?
+    
+    func attachView(_ view: SettingsViewProtocol){
+        self.view = view
+    }
 
     func viewDidLoad() {
         let isDark = ThemeManager.shared.currentTheme == .dark

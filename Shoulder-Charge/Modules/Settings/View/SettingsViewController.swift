@@ -9,7 +9,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    var presenter: SettingsPresenter!
+    var presenter: SettingsPresenterProtocol!
 
     @IBOutlet weak var settingsTableView: UITableView!
 
@@ -19,7 +19,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = SettingsPresenter()
-        presenter.view = self
+        presenter.attachView(self)
         setupTableView()
     }
 
