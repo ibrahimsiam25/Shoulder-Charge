@@ -50,9 +50,15 @@ final class ThemeManager {
 
     func applyTheme() {
         let style = currentTheme.interfaceStyle
-        UIApplication.shared.connectedScenes
+        let windows = UIApplication.shared.connectedScenes
             .compactMap { $0 as? UIWindowScene }
             .flatMap { $0.windows }
-            .forEach { $0.overrideUserInterfaceStyle = style }
+        windows.forEach { window in
+            UIView.transition(with: window,
+                              duration: 0.35,
+                              options: [.transitionFlipFromLeft, .allowUserInteraction]) {
+                window.overrideUserInterfaceStyle = style
+            }
+        }
     }
 }

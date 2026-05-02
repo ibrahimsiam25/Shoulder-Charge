@@ -21,6 +21,10 @@ class SettingsViewController: UIViewController {
         presenter = SettingsPresenter()
         presenter.view = self
         setupTableView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter.viewDidLoad()
     }
 
@@ -58,7 +62,10 @@ extension SettingsViewController: UITableViewDataSource {
 
             cell.contentView.subviews.compactMap { $0 as? UILabel }.first?.text = L10n.Settings.appearance
 
-            if let sw = cell.accessoryView as? UISwitch {
+            // Find the switch wherever it lives (accessoryView or contentView).
+            let sw = (cell.accessoryView as? UISwitch)
+                ?? cell.contentView.subviews.compactMap { $0 as? UISwitch }.first
+            if let sw {
                 sw.removeTarget(nil, action: nil, for: .valueChanged)
                 sw.addTarget(self, action: #selector(appearanceSwitchToggled(_:)), for: .valueChanged)
                 sw.isOn = ThemeManager.shared.currentTheme == .dark
