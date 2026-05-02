@@ -21,6 +21,11 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
         }
         return index
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -83,15 +88,12 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
     }
 
     private func finishOnboarding() {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
-            return
-        }
         UserDefaults.standard.set(true, forKey: Constants.userDefaultsIsFirstTimeUserKey)
         let storyboard = self.storyboard
-        let mainNav = storyboard?.instantiateViewController(withIdentifier: "MainNavigationController")
-        window.rootViewController = mainNav
-        window.makeKeyAndVisible()
+        let tabBar = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
+        
+    navigationController?.setViewControllers([tabBar!], animated: true)
+       
     }
     
 

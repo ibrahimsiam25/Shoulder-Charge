@@ -43,6 +43,11 @@ class SplashViewController: UIViewController {
         scheduleMainTransition()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
     private func setupUI() {
         view.backgroundColor = .black
         leftLogoImageView.alpha = 0
@@ -74,7 +79,6 @@ class SplashViewController: UIViewController {
         }
     }
 
-   
     private func playCollisionSound() {
         guard let url = Bundle.main.url(forResource: "splash_sound",
                                         withExtension: "wav") else {
@@ -89,31 +93,23 @@ class SplashViewController: UIViewController {
         }
     }
 
-   
     private func transitionToMain() {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let window = windowScene.windows.first(where: { $0.isKeyWindow }) else {
-            return
-        }
-        
         let isFirstTime = UserDefaults.standard.bool(forKey: Constants.userDefaultsIsFirstTimeUserKey)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        let nextVC: UIViewController
         if isFirstTime {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mainNav = storyboard.instantiateViewController(withIdentifier: "MainNavigationController")
-            window.rootViewController = mainNav
-            window.makeKeyAndVisible()
+            // نأخذ الـ TabBar مباشرة ليكون هو الشاشة التالية في الـ Navigation الحالي
+            nextVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
         } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let onboardingVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
-            window.rootViewController = onboardingVC
+            nextVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
         }
         
-        UIView.transition(with: window,
-                          duration: 0.4,
-                          options: .transitionCrossDissolve,
-                          animations: nil,
-                          completion: nil)}
+        // استبدال الـ Splash بالشاشة التالية بداخل نفس الـ Navigation Controller
+        navigationController?.setViewControllers([nextVC], animated: true)
+    }
+        
+      
 }
 
 
