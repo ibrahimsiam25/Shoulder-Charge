@@ -70,7 +70,7 @@ extension LeaguesViewController : UITableViewDataSource{
         return cell
     }
     
-    
+
 }
 
 // MARK: - TABLE UI DELEGATE

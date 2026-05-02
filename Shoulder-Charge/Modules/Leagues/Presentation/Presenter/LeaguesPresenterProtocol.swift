@@ -7,9 +7,11 @@
 
 import Foundation
 protocol LeaguesPresenterProtocol {
+  
     func viewDidLoad()
     func getItemsCount() -> Int
     func getItem (at index: Int) -> UnifiedLeagueModel
     func navigateToLeagueDetails(at index: Int)
     func filterLeagues(by query: String)
+    func getSprotType()->SportType
 }

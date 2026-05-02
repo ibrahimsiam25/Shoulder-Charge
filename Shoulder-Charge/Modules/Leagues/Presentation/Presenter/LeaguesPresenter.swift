@@ -9,7 +9,7 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
 
     private let repository: LeaguesRepositoryProtocol
     private var view: LeaguesViewProtocol!
-    private var router: LeaguesRouterProtocol!
+    var router: LeaguesRouterProtocol!
     private var leagues: [UnifiedLeagueModel] = []
     private var sportType:SportType!
     private var filteredLeagues: [UnifiedLeagueModel] = []
@@ -57,5 +57,8 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
     func navigateToLeagueDetails(at index: Int) {
         let league = filteredLeagues[index]
         router.navigateToLeagueDetails(with: league.id, sport: league.sport, from: view)
+    }
+    func getSprotType()->SportType{
+        return sportType
     }
 }
