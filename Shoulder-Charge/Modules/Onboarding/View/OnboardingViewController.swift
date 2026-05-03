@@ -6,12 +6,14 @@
 //
 
 import UIKit
+protocol OnboardingViewProtocol: AnyObject {
+    func goToPage(index: Int)
+}
 
-class OnboardingViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+class OnboardingViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource, OnboardingViewProtocol {
+    var router: OnboardingRouterProtocol = OnboardingRouter()
+    var presenter: OnboardingPresenterProtocol!
     private var arrContainer = [UIViewController]()
-    private var data: [OnboardingSlide] {
-        return LocalizationManager.shared.currentLanguage == "ar" ? Constants.onboardingSlide.reversed() : Constants.onboardingSlide
-    }
 
     private let pageControl: UIPageControl = {
         let pc = UIPageControl()
@@ -37,6 +39,11 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if presenter == nil {
+            presenter = OnboardingPresenter(view: self, router: router)
+        }
+        
         view.backgroundColor = .systemBackground
         dataSource = self
         delegate = self
@@ -48,11 +55,12 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
         }
         
         setupPageControl()
+        presenter.viewDidLoad()
     }
 
     private func setupPageControl() {
         view.addSubview(pageControl)
-        pageControl.numberOfPages = data.count
+        pageControl.numberOfPages = presenter.slidesCount
         pageControl.currentPage = 0
         pageControl.addTarget(self, action: #selector(handlePageControlChanged(_:)), for: .valueChanged)
         
@@ -69,18 +77,19 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
     }
 
     private func buildSlides() {
-        for (index, slide) in data.enumerated() {
+        for index in 0..<presenter.slidesCount {
+            let slide = presenter.getSlide(at: index)
             let vc = UIViewController()
             vc.view.backgroundColor = .systemBackground
 
             let customView = CustomOnboardingView()
-            customView.configure(model: slide, totalPages: data.count)
+            customView.configure(model: slide, totalPages: presenter.slidesCount)
             customView.translatesAutoresizingMaskIntoConstraints = false
             customView.onContinueTapped = { [weak self] in
-                self?.handleContinue(from: index)
+                self?.presenter.didTapContinue(from: index)
             }
             customView.onSkipTapped = { [weak self] in
-                self?.finishOnboarding()
+                self?.presenter.didTapSkip()
             }
 
             vc.view.addSubview(customView)
@@ -96,16 +105,7 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
         }
     }
 
-    private func handleContinue(from index: Int) {
-        let nextIndex = index + 1
-        if nextIndex < arrContainer.count {
-            goToPage(index: nextIndex)
-        } else {
-            finishOnboarding()
-        }
-    }
-
-    private func goToPage(index: Int) {
+    func goToPage(index: Int) {
         guard index >= 0, index < arrContainer.count else { return }
         let current = currentIndex
         guard index != current else { return }
@@ -116,13 +116,6 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
                 self?.updatePageIndicators(currentPage: index)
             }
         }
-    }
-
-    private func finishOnboarding() {
-        UserDefaults.standard.set(true, forKey: Constants.userDefaultsIsFirstTimeUserKey)
-        let storyboard = self.storyboard
-        let tabBar = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
-        navigationController?.setViewControllers([tabBar!], animated: true)
     }
 
   

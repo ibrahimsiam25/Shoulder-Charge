@@ -10,6 +10,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
 
     private let repository: LeagueDetailsRepositoryProtocol
     private weak var view: LeagueDetailsViewProtocol?
+    private let router: LeagueDetailsRouterProtocol
     private let leagueId: String
     private let sport: SportType
     private let leagueName: String
@@ -22,6 +23,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     init(
         repository: LeagueDetailsRepositoryProtocol,
         view: LeagueDetailsViewProtocol,
+        router: LeagueDetailsRouterProtocol,
         leagueId: String,
         sport: SportType,
         leagueName: String,
@@ -29,6 +31,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     ) {
         self.repository = repository
         self.view = view
+        self.router = router
         self.leagueId = leagueId
         self.sport = sport
         self.leagueName = leagueName

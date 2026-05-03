@@ -5,7 +5,7 @@
 //  Created by Eslam Elnady on 28/04/2026.
 //
 
-import UIKit
+import Foundation
 
 class SettingsPresenter : SettingsPresenterProtocol{
 

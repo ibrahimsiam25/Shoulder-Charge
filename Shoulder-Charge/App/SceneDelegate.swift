@@ -33,16 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         LocalizationManager.shared.swizzleBundleForCurrentLanguage()
    
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let rootNav = storyboard.instantiateViewController(withIdentifier: "RootNav") as! UINavigationController
-        rootNav.isNavigationBarHidden = true
-        let tabBar = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
-        rootNav.viewControllers = [tabBar]
-  
-
-        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft) {
-            window.rootViewController = rootNav
-        }
+        HomeRouter.setRoot(on: window)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

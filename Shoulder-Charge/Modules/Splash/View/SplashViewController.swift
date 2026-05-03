@@ -75,7 +75,7 @@ class SplashViewController: UIViewController {
 
     private func scheduleMainTransition() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) { [weak self] in
-            self?.transitionToMain()
+            self?.presenter.handleTransition()
         }
     }
 
@@ -92,21 +92,6 @@ class SplashViewController: UIViewController {
             print(" Audio error: \(error)")
         }
     }
-
-    private func transitionToMain() {
-        let isFirstTime = UserDefaults.standard.bool(forKey: Constants.userDefaultsIsFirstTimeUserKey)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let nextVC: UIViewController
-        if isFirstTime {
-                 nextVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
-        } else {
-            nextVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
-        }
-           navigationController?.setViewControllers([nextVC], animated: true)
-    }
-        
-      
 }
 
 
