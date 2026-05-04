@@ -18,7 +18,7 @@ extension PlayerDetailsViewController {
             guard let self else { return nil }
             let section = PlayerDetailsSection(rawValue: index) ?? .header
             switch section {
-            case .header:      return self.makeFullWidthSection(height: 160)
+            case .header:      return self.makeFullWidthSection(height: 150)
             case .stats:       return self.makeHorizontalSection(height: 236, itemWidth: 0.85)
             case .tournaments: return self.makeVerticalListSection(height: 90)
             }
