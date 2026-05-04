@@ -44,7 +44,7 @@ class PlayerDetailsViewController: UICollectionViewController, PlayerDetailsView
     private func setupCells() {
         collectionView.register(UINib(nibName: "PlayerHeaderCell", bundle: nil), forCellWithReuseIdentifier: Self.reuseHeader)
         collectionView.register(UINib(nibName: "PlayerStatSeasonCard", bundle: nil), forCellWithReuseIdentifier: Self.reuseStat)
-        collectionView.register(PlayerTournamentCell.self, forCellWithReuseIdentifier: Self.reuseTournament)
+        collectionView.register(UINib(nibName: "PlayerTournamentCell", bundle: nil), forCellWithReuseIdentifier: Self.reuseTournament)
         collectionView.register(
             SectionHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,

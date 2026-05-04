@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PlayerTournamentCell" reuseIdentifier="PlayerTournamentCell" id="ptc-AA-001" customClass="PlayerTournamentCell" customModule="Shoulder_Charge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <!-- Card view -->
+                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crd-VW-001">
+                        <rect key="frame" x="16" y="6" width="343" height="68"/>
+                        <subviews>
+
+                            <!-- Name label -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tournament Name" lineBreakMode="middleTruncation" numberOfLines="1" translatesAutoresizingMaskIntoConstraints="NO" id="nam-LB-001">
+                                <rect key="frame" x="12" y="10" width="230" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" name="Text Primary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+
+                            <!-- Season label -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2024" translatesAutoresizingMaskIntoConstraints="NO" id="sea-LB-002">
+                                <rect key="frame" x="12" y="32" width="230" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="Text Sec"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+
+                            <!-- Chip stack: surface + type -->
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="horizontal" spacing="6" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="chp-SV-003">
+                                <rect key="frame" x="12" y="51" width="120" height="16"/>
+                                <subviews>
+                                    <!-- Surface chip -->
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" text=" Hard " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="srf-LB-004">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <!-- Type chip -->
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" text=" Singles " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="typ-LB-005">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+
+                            <!-- Prize label -->
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$1,000,000" translatesAutoresizingMaskIntoConstraints="NO" id="prz-LB-006">
+                                <rect key="frame" x="260" y="27" width="71" height="16"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" name="Primary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+
+                        </subviews>
+                        <!-- Card constraints -->
+                        <constraints>
+                            <!-- nameLabel -->
+                            <constraint firstItem="nam-LB-001" firstAttribute="top" secondItem="crd-VW-001" secondAttribute="top" constant="10" id="nam-top"/>
+                            <constraint firstItem="nam-LB-001" firstAttribute="leading" secondItem="crd-VW-001" secondAttribute="leading" constant="12" id="nam-lead"/>
+                            <constraint firstItem="prz-LB-006" firstAttribute="leading" secondItem="nam-LB-001" secondAttribute="trailing" constant="8" id="nam-trail"/>
+                            <!-- seasonLabel -->
+                            <constraint firstItem="sea-LB-002" firstAttribute="top" secondItem="nam-LB-001" secondAttribute="bottom" constant="4" id="sea-top"/>
+                            <constraint firstItem="sea-LB-002" firstAttribute="leading" secondItem="nam-LB-001" secondAttribute="leading" id="sea-lead"/>
+                            <constraint firstItem="sea-LB-002" firstAttribute="trailing" secondItem="nam-LB-001" secondAttribute="trailing" id="sea-trail"/>
+                            <!-- chipStack -->
+                            <constraint firstItem="chp-SV-003" firstAttribute="top" secondItem="sea-LB-002" secondAttribute="bottom" constant="6" id="chp-top"/>
+                            <constraint firstItem="chp-SV-003" firstAttribute="leading" secondItem="nam-LB-001" secondAttribute="leading" id="chp-lead"/>
+                            <constraint firstItem="chp-SV-003" firstAttribute="bottom" secondItem="crd-VW-001" secondAttribute="bottom" relation="lessThanOrEqual" constant="-10" id="chp-bot"/>
+                            <!-- prizeLabel: trailing + centerY -->
+                            <constraint firstItem="prz-LB-006" firstAttribute="centerY" secondItem="crd-VW-001" secondAttribute="centerY" id="prz-cy"/>
+                            <constraint firstItem="crd-VW-001" firstAttribute="trailing" secondItem="prz-LB-006" secondAttribute="trailing" constant="12" id="prz-trail"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" name="Background"/>
+            <!-- Cell constraints: card pinned with insets -->
+            <constraints>
+                <constraint firstItem="crd-VW-001" firstAttribute="top" secondItem="ptc-AA-001" secondAttribute="top" constant="6" id="card-top"/>
+                <constraint firstItem="crd-VW-001" firstAttribute="leading" secondItem="ptc-AA-001" secondAttribute="leading" constant="16" id="card-lead"/>
+                <constraint firstItem="ptc-AA-001" firstAttribute="trailing" secondItem="crd-VW-001" secondAttribute="trailing" constant="16" id="card-trail"/>
+                <constraint firstItem="ptc-AA-001" firstAttribute="bottom" secondItem="crd-VW-001" secondAttribute="bottom" constant="6" id="card-bot"/>
+            </constraints>
+            <size key="customSize" width="375" height="80"/>
+            <connections>
+                <outlet property="cardView" destination="crd-VW-001" id="out-crd-001"/>
+                <outlet property="nameLabel" destination="nam-LB-001" id="out-nam-001"/>
+                <outlet property="seasonLabel" destination="sea-LB-002" id="out-sea-002"/>
+                <outlet property="surfaceChipLabel" destination="srf-LB-004" id="out-srf-004"/>
+                <outlet property="typeChipLabel" destination="typ-LB-005" id="out-typ-005"/>
+                <outlet property="prizeLabel" destination="prz-LB-006" id="out-prz-006"/>
+            </connections>
+            <point key="canvasLocation" x="100" y="100"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Background">
+            <color red="0.07843137254901961" green="0.07843137254901961" blue="0.08627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.47058823529411764" green="0.78431372549019607" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Surface">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text Primary">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text Sec">
+            <color red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
