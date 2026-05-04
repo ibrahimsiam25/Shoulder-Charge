@@ -56,7 +56,7 @@
 "leagueDetails.teams"    = "الفرق";
 "leagueDetails.players"  = "اللاعبين";
 "leagueDetails.title"    = "تفاصيل الدوري";
-
+"favorites.empty" = "لا توجد دوريات مفضلة حتى الآن";
 /* شاشة تفاصيل اللاعب */
 "playerDetails.stats"         = "الإحصائيات";
 "playerDetails.tournaments"   = "البطولات";

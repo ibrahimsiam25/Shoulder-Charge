@@ -56,6 +56,7 @@
 "leagueDetails.players"  = "Players";
 "leagueDetails.title"    = "League Details";
 
+
 /* Player Details Screen */
 "playerDetails.stats"         = "Statistics";
 "playerDetails.tournaments"   = "Tournaments";
@@ -73,4 +74,4 @@
 "playerDetails.prize"         = "Prize";
 "playerDetails.country"       = "Country";
 "playerDetails.birthdate"     = "Born";
-
+"favorites.empty" = "No favorite leagues yet.";
