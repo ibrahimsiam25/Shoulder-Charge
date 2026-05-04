@@ -20,10 +20,16 @@ class LeaguesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        let appearance = LocalizationManager.shared.makeNavigationBarAppearance()
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: true)
         setupUI()
         leaguesPresenter.viewDidLoad()
     }
@@ -71,7 +77,9 @@ extension LeaguesViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! LeagueTableViewCell
         let leagueModel = leaguesPresenter.getItem(at: indexPath.row)
-        cell.configure(with: leagueModel)
+        cell.configure(with: leagueModel, showsFavorite: true, isFavorite: true,  ){ [weak self] in
+                 print("dgd")
+        }
         return cell
     }
     

@@ -42,7 +42,7 @@ final class LocalizationManager {
           let backChevron = UIImage(systemName: isRTL ? "chevron.forward" : "chevron.backward")
           
           let navAppearance = UINavigationBarAppearance()
-          navAppearance.configureWithOpaqueBackground()
+          navAppearance.configureWithTransparentBackground()
           navAppearance.setBackIndicatorImage(backChevron, transitionMaskImage: backChevron)
           
           UINavigationBar.appearance().standardAppearance = navAppearance
@@ -81,9 +81,12 @@ final class LocalizationManager {
         let backChevron = UIImage(systemName: isRTL ? "chevron.forward" : "chevron.backward")
         
         let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = backgroundColor
-            ?? UIColor(red: 0.08, green: 0.08, blue: 0.08, alpha: 1)
+        if let bgColor = backgroundColor {
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = bgColor
+        } else {
+            appearance.configureWithTransparentBackground()
+        }
         appearance.shadowColor = .clear
         appearance.setBackIndicatorImage(backChevron, transitionMaskImage: backChevron)
         
