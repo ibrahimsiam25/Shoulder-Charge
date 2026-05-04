@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PlayerHeaderCell" reuseIdentifier="PlayerHeaderCell" id="pHC-AA-001" customClass="PlayerHeaderCell" customModule="Shoulder_Charge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pIV-BB-002">
+                        <rect key="frame" x="16" y="12" width="88.666666666666671" height="88.666666666666671"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="vSV-AA-100">
+                        <rect key="frame" x="116.66666666666667" y="12" width="242.33333333333331" height="88.666666666666671"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" lineBreakMode="tailTruncation" numberOfLines="2" translatesAutoresizingMaskIntoConstraints="NO" id="pNL-CC-003">
+                                <rect key="frame" x="0.0" y="0.0" width="242.33333333333334" height="21.666666666666668"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" name="Text Primary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="League Name" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNL-DD-004">
+                                <rect key="frame" x="0.0" y="28.333333333333339" width="242.33333333333334" height="15.666666666666668"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" name="Primary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="cHS-BB-101">
+                                <rect key="frame" x="0.0" y="50.666666666666664" width="242.33333333333334" height="15.666666666666664"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTL-EE-005">
+                                        <rect key="frame" x="0.0" y="1.3333333333333366" width="72" height="13.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" name="Text Sec"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="—" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-FF-006">
+                                        <rect key="frame" x="75.999999999999986" y="0.0" width="166.33333333333331" height="15.666666666666666"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" name="Text Primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bHS-CC-102">
+                                <rect key="frame" x="0.0" y="73" width="242.33333333333334" height="15.666666666666671"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthdate" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTL-GG-007">
+                                        <rect key="frame" x="0.0" y="1.3333333333333286" width="72" height="13.333333333333334"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" name="Text Sec"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="—" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVL-HH-008">
+                                        <rect key="frame" x="75.999999999999986" y="0.0" width="166.33333333333331" height="15.666666666666666"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" name="Text Primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="pSA-II-009"/>
+            <color key="backgroundColor" name="Surface"/>
+            <constraints>
+                <constraint firstItem="bTL-GG-007" firstAttribute="width" secondItem="cTL-EE-005" secondAttribute="width" id="4Vw-Ud-Sub"/>
+                <constraint firstItem="pIV-BB-002" firstAttribute="leading" secondItem="pHC-AA-001" secondAttribute="leading" constant="16" id="8Jn-wH-ZxQ"/>
+                <!-- image top: 16pt from cell top -->
+                <constraint firstAttribute="top" secondItem="pIV-BB-002" secondAttribute="top" constant="-16" id="X38-th-C5j"/>
+                <!-- image bottom: 16pt from cell bottom -->
+                <constraint firstAttribute="bottom" secondItem="pIV-BB-002" secondAttribute="bottom" constant="16" id="img-bot-001"/>
+                <!-- image aspect ratio 1:1 (width = height) -->
+                <constraint firstItem="pIV-BB-002" firstAttribute="width" secondItem="pIV-BB-002" secondAttribute="height" multiplier="1" id="ZTy-oB-nNE"/>
+                <constraint firstItem="cTL-EE-005" firstAttribute="width" secondItem="pHC-AA-001" secondAttribute="width" multiplier="0.192" id="j48-P8-bat"/>
+                <constraint firstItem="vSV-AA-100" firstAttribute="bottom" secondItem="pIV-BB-002" secondAttribute="bottom" id="vSV-bot-004"/>
+                <constraint firstItem="vSV-AA-100" firstAttribute="leading" secondItem="pIV-BB-002" secondAttribute="trailing" constant="12" id="vSV-lead-001"/>
+                <constraint firstItem="vSV-AA-100" firstAttribute="top" secondItem="pIV-BB-002" secondAttribute="top" id="vSV-top-003"/>
+                <constraint firstItem="pSA-II-009" firstAttribute="trailing" secondItem="vSV-AA-100" secondAttribute="trailing" constant="16" id="vSV-trail-002"/>
+            </constraints>
+            <size key="customSize" width="375" height="148"/>
+            <connections>
+                <outlet property="birthdateLabel" destination="bVL-HH-008" id="oBL-PP-016"/>
+                <outlet property="birthdateTitleLabel" destination="bTL-GG-007" id="oBT-OO-015"/>
+                <outlet property="countryLabel" destination="cVL-FF-006" id="oCL-NN-014"/>
+                <outlet property="countryTitleLabel" destination="cTL-EE-005" id="oCT-MM-013"/>
+                <outlet property="leagueNameLabel" destination="lNL-DD-004" id="oLN-LL-012"/>
+                <outlet property="playerImageView" destination="pIV-BB-002" id="oPI-JJ-010"/>
+                <outlet property="playerNameLabel" destination="pNL-CC-003" id="oPN-KK-011"/>
+            </connections>
+            <point key="canvasLocation" x="100" y="73.943661971830991"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Primary">
+            <color red="0.47058823529411764" green="0.78431372549019607" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Surface">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text Primary">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text Sec">
+            <color red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

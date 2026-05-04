@@ -42,7 +42,7 @@ class PlayerDetailsViewController: UICollectionViewController, PlayerDetailsView
     // MARK: - Setup
 
     private func setupCells() {
-        collectionView.register(PlayerHeaderCell.self, forCellWithReuseIdentifier: Self.reuseHeader)
+        collectionView.register(UINib(nibName: "PlayerHeaderCell", bundle: nil), forCellWithReuseIdentifier: Self.reuseHeader)
         collectionView.register(PlayerStatSeasonCard.self, forCellWithReuseIdentifier: Self.reuseStat)
         collectionView.register(PlayerTournamentCell.self, forCellWithReuseIdentifier: Self.reuseTournament)
         collectionView.register(

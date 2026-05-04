@@ -8,75 +8,30 @@ import SDWebImage
 
 class PlayerHeaderCell: UICollectionViewCell {
 
-    // MARK: - Views
+    // MARK: - Outlets
 
-    private let playerImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.layer.cornerRadius = 40
-        iv.layer.borderWidth = 1.5
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        return iv
-    }()
+    @IBOutlet weak var playerImageView: UIImageView!
+    @IBOutlet weak var playerNameLabel: UILabel!
+    @IBOutlet weak var leagueNameLabel: UILabel!
+    @IBOutlet weak var countryTitleLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var birthdateTitleLabel: UILabel!
+    @IBOutlet weak var birthdateLabel: UILabel!
 
-    private let playerNameLabel: UILabel = {
-        let l = UILabel()
-        l.font = .systemFont(ofSize: 18, weight: .bold)
-        l.numberOfLines = 2
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }()
+    // MARK: - Lifecycle
 
-    private let leagueNameLabel: UILabel = {
-        let l = UILabel()
-        l.font = .systemFont(ofSize: 13, weight: .semibold)
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }()
-
-    private let countryTitleLabel: UILabel = {
-        let l = UILabel()
-        l.font = .systemFont(ofSize: 11)
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }()
-
-    private let countryLabel: UILabel = {
-        let l = UILabel()
-        l.font = .systemFont(ofSize: 13, weight: .medium)
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }()
-
-    private let birthdateTitleLabel: UILabel = {
-        let l = UILabel()
-        l.font = .systemFont(ofSize: 11)
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }()
-
-    private let birthdateLabel: UILabel = {
-        let l = UILabel()
-        l.font = .systemFont(ofSize: 13, weight: .medium)
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }()
-
-    // MARK: - Init
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupLayout()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        applyStyle()
         applyColors()
         applyLocalization()
     }
 
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setupLayout()
-        applyColors()
-        applyLocalization()
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let side = playerImageView.frame.width
+        playerImageView.layer.cornerRadius = side / 2
+        playerImageView.layer.masksToBounds = true
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -86,44 +41,16 @@ class PlayerHeaderCell: UICollectionViewCell {
         }
     }
 
-    // MARK: - Layout
+    // MARK: - Style (kept in code)
 
-    private func setupLayout() {
-        [playerImageView, playerNameLabel, leagueNameLabel,
-         countryTitleLabel, countryLabel, birthdateTitleLabel, birthdateLabel]
-            .forEach { contentView.addSubview($0) }
+    private func applyStyle() {
+        playerImageView.contentMode = .scaleAspectFill
+        playerImageView.layer.borderWidth = 1.5
 
-        NSLayoutConstraint.activate([
-            playerImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            playerImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            playerImageView.widthAnchor.constraint(equalToConstant: 80),
-            playerImageView.heightAnchor.constraint(equalToConstant: 80),
-
-            playerNameLabel.leadingAnchor.constraint(equalTo: playerImageView.trailingAnchor, constant: 16),
-            playerNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            playerNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
-
-            leagueNameLabel.leadingAnchor.constraint(equalTo: playerNameLabel.leadingAnchor),
-            leagueNameLabel.trailingAnchor.constraint(equalTo: playerNameLabel.trailingAnchor),
-            leagueNameLabel.topAnchor.constraint(equalTo: playerNameLabel.bottomAnchor, constant: 4),
-
-            countryTitleLabel.leadingAnchor.constraint(equalTo: playerNameLabel.leadingAnchor),
-            countryTitleLabel.topAnchor.constraint(equalTo: leagueNameLabel.bottomAnchor, constant: 6),
-            countryTitleLabel.widthAnchor.constraint(equalToConstant: 64),
-
-            countryLabel.leadingAnchor.constraint(equalTo: countryTitleLabel.trailingAnchor, constant: 4),
-            countryLabel.trailingAnchor.constraint(equalTo: playerNameLabel.trailingAnchor),
-            countryLabel.centerYAnchor.constraint(equalTo: countryTitleLabel.centerYAnchor),
-
-            birthdateTitleLabel.leadingAnchor.constraint(equalTo: playerNameLabel.leadingAnchor),
-            birthdateTitleLabel.topAnchor.constraint(equalTo: countryTitleLabel.bottomAnchor, constant: 4),
-            birthdateTitleLabel.widthAnchor.constraint(equalToConstant: 64),
-            birthdateTitleLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -20),
-
-            birthdateLabel.leadingAnchor.constraint(equalTo: birthdateTitleLabel.trailingAnchor, constant: 4),
-            birthdateLabel.trailingAnchor.constraint(equalTo: playerNameLabel.trailingAnchor),
-            birthdateLabel.centerYAnchor.constraint(equalTo: birthdateTitleLabel.centerYAnchor),
-        ])
+        layer.cornerRadius = 16
+        layer.masksToBounds = true
+        contentView.layer.cornerRadius = 16
+        contentView.layer.masksToBounds = true
     }
 
     private func applyColors() {
