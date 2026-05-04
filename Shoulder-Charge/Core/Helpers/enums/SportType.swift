@@ -6,7 +6,7 @@
 //
 
 
-enum SportType {
+enum SportType:String {
     case football, basketball, tennis, cricket
 
     var apiPath: String {

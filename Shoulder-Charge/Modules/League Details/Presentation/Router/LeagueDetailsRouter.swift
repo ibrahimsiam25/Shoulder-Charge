@@ -15,7 +15,7 @@ class LeagueDetailsRouter: LeagueDetailsRouterProtocol {
         let view = storyboard.instantiateViewController(
             withIdentifier: "LeagueDetailsCollectionViewController"
         ) as! LeagueDetailsCollectionViewController
-        
+        let favoriteManager = FavoriteManager.shared
         let repository = LeagueDetailsRepository()
         let router = LeagueDetailsRouter()
         let presenter  = LeagueDetailsPresenter(
@@ -25,7 +25,8 @@ class LeagueDetailsRouter: LeagueDetailsRouterProtocol {
             leagueId: leagueId,
             sport: sport,
             leagueName: leagueName,
-            leagueLogo: leagueLogo
+            leagueLogo: leagueLogo,
+            favoriteManager: favoriteManager
         )
         view.presenter = presenter
         return view

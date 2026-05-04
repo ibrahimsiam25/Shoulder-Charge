@@ -62,7 +62,7 @@ extension LeaguesViewController : LeaguesViewProtocol{
     }
 }
 
- // MARK: - DATA SOURCE
+
 extension LeaguesViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return leaguesPresenter.getItemsCount()
@@ -78,7 +78,7 @@ extension LeaguesViewController : UITableViewDataSource{
 
 }
 
-// MARK: - TABLE UI DELEGATE
+
 
 extension LeaguesViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,7 +89,7 @@ extension LeaguesViewController : UITableViewDelegate{
     }
 }
 
-// MARK: - SEARCH BAR DELEGATE
+
 
 extension LeaguesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

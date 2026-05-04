@@ -15,7 +15,8 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     private let sport: SportType
     private let leagueName: String
     private let leagueLogo: URL?
-
+    private let favoriteManager:FavoriteManagerProtocol
+    
     private var pastEvents: [UnifiedEventModel] = []
     private var upcomingEvents: [UnifiedEventModel] = []
     private var participants: [LeagueParticipantDisplayModel] = []
@@ -27,7 +28,8 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         leagueId: String,
         sport: SportType,
         leagueName: String,
-        leagueLogo: URL?
+        leagueLogo: URL?,
+        favoriteManager:FavoriteManagerProtocol
     ) {
         self.repository = repository
         self.view = view
@@ -36,6 +38,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         self.sport = sport
         self.leagueName = leagueName
         self.leagueLogo = leagueLogo
+        self.favoriteManager = favoriteManager
     }
 
     func viewDidLoad() {

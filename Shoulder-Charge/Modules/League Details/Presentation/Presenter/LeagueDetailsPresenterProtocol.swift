@@ -9,7 +9,7 @@ enum LeagueDetailsSection: Int, CaseIterable {
 protocol LeagueDetailsPresenterProtocol {
     func viewDidLoad()
     
-    // MARK: - Data Source
+
     func numberOfSections() -> Int
     func getSectionType(at index: Int) -> LeagueDetailsSection
     func getPastEventsCount() -> Int
@@ -20,7 +20,7 @@ protocol LeagueDetailsPresenterProtocol {
     func getUpcomingEvent(at index: Int) -> UnifiedEventModel
     func getParticipant(at index: Int) -> LeagueParticipantDisplayModel
     
-    // MARK: - UI Configuration
+ 
     func getTitleForSection(at index: Int) -> String
     func getLeagueName() -> String
     func getLeagueLogo() -> URL?
