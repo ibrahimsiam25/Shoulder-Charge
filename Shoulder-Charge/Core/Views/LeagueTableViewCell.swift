@@ -16,9 +16,14 @@ class LeagueTableViewCell: UITableViewCell {
 
     @IBOutlet weak var starBtn: UIButton!
     
+    @IBAction func StarBtnClick(_ sender: UIButton) {
+   
+         onStarTapped?()
+    }
     private let verticalSpacing: CGFloat = 4
     private let horizontalPadding: CGFloat = 8
     private var onStarTapped: (() -> Void)?
+    private var isFavorite: Bool = false
     override func awakeFromNib() {
         super.awakeFromNib()
         setupStyle()
@@ -65,7 +70,7 @@ class LeagueTableViewCell: UITableViewCell {
         leagueNameLabel.text = model.name
           subtitleLabel.text = model.displaySubTitle
           self.onStarTapped = onStarTapped
-
+          self.isFavorite = isFavorite
           let placeholder = UIImage(systemName: "globe")?
               .withTintColor(UIColor(named: "Primary") ?? .gray, renderingMode: .alwaysOriginal)
 
@@ -76,6 +81,7 @@ class LeagueTableViewCell: UITableViewCell {
               self?.setNeedsLayout()
               self?.layoutIfNeeded()
           }
+        guard starBtn != nil else { return }
          starBtn.isHidden = !showsFavorite
 
           updateStarUI(isFavorite: isFavorite)

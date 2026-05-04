@@ -13,12 +13,15 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
     private var leagues: [UnifiedLeagueModel] = []
     private var sportType:SportType!
     private var filteredLeagues: [UnifiedLeagueModel] = []
-
-    init(repository: LeaguesRepositoryProtocol, view: LeaguesViewProtocol!, router: LeaguesRouterProtocol!,sportType:SportType) {
+    private let favoriteManager:FavoriteManagerProtocol
+    init(repository: LeaguesRepositoryProtocol, view: LeaguesViewProtocol!, router: LeaguesRouterProtocol!,sportType:SportType,
+     favoriteManager:FavoriteManagerProtocol
+    ) {
         self.repository = repository
         self.view = view
         self.router = router
         self.sportType = sportType
+        self.favoriteManager = favoriteManager
     }
 
     func viewDidLoad() {
@@ -60,5 +63,18 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
     }
     func getSprotType()->SportType{
         return sportType
+    }
+    func isFavorite(at index: Int) -> Bool {
+        let league = filteredLeagues[index]
+        return favoriteManager.isExist(id: league.id)
+    }
+
+    func toggleFavorite(at index: Int) {
+        let league = filteredLeagues[index]
+        if favoriteManager.isExist(id: league.id) {
+            favoriteManager.delete(id: league.id)
+        } else {
+            favoriteManager.add(league: league)
+        }
     }
 }

@@ -180,7 +180,7 @@
         <!--Favorite-->
         <scene sceneID="VKz-7Q-UB3">
             <objects>
-                <viewController id="ckG-vi-4ct" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteViewController" id="ckG-vi-4ct" customClass="FavoriteViewController" customModule="Shoulder_Charge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fbU-5n-Zad">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

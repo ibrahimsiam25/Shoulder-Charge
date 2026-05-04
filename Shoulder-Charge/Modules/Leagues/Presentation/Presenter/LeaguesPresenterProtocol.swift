@@ -14,4 +14,6 @@ protocol LeaguesPresenterProtocol {
     func navigateToLeagueDetails(at index: Int)
     func filterLeagues(by query: String)
     func getSprotType()->SportType
+    func toggleFavorite(at index: Int)
+    func isFavorite(at index: Int) -> Bool
 }

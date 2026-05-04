@@ -25,6 +25,7 @@ class LeaguesViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
+        leaguesTableView.reloadData()
     }
 
     override func viewDidLoad() {
@@ -77,8 +78,11 @@ extension LeaguesViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! LeagueTableViewCell
         let leagueModel = leaguesPresenter.getItem(at: indexPath.row)
-        cell.configure(with: leagueModel, showsFavorite: true, isFavorite: true,  ){ [weak self] in
-                 print("dgd")
+        let isFavorite = leaguesPresenter.isFavorite(at: indexPath.row)
+        cell.configure(with: leagueModel, showsFavorite: true, isFavorite: isFavorite) { [weak self] in
+            guard let self = self else { return }
+            self.leaguesPresenter.toggleFavorite(at: indexPath.row)
+            self.leaguesTableView.reloadRows(at: [indexPath], with: .automatic)
         }
         return cell
     }

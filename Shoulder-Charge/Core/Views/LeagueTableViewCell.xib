@@ -41,6 +41,9 @@
                         <color key="tintColor" name="Text Sec"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="star" catalog="system" title=""/>
+                        <connections>
+                            <action selector="StarBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Du6-7J-wqy"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" name="Surface"/>
@@ -62,7 +65,7 @@
             <connections>
                 <outlet property="leagueImageView" destination="sBM-MM-YzZ" id="Aa1-Bb-Cc1"/>
                 <outlet property="leagueNameLabel" destination="UCF-go-5QY" id="Dd2-Ee-Ff2"/>
-                <outlet property="starBtn" destination="Nvl-gP-xUw" id="XNQ-jg-VTs"/>
+                <outlet property="starBtn" destination="Nvl-gP-xUw" id="starBtnOutletId"/>
                 <outlet property="subtitleLabel" destination="CSN-eg-lZB" id="Gg3-Hh-Ii3"/>
             </connections>
             <point key="canvasLocation" x="122.13740458015266" y="139.78873239436621"/>
