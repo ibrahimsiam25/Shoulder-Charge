@@ -31,13 +31,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCF-go-5QY">
-                        <rect key="frame" x="92" y="21" width="47" height="22"/>
+                        <rect key="frame" x="92" y="21" width="304" height="22"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <color key="textColor" name="Text Primary"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvl-gP-xUw">
-                        <rect key="frame" x="418" y="28" width="52" height="35"/>
+                        <rect key="frame" x="406" y="28" width="52" height="35"/>
                         <color key="tintColor" name="Text Sec"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="star" catalog="system" title=""/>
@@ -55,10 +55,13 @@
                     <constraint firstItem="sBM-MM-YzZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="JWo-AD-o5y"/>
                     <constraint firstItem="CSN-eg-lZB" firstAttribute="leading" secondItem="sBM-MM-YzZ" secondAttribute="trailing" constant="16" id="Kz3-vn-IEk"/>
                     <constraint firstItem="CSN-eg-lZB" firstAttribute="bottom" secondItem="sBM-MM-YzZ" secondAttribute="bottom" constant="-5" id="Tma-sI-nCx"/>
+                    <constraint firstItem="Nvl-gP-xUw" firstAttribute="leading" secondItem="UCF-go-5QY" secondAttribute="trailing" constant="10" id="XMj-xD-gEq"/>
+                    <constraint firstItem="Nvl-gP-xUw" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.384615" id="ak6-Uu-ztV"/>
+                    <constraint firstItem="Nvl-gP-xUw" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.110638" id="fnm-13-aSY"/>
                     <constraint firstAttribute="bottom" secondItem="sBM-MM-YzZ" secondAttribute="bottom" constant="16" id="kmy-EH-oXL"/>
                     <constraint firstItem="UCF-go-5QY" firstAttribute="top" secondItem="sBM-MM-YzZ" secondAttribute="top" constant="5" id="sIG-A5-rgD"/>
                     <constraint firstItem="sBM-MM-YzZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="top-img-cv"/>
-                    <constraint firstAttribute="trailing" secondItem="Nvl-gP-xUw" secondAttribute="trailing" id="vFG-ec-we9"/>
+                    <constraint firstAttribute="trailing" secondItem="Nvl-gP-xUw" secondAttribute="trailing" constant="12" id="vFG-ec-we9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
