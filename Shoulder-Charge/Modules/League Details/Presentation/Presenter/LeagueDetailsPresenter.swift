@@ -20,7 +20,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     private var pastEvents: [UnifiedEventModel] = []
     private var upcomingEvents: [UnifiedEventModel] = []
     private var participants: [LeagueParticipantDisplayModel] = []
-
+    private var isFavorite = false
     init(
         repository: LeagueDetailsRepositoryProtocol,
         view: LeagueDetailsViewProtocol,
@@ -43,6 +43,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
 
     func viewDidLoad() {
         view?.toggleLoading(true)
+        isFavorite =  favoriteManager.isExist(id: Int(leagueId)!)
         Task {
             do {
                 async let past         = repository.getPastEvents(sport: sport, leagueId: leagueId)
@@ -65,7 +66,6 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
             } catch {
                 view?.toggleLoading(false)
                 print("DEBUG: Error fetching league details: \(error)")
-                // Add mock data on error too to see if layout works
                 self.addMockData()
                 view?.reloadData()
             }
@@ -130,17 +130,22 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     func getSportType() -> SportType { sport }
     
     func isFavoriteLeague() -> Bool {
-        let favorites = UserDefaults.standard.stringArray(forKey: "favorites") ?? []
-        return favorites.contains(leagueId)
+       return isFavorite
     }
     
     func toggleFavorite() {
-        var favorites = UserDefaults.standard.stringArray(forKey: "favorites") ?? []
-        if let index = favorites.firstIndex(of: leagueId) {
-            favorites.remove(at: index)
-        } else {
-            favorites.append(leagueId)
+        if isFavorite {
+            favoriteManager.delete(id: Int(leagueId)!)
+            isFavorite.toggle()
+        } else{
+            favoriteManager.add(league:UnifiedLeagueModel(
+                id: Int(leagueId)!,
+                name: leagueName,
+                logoURL: leagueLogo,
+                displaySubTitle: nil,
+                sport: sport
+            ))
+            isFavorite.toggle()
         }
-        UserDefaults.standard.set(favorites, forKey: "favorites")
     }
 }
