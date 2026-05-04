@@ -14,10 +14,16 @@ class LeagueTableViewCell: UITableViewCell {
     @IBOutlet weak var leagueNameLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
-
+    @IBOutlet weak var starBtn: UIButton!
+    
+    @IBAction func StarBtnClick(_ sender: UIButton) {
+   
+         onStarTapped?()
+    }
     private let verticalSpacing: CGFloat = 4
     private let horizontalPadding: CGFloat = 8
-
+    private var onStarTapped: (() -> Void)?
+    private var isFavorite: Bool = false
     override func awakeFromNib() {
         super.awakeFromNib()
         setupStyle()
@@ -55,20 +61,30 @@ class LeagueTableViewCell: UITableViewCell {
         
     }
 
-    func configure(with model: UnifiedLeagueModel) {
+    func configure(
+        with model: UnifiedLeagueModel,
+        showsFavorite: Bool,
+        isFavorite: Bool,
+        onStarTapped: (() -> Void)? = nil
+    ) {
         leagueNameLabel.text = model.name
-        subtitleLabel.text = model.displaySubTitle
-        let placeholder = UIImage(systemName: "globe")?
-            .withTintColor(UIColor(named: "Primary") ?? .gray, renderingMode: .alwaysOriginal)
+          subtitleLabel.text = model.displaySubTitle
+          self.onStarTapped = onStarTapped
+          self.isFavorite = isFavorite
+          let placeholder = UIImage(systemName: "globe")?
+              .withTintColor(UIColor(named: "Primary") ?? .gray, renderingMode: .alwaysOriginal)
 
-        leagueImageView.sd_setImage(
-            with: model.logoURL,
-            placeholderImage: placeholder
-        ){[weak self] _,_,_,_ in
-            guard let self else { return }
-            self.setNeedsLayout()
-            self.layoutIfNeeded()
-        }
+          leagueImageView.sd_setImage(
+              with: model.logoURL,
+              placeholderImage: placeholder
+          ){ [weak self] _,_,_,_ in
+              self?.setNeedsLayout()
+              self?.layoutIfNeeded()
+          }
+        guard starBtn != nil else { return }
+         starBtn.isHidden = !showsFavorite
+
+          updateStarUI(isFavorite: isFavorite)
         
     }
 
@@ -82,5 +98,11 @@ class LeagueTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    private func updateStarUI(isFavorite: Bool) {
+        let imageName = isFavorite ? "star.fill" : "star"
+        let image = UIImage(systemName: imageName)
+        starBtn.setImage(image, for: .normal)
+        starBtn.tintColor = UIColor(named: "Primary")
     }
 }

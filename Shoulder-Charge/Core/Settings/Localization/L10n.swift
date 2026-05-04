@@ -83,4 +83,7 @@ enum L10n {
         static var players:  String { "leagueDetails.players".localized }
         static var title:    String { "leagueDetails.title".localized }
     }
+    enum Favorites {
+        static var empty: String { "favorites.empty".localized }
+    }
 }

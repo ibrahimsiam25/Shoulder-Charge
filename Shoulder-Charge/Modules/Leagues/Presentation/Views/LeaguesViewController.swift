@@ -20,10 +20,17 @@ class LeaguesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        let appearance = LocalizationManager.shared.makeNavigationBarAppearance()
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        leaguesTableView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: true)
         setupUI()
         leaguesPresenter.viewDidLoad()
     }
@@ -62,7 +69,7 @@ extension LeaguesViewController : LeaguesViewProtocol{
     }
 }
 
- // MARK: - DATA SOURCE
+
 extension LeaguesViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return leaguesPresenter.getItemsCount()
@@ -71,14 +78,19 @@ extension LeaguesViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! LeagueTableViewCell
         let leagueModel = leaguesPresenter.getItem(at: indexPath.row)
-        cell.configure(with: leagueModel)
+        let isFavorite = leaguesPresenter.isFavorite(at: indexPath.row)
+        cell.configure(with: leagueModel, showsFavorite: true, isFavorite: isFavorite) { [weak self] in
+            guard let self = self else { return }
+            self.leaguesPresenter.toggleFavorite(at: indexPath.row)
+            self.leaguesTableView.reloadRows(at: [indexPath], with: .automatic)
+        }
         return cell
     }
     
 
 }
 
-// MARK: - TABLE UI DELEGATE
+
 
 extension LeaguesViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,7 +101,7 @@ extension LeaguesViewController : UITableViewDelegate{
     }
 }
 
-// MARK: - SEARCH BAR DELEGATE
+
 
 extension LeaguesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

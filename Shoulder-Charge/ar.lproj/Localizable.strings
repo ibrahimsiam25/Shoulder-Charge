@@ -56,3 +56,5 @@
 "leagueDetails.teams"    = "الفرق";
 "leagueDetails.players"  = "اللاعبين";
 "leagueDetails.title"    = "تفاصيل الدوري";
+
+"favorites.empty" = "لا توجد دوريات مفضلة حتى الآن";

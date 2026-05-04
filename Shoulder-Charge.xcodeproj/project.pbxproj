@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0829F1F72FA0F1E200D4A704 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0829F1F62FA0F1E200D4A704 /* SDWebImage */; };
 		0829F1FA2FA0F20700D4A704 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 0829F1F92FA0F20700D4A704 /* Localize_Swift */; };
+		15BA6ACD2FA81B3800386366 /* FavoriteLeagues+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BA6ACC2FA81B3800386366 /* FavoriteLeagues+CoreDataProperties.swift */; };
+		15BA6ACE2FA81B3800386366 /* FavoriteLeagues+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BA6ACB2FA81B3800386366 /* FavoriteLeagues+CoreDataClass.swift */; };
 		15D239472FA3ADBF003AF853 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 15D239462FA3ADBF003AF853 /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		08AEE2C22FA0C95F00920AED /* Shoulder-Charge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shoulder-Charge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08AEE2DB2FA0C96200920AED /* Shoulder-ChargeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shoulder-ChargeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08AEE2E52FA0C96200920AED /* Shoulder-ChargeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shoulder-ChargeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15BA6ACB2FA81B3800386366 /* FavoriteLeagues+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteLeagues+CoreDataClass.swift"; sourceTree = "<group>"; };
+		15BA6ACC2FA81B3800386366 /* FavoriteLeagues+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteLeagues+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -97,6 +101,8 @@
 		08AEE2B92FA0C95F00920AED = {
 			isa = PBXGroup;
 			children = (
+				15BA6ACB2FA81B3800386366 /* FavoriteLeagues+CoreDataClass.swift */,
+				15BA6ACC2FA81B3800386366 /* FavoriteLeagues+CoreDataProperties.swift */,
 				08AEE2C42FA0C95F00920AED /* Shoulder-Charge */,
 				08AEE2DE2FA0C96200920AED /* Shoulder-ChargeTests */,
 				08AEE2E82FA0C96200920AED /* Shoulder-ChargeUITests */,
@@ -267,6 +273,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15BA6ACD2FA81B3800386366 /* FavoriteLeagues+CoreDataProperties.swift in Sources */,
+				15BA6ACE2FA81B3800386366 /* FavoriteLeagues+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,8 +13,11 @@ class LeaguesRouter : LeaguesRouterProtocol{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "LeaguesViewController") as! LeaguesViewController
         let repository = LeaguesRepository()
+        let favManger = FavoriteManager.shared
         let router = LeaguesRouter()
-        let presenter = LeaguesPresenter(repository: repository, view: view, router: router,  sportType: sportType)
+        let presenter = LeaguesPresenter(repository: repository, view: view, router: router,  sportType: sportType,
+             favoriteManager: favManger
+        )
         view.leaguesPresenter = presenter
         return view
     }

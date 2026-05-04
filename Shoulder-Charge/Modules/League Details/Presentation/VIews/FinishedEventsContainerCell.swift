@@ -48,7 +48,7 @@ class FinishedEventsContainerCell: UICollectionViewCell, UICollectionViewDataSou
         collectionView.reloadData()
     }
     
-    // MARK: - UICollectionViewDataSource
+ 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return events.count
     }
@@ -59,9 +59,9 @@ class FinishedEventsContainerCell: UICollectionViewCell, UICollectionViewDataSou
         return cell
     }
     
-    // MARK: - UICollectionViewDelegateFlowLayout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 32, height: 120)
+        return CGSize(width: collectionView.frame.width - 32, height: 180)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

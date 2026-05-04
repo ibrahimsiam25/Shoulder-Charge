@@ -56,3 +56,4 @@
 "leagueDetails.players"  = "Players";
 "leagueDetails.title"    = "League Details";
 
+"favorites.empty" = "No favorite leagues yet.";

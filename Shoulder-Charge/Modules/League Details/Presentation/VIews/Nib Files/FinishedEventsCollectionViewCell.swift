@@ -46,6 +46,7 @@ class FinishedEventsCollectionViewCell: UICollectionViewCell {
         homeTeamNameLabel.text = model.homeTeam
         awayTeamNameLabel.text = model.awayTeam
         scoreLabel.text = model.result ?? "- : -"
+        
         homeTeamImageView.sd_setImage(with: model.homeTeamLogo,
                                       placeholderImage: UIImage(systemName: "sportscourt.circle"))
         awayTeamImageView.sd_setImage(with: model.awayTeamLogo,
