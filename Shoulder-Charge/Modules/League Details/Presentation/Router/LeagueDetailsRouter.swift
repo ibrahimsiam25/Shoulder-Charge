@@ -6,6 +6,7 @@
 import UIKit
 protocol LeagueDetailsRouterProtocol {
     static func build(leagueId: String, sport: SportType, leagueName: String, leagueLogo: URL?) -> UIViewController
+    func navigateToPlayerDetails(playerId: String, leagueId: String, leagueName: String, sport: SportType, from view: LeagueDetailsViewProtocol)
 }
 
 class LeagueDetailsRouter: LeagueDetailsRouterProtocol {
@@ -31,4 +32,10 @@ class LeagueDetailsRouter: LeagueDetailsRouterProtocol {
         return view
     }
 
+    func navigateToPlayerDetails(playerId: String, leagueId: String, leagueName: String, sport: SportType, from view: LeagueDetailsViewProtocol) {
+        let playerVC = PlayerDetailsRouter.build(sport: sport, playerId: playerId, leagueId: leagueId, leagueName: leagueName)
+        if let vc = view as? UIViewController {
+            vc.navigationController?.pushViewController(playerVC, animated: true)
+        }
+    }
 }

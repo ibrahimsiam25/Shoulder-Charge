@@ -6,4 +6,5 @@
 protocol PlayerDetailsPresenterProtocol {
     func viewDidLoad()
     func getLeagueName() -> String
+    func getPlayer() -> TennisPlayerModel?
 }

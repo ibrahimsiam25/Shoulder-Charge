@@ -14,6 +14,7 @@ class PlayerDetailsPresenter: PlayerDetailsPresenterProtocol {
     private let playerId: String
     private let leagueId: String
     private let leagueName: String
+    private var player: TennisPlayerModel?
 
     init(
         repository: PlayerDetailsRepositoryProtocol,
@@ -37,6 +38,7 @@ class PlayerDetailsPresenter: PlayerDetailsPresenterProtocol {
         Task {
             do {
                 let player = try await repository.getPlayerDetails(sport: sport, leagueId: leagueId, playerId: playerId)
+                self.player = player
                 view?.toggleLoading(false)
                 view?.showPlayerDetails(player)
             } catch {
@@ -48,5 +50,9 @@ class PlayerDetailsPresenter: PlayerDetailsPresenterProtocol {
 
     func getLeagueName() -> String {
         leagueName
+    }
+
+    func getPlayer() -> TennisPlayerModel? {
+        player
     }
 }

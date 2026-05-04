@@ -56,3 +56,21 @@
 "leagueDetails.teams"    = "الفرق";
 "leagueDetails.players"  = "اللاعبين";
 "leagueDetails.title"    = "تفاصيل الدوري";
+
+/* شاشة تفاصيل اللاعب */
+"playerDetails.stats"         = "الإحصائيات";
+"playerDetails.tournaments"   = "البطولات";
+"playerDetails.season"        = "الموسم";
+"playerDetails.rank"          = "الترتيب";
+"playerDetails.titles"        = "الألقاب";
+"playerDetails.matchesWon"    = "فوز";
+"playerDetails.matchesLost"   = "خسارة";
+"playerDetails.hard"          = "هارد";
+"playerDetails.clay"          = "كلاي";
+"playerDetails.grass"         = "عشب";
+"playerDetails.singles"       = "فردي";
+"playerDetails.doubles"       = "زوجي";
+"playerDetails.surface"       = "السطح";
+"playerDetails.prize"         = "الجائزة";
+"playerDetails.country"       = "الدولة";
+"playerDetails.birthdate"     = "تاريخ الميلاد";

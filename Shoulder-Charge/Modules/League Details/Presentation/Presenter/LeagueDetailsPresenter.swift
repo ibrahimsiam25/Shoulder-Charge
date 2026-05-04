@@ -140,4 +140,17 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         }
         UserDefaults.standard.set(favorites, forKey: "favorites")
     }
+
+    func didSelectParticipant(at index: Int, from view: LeagueDetailsViewProtocol) {
+        guard sport == .tennis else { return }
+        let participant = participants[index]
+        guard let playerId = participant.key else { return }
+        router.navigateToPlayerDetails(
+            playerId: String(playerId),
+            leagueId: leagueId,
+            leagueName: leagueName,
+            sport: sport,
+            from: view
+        )
+    }
 }

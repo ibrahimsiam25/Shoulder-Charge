@@ -83,4 +83,23 @@ enum L10n {
         static var players:  String { "leagueDetails.players".localized }
         static var title:    String { "leagueDetails.title".localized }
     }
+
+    enum PlayerDetails {
+        static var stats:       String { "playerDetails.stats".localized }
+        static var tournaments: String { "playerDetails.tournaments".localized }
+        static var season:      String { "playerDetails.season".localized }
+        static var rank:        String { "playerDetails.rank".localized }
+        static var titles:      String { "playerDetails.titles".localized }
+        static var matchesWon:  String { "playerDetails.matchesWon".localized }
+        static var matchesLost: String { "playerDetails.matchesLost".localized }
+        static var hard:        String { "playerDetails.hard".localized }
+        static var clay:        String { "playerDetails.clay".localized }
+        static var grass:       String { "playerDetails.grass".localized }
+        static var singles:     String { "playerDetails.singles".localized }
+        static var doubles:     String { "playerDetails.doubles".localized }
+        static var surface:     String { "playerDetails.surface".localized }
+        static var prize:       String { "playerDetails.prize".localized }
+        static var country:     String { "playerDetails.country".localized }
+        static var birthdate:   String { "playerDetails.birthdate".localized }
+    }
 }

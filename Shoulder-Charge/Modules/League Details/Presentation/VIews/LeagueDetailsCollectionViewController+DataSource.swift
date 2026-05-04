@@ -73,4 +73,10 @@ extension LeagueDetailsCollectionViewController {
         header.titleLabel.text = presenter.getTitleForSection(at: indexPath.section)
         return header
     }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sectionType = presenter.getSectionType(at: indexPath.section)
+        guard sectionType == .participants else { return }
+        presenter.didSelectParticipant(at: indexPath.item, from: self)
+    }
 }

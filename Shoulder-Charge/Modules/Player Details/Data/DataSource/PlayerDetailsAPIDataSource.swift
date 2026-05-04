@@ -3,6 +3,8 @@
 //  Shoulder-Charge
 //
 
+import Foundation
+
 class PlayerDetailsAPIDataSource {
 
     private let client: NetworkClient

@@ -56,3 +56,21 @@
 "leagueDetails.players"  = "Players";
 "leagueDetails.title"    = "League Details";
 
+/* Player Details Screen */
+"playerDetails.stats"         = "Statistics";
+"playerDetails.tournaments"   = "Tournaments";
+"playerDetails.season"        = "Season";
+"playerDetails.rank"          = "Rank";
+"playerDetails.titles"        = "Titles";
+"playerDetails.matchesWon"    = "Won";
+"playerDetails.matchesLost"   = "Lost";
+"playerDetails.hard"          = "Hard";
+"playerDetails.clay"          = "Clay";
+"playerDetails.grass"         = "Grass";
+"playerDetails.singles"       = "Singles";
+"playerDetails.doubles"       = "Doubles";
+"playerDetails.surface"       = "Surface";
+"playerDetails.prize"         = "Prize";
+"playerDetails.country"       = "Country";
+"playerDetails.birthdate"     = "Born";
+

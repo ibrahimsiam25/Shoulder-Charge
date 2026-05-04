@@ -27,4 +27,5 @@ protocol LeagueDetailsPresenterProtocol {
     func getSportType() -> SportType
     func isFavoriteLeague() -> Bool
     func toggleFavorite()
+    func didSelectParticipant(at index: Int, from view: LeagueDetailsViewProtocol)
 }
