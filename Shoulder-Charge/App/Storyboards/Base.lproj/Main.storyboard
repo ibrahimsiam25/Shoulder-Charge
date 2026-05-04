@@ -224,6 +224,9 @@
                     <tabBarItem key="tabBarItem" title="Favorite" image="star.fill" catalog="system" id="bFb-Mb-UOX">
                         <color key="badgeColor" name="Text Sec"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="favoriteTableView" destination="gv6-oD-ujy" id="gv6-oD-ujy-out"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GrW-uV-Phk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
