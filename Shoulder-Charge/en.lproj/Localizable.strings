@@ -58,6 +58,10 @@
 "leagueDetails.teams"    = "Teams";
 "leagueDetails.players"  = "Players";
 "leagueDetails.title"    = "League Details";
+"leagueDetails.noUpcomingEvents.title" = "No upcoming events";
+"leagueDetails.noUpcomingEvents.subtitle" = "New matches will appear here once they are scheduled.";
+"leagueDetails.noFinishedEvents.title" = "No finished events";
+"leagueDetails.noFinishedEvents.subtitle" = "Completed matches will appear here after they are played.";
 
 
 /* Player Details Screen */

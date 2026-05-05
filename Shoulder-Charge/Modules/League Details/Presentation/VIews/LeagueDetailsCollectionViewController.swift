@@ -7,6 +7,7 @@ class LeagueDetailsCollectionViewController: UICollectionViewController, LeagueD
 
     static let reuseIdentifierFinished    = "finishedCell"
     static let reuseIdentifierUpComing    = "upcomingCell"
+    static let reuseIdentifierEmptyState  = "LeagueDetailsEmptyStateCollectionViewCell"
     static let reuseIdentifierParticipant = "LeagueParticipantCollectionViewCell"
     static let containerReuseIdentifier   = "FinishedEventsContainerCell"
     static let headerReuseIdentifier      = "SectionHeaderView"
@@ -124,6 +125,7 @@ class LeagueDetailsCollectionViewController: UICollectionViewController, LeagueD
   
     private func setupCells() {
         collectionView.register(UINib(nibName: "UpComingEventsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Self.reuseIdentifierUpComing)
+        collectionView.register(UINib(nibName: "LeagueDetailsEmptyStateCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Self.reuseIdentifierEmptyState)
         collectionView.register(UINib(nibName: "FinishedEventsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Self.reuseIdentifierFinished)
         collectionView.register(UINib(nibName: "LeagueParticipantCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: Self.reuseIdentifierParticipant)
         collectionView.register(FinishedEventsContainerCell.self, forCellWithReuseIdentifier: Self.containerReuseIdentifier)
@@ -144,6 +146,7 @@ class LeagueDetailsCollectionViewController: UICollectionViewController, LeagueD
 
     func reloadData() {
         isDataLoaded = true
+        collectionView.collectionViewLayout.invalidateLayout()
         collectionView.reloadData()
     }
 

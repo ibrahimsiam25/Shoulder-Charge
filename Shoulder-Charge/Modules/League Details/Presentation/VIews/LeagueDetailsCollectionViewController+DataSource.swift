@@ -18,8 +18,13 @@ extension LeagueDetailsCollectionViewController {
                                  numberOfItemsInSection section: Int) -> Int {
         let sectionType = presenter.getSectionType(at: section)
         switch sectionType {
-        case .upcoming:     return presenter.getUpcomingEventsCount()
-        case .past:         return presenter.getPastEventsCount() > 0 ? 1 : 0
+        case .upcoming:
+            guard isDataLoaded else { return 0 }
+            let upcomingEventsCount = presenter.getUpcomingEventsCount()
+            return upcomingEventsCount > 0 ? upcomingEventsCount : 1
+        case .past:
+            guard isDataLoaded else { return 0 }
+            return 1
         case .participants: return presenter.getParticipantsCount()
         }
     }
@@ -30,6 +35,18 @@ extension LeagueDetailsCollectionViewController {
         
         switch sectionType {
         case .upcoming:
+            if presenter.getUpcomingEventsCount() == 0 {
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: LeagueDetailsCollectionViewController.reuseIdentifierEmptyState,
+                    for: indexPath
+                ) as! LeagueDetailsEmptyStateCollectionViewCell
+                cell.configure(
+                    title: L10n.LeagueDetails.noUpcomingEventsTitle,
+                    subtitle: L10n.LeagueDetails.noUpcomingEventsSubtitle
+                )
+                return cell
+            }
+            
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: LeagueDetailsCollectionViewController.reuseIdentifierUpComing, for: indexPath
             ) as! UpComingEventsCollectionViewCell
@@ -37,6 +54,18 @@ extension LeagueDetailsCollectionViewController {
             return cell
 
         case .past:
+            if presenter.getPastEventsCount() == 0 {
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: LeagueDetailsCollectionViewController.reuseIdentifierEmptyState,
+                    for: indexPath
+                ) as! LeagueDetailsEmptyStateCollectionViewCell
+                cell.configure(
+                    title: L10n.LeagueDetails.noFinishedEventsTitle,
+                    subtitle: L10n.LeagueDetails.noFinishedEventsSubtitle
+                )
+                return cell
+            }
+            
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: LeagueDetailsCollectionViewController.containerReuseIdentifier, for: indexPath
             ) as! FinishedEventsContainerCell

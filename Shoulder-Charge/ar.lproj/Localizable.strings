@@ -59,6 +59,10 @@
 "leagueDetails.teams"    = "الفرق";
 "leagueDetails.players"  = "اللاعبين";
 "leagueDetails.title"    = "تفاصيل الدوري";
+"leagueDetails.noUpcomingEvents.title" = "لا توجد مباريات قادمة";
+"leagueDetails.noUpcomingEvents.subtitle" = "ستظهر المباريات الجديدة هنا عند جدولتها.";
+"leagueDetails.noFinishedEvents.title" = "لا توجد مباريات منتهية";
+"leagueDetails.noFinishedEvents.subtitle" = "ستظهر المباريات المكتملة هنا بعد لعبها.";
 "favorites.empty.title"    = "لا توجد مفضلات بعد";
 "favorites.empty.subtitle" = "أضف دوريات إلى مفضلتك لتجدها هنا";
 /* شاشة تفاصيل اللاعب */

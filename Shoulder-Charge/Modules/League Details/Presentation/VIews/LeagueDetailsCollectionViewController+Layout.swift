@@ -16,12 +16,18 @@ extension LeagueDetailsCollectionViewController {
             let height = UIScreen.main.bounds.height
             switch sectionType {
             case .upcoming:
-                return self.makeHorizontalSection(height: height * 0.18, itemWidth: 0.85)
+                if self.isDataLoaded && self.presenter.getUpcomingEventsCount() == 0 {
+                    return self.makeEmptyStateSection(height: height * 0.2)
+                }
+                return self.makeHorizontalSection(height: height * 0.2, itemWidth: 0.85)
             case .past:
+                if self.isDataLoaded && self.presenter.getPastEventsCount() == 0 {
+                    return self.makeEmptyStateSection(height: height * 0.2)
+                }
                 // height * 0.4
                 return self.makeVerticalContainerSection()
             case .participants:
-                return self.makeHorizontalSection(height: height * 0.15, itemWidth: 0.3)
+                return self.makeHorizontalSection(height: height * 0.14, itemWidth: 0.25)
             }
         }
     }
@@ -38,7 +44,7 @@ extension LeagueDetailsCollectionViewController {
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 8, bottom: 10, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .absolute(30))
@@ -63,6 +69,31 @@ extension LeagueDetailsCollectionViewController {
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                heightDimension: .absolute(sectionHeight))
         let group     = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)
+        
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .absolute(30))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        section.boundarySupplementaryItems = [header]
+        
+        return section
+    }
+    
+    private func makeEmptyStateSection(height: CGFloat) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                              heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 8)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .absolute(height))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)

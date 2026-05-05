@@ -56,39 +56,14 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
                 self.upcomingEvents = upcomingResult
                 self.participants  = participantsResult
                 
-                if self.pastEvents.isEmpty && self.upcomingEvents.isEmpty {
-                    print("DEBUG: API returned 0 events for league \(self.leagueId). Adding mock data for layout verification.")
-                    self.addMockData()
-                }
-                
                 view?.toggleLoading(false)
                 view?.reloadData()
-            } catch {
+            } catch let error{
+                print("error : \(error.localizedDescription)")
                 view?.toggleLoading(false)
-                print("DEBUG: Error fetching league details: \(error)")
-                self.addMockData()
                 view?.reloadData()
             }
         }
-    }
-
-    private func addMockData() {
-        let mockEvent = UnifiedEventModel(
-            eventKey: 1,
-            date: "2026-05-10",
-            time: "18:00",
-            homeTeam: "Mock Home Team",
-            awayTeam: "Mock Away Team",
-            homeTeamLogo: nil,
-            awayTeamLogo: nil,
-            result: "2 - 1",
-            status: "Upcoming",
-            leagueName: "Mock League",
-            leagueRound: "Final",
-            leagueSeason: "2026"
-        )
-        self.upcomingEvents = [mockEvent, mockEvent, mockEvent]
-        self.pastEvents = [mockEvent, mockEvent]
     }
 
     func numberOfSections() -> Int {
@@ -114,9 +89,9 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         
         switch section {
         case .upcoming:
-            return upcomingEvents.count > 0 ? L10n.LeagueDetails.upcoming : ""
+            return L10n.LeagueDetails.upcoming
         case .past:
-            return pastEvents.count > 0 ? L10n.LeagueDetails.finished : ""
+            return L10n.LeagueDetails.finished
         case .participants:
             if participants.count > 0 {
                 return sport == .tennis ? L10n.LeagueDetails.players : L10n.LeagueDetails.teams
