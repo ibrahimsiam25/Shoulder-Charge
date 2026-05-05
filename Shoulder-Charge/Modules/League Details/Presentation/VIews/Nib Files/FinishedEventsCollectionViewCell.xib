@@ -11,44 +11,44 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FinishedEventsCollectionViewCell" reuseIdentifier="finishedCell" id="fEC-FN-2aB" customClass="FinishedEventsCollectionViewCell" customModule="Shoulder_Charge" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="334" height="205"/>
+            <rect key="frame" x="0.0" y="0.0" width="334" height="184"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="334" height="205"/>
+                <rect key="frame" x="0.0" y="0.0" width="334" height="184"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2026-05-15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFL-cx-h7U">
-                        <rect key="frame" x="21" y="21" width="116" height="14"/>
+                        <rect key="frame" x="21" y="16" width="116" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" name="Text Sec"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hTI-uG-qDz">
-                        <rect key="frame" x="20" y="55.000000000000007" width="83.666666666666671" height="83.666666666666686"/>
+                        <rect key="frame" x="20" y="45.999999999999993" width="73.333333333333329" height="73.333333333333314"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="hTI-uG-qDz" secondAttribute="height" id="z96-XL-INn"/>
                         </constraints>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aTI-tJ-Fmc">
-                        <rect key="frame" x="230.66666666666666" y="55.000000000000007" width="83.333333333333343" height="83.666666666666686"/>
+                        <rect key="frame" x="240.66666666666666" y="45.999999999999993" width="73.333333333333343" height="73.333333333333314"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="aTI-tJ-Fmc" secondAttribute="height" id="Pqw-oM-48l"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Away Team" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNL-02-Cb">
-                        <rect key="frame" x="221.66666666666666" y="146.66666666666666" width="101.33333333333334" height="14.333333333333343"/>
+                        <rect key="frame" x="231.66666666666666" y="127.33333333333333" width="91.333333333333343" height="14.333333333333329"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" name="Text Primary"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 - 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scL-03-Dc">
-                        <rect key="frame" x="106.66666666666669" y="88" width="121" height="29"/>
+                        <rect key="frame" x="96.333333333333329" y="77.666666666666671" width="141.33333333333337" height="29"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                         <color key="textColor" name="Primary"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Team" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNL-01-Ba">
-                        <rect key="frame" x="11" y="146.66666666666666" width="101.66666666666667" height="14.333333333333343"/>
+                        <rect key="frame" x="11" y="127.33333333333333" width="91.333333333333329" height="14.333333333333329"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" name="Text Primary"/>
                         <nil key="highlightedColor"/>
@@ -58,27 +58,27 @@
             <viewLayoutGuide key="safeArea" id="ZTh-uL-8eu"/>
             <color key="backgroundColor" name="Surface"/>
             <constraints>
-                <constraint firstItem="hTI-uG-qDz" firstAttribute="width" secondItem="fEC-FN-2aB" secondAttribute="width" multiplier="0.25" id="E9H-cc-IVM"/>
+                <constraint firstItem="hTI-uG-qDz" firstAttribute="width" secondItem="fEC-FN-2aB" secondAttribute="width" multiplier="0.22" id="E9H-cc-IVM"/>
                 <constraint firstItem="scL-03-Dc" firstAttribute="centerY" secondItem="fEC-FN-2aB" secondAttribute="centerY" id="ILU-TL-b9k"/>
                 <constraint firstItem="aTI-tJ-Fmc" firstAttribute="leading" secondItem="scL-03-Dc" secondAttribute="trailing" constant="3" id="J4c-Wm-R18"/>
                 <constraint firstItem="hNL-01-Ba" firstAttribute="leading" secondItem="hTI-uG-qDz" secondAttribute="leading" constant="-9" id="JGF-NO-X8p"/>
                 <constraint firstItem="hNL-01-Ba" firstAttribute="top" secondItem="hTI-uG-qDz" secondAttribute="bottom" constant="8" symbolic="YES" id="K4V-L2-rvr"/>
                 <constraint firstItem="aNL-02-Cb" firstAttribute="leading" secondItem="aTI-tJ-Fmc" secondAttribute="leading" constant="-9" id="TGk-Rh-HvV"/>
-                <constraint firstItem="aTI-tJ-Fmc" firstAttribute="width" secondItem="fEC-FN-2aB" secondAttribute="width" multiplier="0.25" id="XSs-9X-ycx"/>
+                <constraint firstItem="aTI-tJ-Fmc" firstAttribute="width" secondItem="fEC-FN-2aB" secondAttribute="width" multiplier="0.22" id="XSs-9X-ycx"/>
                 <constraint firstItem="scL-03-Dc" firstAttribute="leading" secondItem="hTI-uG-qDz" secondAttribute="trailing" constant="3" id="YJu-f5-M72"/>
-                <constraint firstAttribute="top" secondItem="dFL-cx-h7U" secondAttribute="top" constant="-21" id="a1T-yJ-3ZF"/>
+                <constraint firstAttribute="top" secondItem="dFL-cx-h7U" secondAttribute="top" constant="-16" id="a1T-yJ-3ZF"/>
                 <constraint firstItem="hTI-uG-qDz" firstAttribute="leading" secondItem="ZTh-uL-8eu" secondAttribute="leading" constant="20" id="aWy-Ar-Z7J"/>
                 <constraint firstItem="hNL-01-Ba" firstAttribute="trailing" secondItem="hTI-uG-qDz" secondAttribute="trailing" constant="9" id="bTo-VX-fy0"/>
                 <constraint firstItem="scL-03-Dc" firstAttribute="centerX" secondItem="fEC-FN-2aB" secondAttribute="centerX" id="bgI-9q-Zkg"/>
                 <constraint firstItem="ZTh-uL-8eu" firstAttribute="trailing" secondItem="aTI-tJ-Fmc" secondAttribute="trailing" constant="20" id="iac-1H-2V0"/>
-                <constraint firstItem="hTI-uG-qDz" firstAttribute="top" secondItem="dFL-cx-h7U" secondAttribute="bottom" constant="20" id="kY1-kg-xhA"/>
+                <constraint firstItem="hTI-uG-qDz" firstAttribute="top" secondItem="dFL-cx-h7U" secondAttribute="bottom" constant="16" id="kY1-kg-xhA"/>
                 <constraint firstItem="dFL-cx-h7U" firstAttribute="width" secondItem="fEC-FN-2aB" secondAttribute="width" multiplier="0.347305" id="nAD-ap-qvR"/>
                 <constraint firstItem="dFL-cx-h7U" firstAttribute="leading" secondItem="fEC-FN-2aB" secondAttribute="leading" constant="21" id="pOQ-lp-Rp2"/>
-                <constraint firstItem="aTI-tJ-Fmc" firstAttribute="top" secondItem="dFL-cx-h7U" secondAttribute="bottom" constant="20" id="unD-in-n8s"/>
+                <constraint firstItem="aTI-tJ-Fmc" firstAttribute="top" secondItem="dFL-cx-h7U" secondAttribute="bottom" constant="16" id="unD-in-n8s"/>
                 <constraint firstItem="aNL-02-Cb" firstAttribute="top" secondItem="aTI-tJ-Fmc" secondAttribute="bottom" constant="8" symbolic="YES" id="wzf-qt-fyE"/>
                 <constraint firstItem="aNL-02-Cb" firstAttribute="trailing" secondItem="aTI-tJ-Fmc" secondAttribute="trailing" constant="9" id="y3P-iU-QFN"/>
             </constraints>
-            <size key="customSize" width="334" height="205"/>
+            <size key="customSize" width="334" height="184"/>
             <connections>
                 <outlet property="awayTeamImageView" destination="aTI-tJ-Fmc" id="AI2-Cd-103"/>
                 <outlet property="awayTeamNameLabel" destination="aNL-02-Cb" id="AN2-Ef-205"/>
@@ -87,7 +87,7 @@
                 <outlet property="homeTeamNameLabel" destination="hNL-01-Ba" id="HN2-Ed-404"/>
                 <outlet property="scoreLabel" destination="scL-03-Dc" id="SC1-Gg-506"/>
             </connections>
-            <point key="canvasLocation" x="123.66412213740458" y="122.1830985915493"/>
+            <point key="canvasLocation" x="123.66412213740458" y="114.78873239436621"/>
         </collectionViewCell>
     </objects>
     <resources>

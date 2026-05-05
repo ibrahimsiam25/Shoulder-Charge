@@ -61,7 +61,8 @@ class FinishedEventsContainerCell: UICollectionViewCell, UICollectionViewDataSou
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 32, height: 180)
+        let height = UIScreen.main.bounds.height
+        return CGSize(width: collectionView.frame.width - 32, height: height * 0.19)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
