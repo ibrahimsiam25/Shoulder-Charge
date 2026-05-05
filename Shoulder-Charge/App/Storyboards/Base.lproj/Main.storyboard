@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RootNav">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cF3-EH-RnE">
     <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
@@ -224,12 +224,12 @@
                             <constraint firstItem="xwr-bI-dmI" firstAttribute="leading" secondItem="47q-7m-vtI" secondAttribute="leading" id="9HL-3K-ywT"/>
                             <constraint firstItem="gv6-oD-ujy" firstAttribute="width" secondItem="fbU-5n-Zad" secondAttribute="width" id="XBP-In-PmB"/>
                             <constraint firstItem="47q-7m-vtI" firstAttribute="bottom" secondItem="gv6-oD-ujy" secondAttribute="bottom" id="dJx-uV-HYU"/>
+                            <constraint firstItem="fav-SB-001" firstAttribute="height" constant="56" id="fav-SB-h"/>
+                            <constraint firstItem="fav-SB-001" firstAttribute="leading" secondItem="47q-7m-vtI" secondAttribute="leading" id="fav-SB-lead"/>
+                            <constraint firstItem="fav-SB-001" firstAttribute="top" secondItem="xwr-bI-dmI" secondAttribute="bottom" id="fav-SB-top"/>
+                            <constraint firstItem="fav-SB-001" firstAttribute="trailing" secondItem="47q-7m-vtI" secondAttribute="trailing" id="fav-SB-trail"/>
                             <constraint firstAttribute="top" secondItem="xwr-bI-dmI" secondAttribute="top" id="myH-9W-Ee7"/>
                             <constraint firstItem="xwr-bI-dmI" firstAttribute="width" secondItem="fbU-5n-Zad" secondAttribute="width" id="u2m-XR-YH3"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="top" secondItem="xwr-bI-dmI" secondAttribute="bottom" id="fav-SB-top"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="leading" secondItem="47q-7m-vtI" secondAttribute="leading" id="fav-SB-lead"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="trailing" secondItem="47q-7m-vtI" secondAttribute="trailing" id="fav-SB-trail"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="height" constant="56" id="fav-SB-h"/>
                             <constraint firstItem="gv6-oD-ujy" firstAttribute="top" secondItem="fav-SB-001" secondAttribute="bottom" id="xoP-Lf-wfU"/>
                         </constraints>
                     </view>
@@ -360,6 +360,68 @@ high-fidelity sports action.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fS8-zp-Dzi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4143" y="-535"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gRY-yK-Nc5">
+            <objects>
+                <viewController id="cF3-EH-RnE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R6c-DA-GHv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdn-2z-BM6">
+                                <rect key="frame" x="16" y="118" width="361" height="128"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rou-et-qXW">
+                                        <rect key="frame" x="8" y="0.0" width="123" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRc-V6-0hS">
+                                        <rect key="frame" x="139" y="17" width="36" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coach Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqc-4c-MQ3">
+                                        <rect key="frame" x="139" y="71" width="99" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Background"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rB-Lv-LjQ">
+                                <rect key="frame" x="-40" y="-18" width="474" height="1380"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stadium" translatesAutoresizingMaskIntoConstraints="NO" id="j50-AS-JRB">
+                                        <rect key="frame" x="40" y="298" width="393" height="524"/>
+                                    </imageView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="XZT-FO-yAG"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="aMc-C2-bvW"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JVC-jW-iYg"/>
+                        <color key="backgroundColor" name="Surface"/>
+                        <constraints>
+                            <constraint firstItem="j50-AS-JRB" firstAttribute="width" secondItem="R6c-DA-GHv" secondAttribute="width" id="DR7-V2-bfk"/>
+                            <constraint firstItem="j50-AS-JRB" firstAttribute="top" secondItem="Pdn-2z-BM6" secondAttribute="bottom" constant="34" id="VmA-Gw-YWY"/>
+                            <constraint firstItem="j50-AS-JRB" firstAttribute="height" secondItem="R6c-DA-GHv" secondAttribute="height" multiplier="0.615023" id="XJw-X0-Wfz"/>
+                            <constraint firstItem="Pdn-2z-BM6" firstAttribute="height" secondItem="R6c-DA-GHv" secondAttribute="height" multiplier="0.150235" id="ZgZ-xV-dmn"/>
+                            <constraint firstItem="Pdn-2z-BM6" firstAttribute="top" secondItem="JVC-jW-iYg" secondAttribute="top" id="pdN-ks-M9H"/>
+                            <constraint firstItem="JVC-jW-iYg" firstAttribute="leading" secondItem="j50-AS-JRB" secondAttribute="leading" id="rlV-FW-o1x"/>
+                            <constraint firstItem="JVC-jW-iYg" firstAttribute="trailing" secondItem="Pdn-2z-BM6" secondAttribute="trailing" constant="16" id="s6Q-BL-get"/>
+                            <constraint firstItem="Pdn-2z-BM6" firstAttribute="leading" secondItem="JVC-jW-iYg" secondAttribute="leading" constant="16" id="zOa-Na-iXh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klQ-fz-5a9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4901.5267175572517" y="-217.60563380281693"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Ksd-Fh-ST0">
@@ -532,7 +594,7 @@ high-fidelity sports action.</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdv-fr-001" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5800" y="-535"/>
+            <point key="canvasLocation" x="4888" y="-886"/>
         </scene>
     </scenes>
     <resources>
@@ -540,6 +602,7 @@ high-fidelity sports action.</string>
         <image name="SplashCenter" width="185" height="188"/>
         <image name="SplashLeft" width="136" height="253"/>
         <image name="SplashRight" width="131" height="243"/>
+        <image name="Stadium" width="748" height="1120"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="globe" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
