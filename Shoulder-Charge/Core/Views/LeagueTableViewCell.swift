@@ -71,9 +71,8 @@ class LeagueTableViewCell: UITableViewCell {
           subtitleLabel.text = model.displaySubTitle
           self.onStarTapped = onStarTapped
           self.isFavorite = isFavorite
-          let placeholder = UIImage(systemName: "globe")?
-              .withTintColor(UIColor(named: "Primary") ?? .gray, renderingMode: .alwaysOriginal)
-
+          let placeholder = UIImage(named: "LeagueLogo")
+              
           leagueImageView.sd_setImage(
               with: model.logoURL,
               placeholderImage: placeholder
