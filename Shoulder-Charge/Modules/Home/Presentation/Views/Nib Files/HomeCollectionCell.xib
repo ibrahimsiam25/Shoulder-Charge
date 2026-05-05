@@ -20,16 +20,18 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccer" translatesAutoresizingMaskIntoConstraints="NO" id="Q8v-3H-2Fh">
                         <rect key="frame" x="0.0" y="0.0" width="211" height="188"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soccer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnM-dA-sOt">
-                        <rect key="frame" x="52.666666666666657" y="118" width="106" height="39"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soccer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnM-dA-sOt">
+                        <rect key="frame" x="12" y="124.66666666666667" width="187" height="32.333333333333329"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                         <color key="textColor" name="Text Primary"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Q8v-3H-2Fh" firstAttribute="centerX" secondItem="Kc0-Uc-e0p" secondAttribute="centerX" id="BHX-aV-ran"/>
+                    <constraint firstAttribute="trailing" secondItem="jnM-dA-sOt" secondAttribute="trailing" constant="12" id="K2q-5B-4IV"/>
                     <constraint firstAttribute="bottom" secondItem="jnM-dA-sOt" secondAttribute="bottom" constant="31" id="Lte-q0-nHV"/>
+                    <constraint firstItem="jnM-dA-sOt" firstAttribute="leading" secondItem="Kc0-Uc-e0p" secondAttribute="leading" constant="12" id="P1b-wO-nbX"/>
                     <constraint firstItem="jnM-dA-sOt" firstAttribute="centerX" secondItem="Kc0-Uc-e0p" secondAttribute="centerX" id="S1u-6H-NiG"/>
                     <constraint firstItem="Q8v-3H-2Fh" firstAttribute="width" secondItem="Kc0-Uc-e0p" secondAttribute="width" id="hAz-Ct-2lW"/>
                     <constraint firstItem="Q8v-3H-2Fh" firstAttribute="centerY" secondItem="Kc0-Uc-e0p" secondAttribute="centerY" id="jxh-E2-bXS"/>
