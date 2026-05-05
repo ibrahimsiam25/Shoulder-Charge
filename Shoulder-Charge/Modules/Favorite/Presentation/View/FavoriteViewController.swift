@@ -11,54 +11,7 @@ class FavoriteViewController: UIViewController {
     private var isPerformingBatchDelete = false
 
     // MARK: – Empty State
-    private lazy var emptyStateView: UIView = {
-        let container = UIView()
-        container.isHidden = true
-        container.translatesAutoresizingMaskIntoConstraints = false
-
-        // Icon
-        let iconConfig = UIImage.SymbolConfiguration(pointSize: 72, weight: .thin)
-        let iconImage = UIImage(systemName: "star.slash.fill", withConfiguration: iconConfig)
-        let iconView = UIImageView(image: iconImage)
-        iconView.tintColor = UIColor(named: "Primary")
-        iconView.contentMode = .scaleAspectFit
-        iconView.translatesAutoresizingMaskIntoConstraints = false
-
-        // Title
-        let titleLabel = UILabel()
-        titleLabel.text = L10n.Favorites.emptyTitle
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = UIColor(named: "Text Primary")
-        titleLabel.font = .systemFont(ofSize: 22, weight: .semibold)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        // Subtitle
-        let subtitleLabel = UILabel()
-        subtitleLabel.text = L10n.Favorites.emptySubtitle
-        subtitleLabel.textAlignment = .center
-        subtitleLabel.textColor = UIColor(named: "Text Sec")
-        subtitleLabel.font = .systemFont(ofSize: 15, weight: .regular)
-        subtitleLabel.numberOfLines = 2
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        // Stack
-        let stack = UIStackView(arrangedSubviews: [iconView, titleLabel, subtitleLabel])
-        stack.axis = .vertical
-        stack.alignment = .center
-        stack.spacing = 12
-        stack.translatesAutoresizingMaskIntoConstraints = false
-
-        container.addSubview(stack)
-        NSLayoutConstraint.activate([
-            iconView.heightAnchor.constraint(equalToConstant: 80),
-            stack.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 32),
-            stack.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -32),
-            stack.centerYAnchor.constraint(equalTo: container.centerYAnchor),
-            stack.centerXAnchor.constraint(equalTo: container.centerXAnchor)
-        ])
-
-        return container
-    }()
+    private let emptyStateView = FavoriteEmptyStateView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +44,9 @@ class FavoriteViewController: UIViewController {
         favoriteTableView.separatorStyle = .none
         favoriteTableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
 
+        emptyStateView.isHidden = true
+        emptyStateView.translatesAutoresizingMaskIntoConstraints = false
+        emptyStateView.configure()
         view.addSubview(emptyStateView)
         NSLayoutConstraint.activate([
             emptyStateView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
