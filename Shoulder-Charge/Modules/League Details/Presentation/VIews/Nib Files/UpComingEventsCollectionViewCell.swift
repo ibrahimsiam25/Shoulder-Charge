@@ -26,14 +26,20 @@ class UpComingEventsCollectionViewCell: UICollectionViewCell {
         setupGradient()
         badgeView.backgroundColor = UIColor(named: "Primary")?.withAlphaComponent(0.2)
         contentView.layer.cornerRadius = 16
-        contentView.layer.borderWidth = 1
+        contentView.layer.borderWidth = 2
         contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
         contentView.clipsToBounds = true
+
+        layer.shadowColor = UIColor(named: "Border")?.cgColor
+        layer.shadowOpacity = 0.08
+        layer.shadowRadius = 8
+        layer.shadowOffset = CGSize(width: 0, height: 2)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = contentView.bounds
+        layer.shadowPath = UIBezierPath(roundedRect: contentView.frame, cornerRadius: 16).cgPath
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -42,6 +48,7 @@ class UpComingEventsCollectionViewCell: UICollectionViewCell {
             applyGradientColors()
             badgeView.backgroundColor = UIColor(named: "Primary")?.withAlphaComponent(0.2)
             contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
+            layer.shadowColor = UIColor(named: "Border")?.cgColor
         }
     }
 
@@ -51,9 +58,9 @@ class UpComingEventsCollectionViewCell: UICollectionViewCell {
         awayTeamNameLabel.text = model.awayTeam
         badgeLabel.text = model.status
         homeTeamImageView.sd_setImage(with: model.homeTeamLogo,
-                                      placeholderImage: UIImage(systemName: "sportscourt.circle"))
+                                      placeholderImage: UIImage(named: "LeagueLogo"))
         awayTeamImageView.sd_setImage(with: model.awayTeamLogo,
-                                      placeholderImage: UIImage(systemName: "sportscourt.circle"))
+                                      placeholderImage: UIImage(named: "sLeagueLogo"))
     }
 
     private func setupGradient() {

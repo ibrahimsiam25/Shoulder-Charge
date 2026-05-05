@@ -42,6 +42,9 @@
 "onboarding.skip"                = "Skip";
 
 
+/* Favorites Screen */
+"favorites.title"               = "Favorites";
+
 /* Home Screen */
 
 "home.soccer" = "SOCCER";

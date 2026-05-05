@@ -20,13 +20,16 @@ class LeagueParticipantCollectionViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        participantImageView.layer.cornerRadius = participantImageView.frame.width / 2
+        let radius = participantImageView.frame.width / 2
+        participantImageView.layer.cornerRadius = radius
+        layer.shadowPath = UIBezierPath(ovalIn: participantImageView.frame).cgPath
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
             participantImageView.layer.borderColor = UIColor(named: "Border")?.cgColor
+            layer.shadowColor = UIColor(named: "Border")?.cgColor
         }
     }
 
@@ -35,13 +38,18 @@ class LeagueParticipantCollectionViewCell: UICollectionViewCell {
         participantImageView.contentMode = .scaleAspectFill
         participantImageView.layer.borderWidth = 1.5
         participantImageView.layer.borderColor = UIColor(named: "Border")?.cgColor
+
+        layer.shadowColor = UIColor(named: "Border")?.cgColor
+        layer.shadowOpacity = 0.08
+        layer.shadowRadius = 8
+        layer.shadowOffset = CGSize(width: 0, height: 2)
     }
 
     func configure(with model:LeagueParticipantDisplayModel) {
         participantNameLabel.text = model.name
         participantImageView.sd_setImage(
             with: model.logoURL,
-            placeholderImage: UIImage(systemName: "person.circle")
+            placeholderImage: UIImage(named: "LeagueLogo")
         )
     }
 }

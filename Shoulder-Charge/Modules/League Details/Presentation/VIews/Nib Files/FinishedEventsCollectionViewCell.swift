@@ -26,11 +26,17 @@ class FinishedEventsCollectionViewCell: UICollectionViewCell {
         contentView.layer.borderWidth = 1
         contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
         contentView.clipsToBounds = true
+
+        layer.shadowColor = UIColor(named: "Text Primary")?.cgColor
+        layer.shadowOpacity = 0.05
+        layer.shadowRadius = 8
+        layer.shadowOffset = CGSize(width: 0, height: 2)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = contentView.bounds
+        layer.shadowPath = UIBezierPath(roundedRect: contentView.frame, cornerRadius: 16).cgPath
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -38,6 +44,7 @@ class FinishedEventsCollectionViewCell: UICollectionViewCell {
         if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
             applyGradientColors()
             contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
+            
         }
     }
 
@@ -48,9 +55,9 @@ class FinishedEventsCollectionViewCell: UICollectionViewCell {
         scoreLabel.text = model.result ?? "- : -"
         
         homeTeamImageView.sd_setImage(with: model.homeTeamLogo,
-                                      placeholderImage: UIImage(systemName: "sportscourt.circle"))
+                                      placeholderImage: UIImage(named: "LeagueLogo"))
         awayTeamImageView.sd_setImage(with: model.awayTeamLogo,
-                                      placeholderImage: UIImage(systemName: "sportscourt.circle"))
+                                      placeholderImage: UIImage(named: "LeagueLogo"))
     }
 
     private func setupGradient() {

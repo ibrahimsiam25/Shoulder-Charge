@@ -42,7 +42,7 @@ class FavoriteViewController: UIViewController {
     }
 
     private func setupUI() {
-        title = "Favorites"
+        title = L10n.Favorites.title
         searchBar.placeholder = L10n.Leagues.searchPlaceholder
         searchBar.delegate = self
 

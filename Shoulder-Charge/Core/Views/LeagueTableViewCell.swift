@@ -36,8 +36,8 @@ class LeagueTableViewCell: UITableViewCell {
         contentView.layer.borderWidth = 2
         contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
 
-        layer.shadowColor = UIColor(named: "Border")?.cgColor
-        layer.shadowOpacity = 0.08
+        layer.shadowColor = UIColor(named: "Text Primary")?.cgColor
+        layer.shadowOpacity = 0.03
         layer.shadowRadius = 8
         layer.shadowOffset = CGSize(width: 0, height: 2)
 
