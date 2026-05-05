@@ -17,7 +17,7 @@ class HomeCollectionCell: UICollectionViewCell {
         
         contentView.layer.cornerRadius = 20
         contentView.clipsToBounds = true
-        
+        titleLbl.textColor = .white
 
     }
 

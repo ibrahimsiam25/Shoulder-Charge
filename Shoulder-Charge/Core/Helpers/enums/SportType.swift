@@ -20,10 +20,10 @@ enum SportType:String {
     
     var image: String {
         switch self {
-        case .football:    return "soccer"
-        case .basketball:  return "basket"
-        case .tennis:      return "tennis"
-        case .cricket:     return "cricket"
+        case .football:    return "FootballHome"
+        case .basketball:  return "BasketballHome"
+        case .tennis:      return "TennisHome"
+        case .cricket:     return "CricketHome"
         }
     }
 
