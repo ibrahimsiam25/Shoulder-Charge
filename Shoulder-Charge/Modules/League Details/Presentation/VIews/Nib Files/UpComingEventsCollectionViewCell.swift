@@ -40,6 +40,14 @@ class UpComingEventsCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         gradientLayer.frame = contentView.bounds
         layer.shadowPath = UIBezierPath(roundedRect: contentView.frame, cornerRadius: 16).cgPath
+        
+        let radius = homeTeamImageView.frame.width / 2
+        homeTeamImageView.layer.cornerRadius = radius
+        homeTeamImageView.clipsToBounds = true
+        awayTeamImageView.layer.cornerRadius = radius
+        awayTeamImageView.clipsToBounds = true
+        setUpImageBorder(image: homeTeamImageView)
+        setUpImageBorder(image: awayTeamImageView)
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -49,6 +57,8 @@ class UpComingEventsCollectionViewCell: UICollectionViewCell {
             badgeView.backgroundColor = UIColor(named: "Primary")?.withAlphaComponent(0.2)
             contentView.layer.borderColor = UIColor(named: "Border")?.cgColor
             layer.shadowColor = UIColor(named: "Border")?.cgColor
+            homeTeamImageView.layer.borderColor = UIColor(named: "Border")?.cgColor
+            awayTeamImageView.layer.borderColor = UIColor(named: "Border")?.cgColor
         }
     }
 
@@ -61,6 +71,11 @@ class UpComingEventsCollectionViewCell: UICollectionViewCell {
                                       placeholderImage: UIImage(named: "LeagueLogo"))
         awayTeamImageView.sd_setImage(with: model.awayTeamLogo,
                                       placeholderImage: UIImage(named: "sLeagueLogo"))
+    }
+
+    private func setUpImageBorder(image: UIImageView) {
+        image.layer.borderWidth = 1.5
+        image.layer.borderColor = UIColor(named: "Border")?.cgColor
     }
 
     private func setupGradient() {

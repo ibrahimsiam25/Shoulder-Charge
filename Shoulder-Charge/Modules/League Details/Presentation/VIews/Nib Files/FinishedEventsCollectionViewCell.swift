@@ -37,6 +37,9 @@ class FinishedEventsCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         gradientLayer.frame = contentView.bounds
         layer.shadowPath = UIBezierPath(roundedRect: contentView.frame, cornerRadius: 16).cgPath
+        
+        setUpImageBorder(image: homeTeamImageView)
+        setUpImageBorder(image: awayTeamImageView)
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -66,6 +69,14 @@ class FinishedEventsCollectionViewCell: UICollectionViewCell {
         gradientLayer.frame      = contentView.bounds
         contentView.layer.insertSublayer(gradientLayer, at: 0)
         applyGradientColors()
+    }
+    
+    private func setUpImageBorder(image : UIImageView){
+        let radius = image.frame.width / 2
+        image.layer.cornerRadius = radius
+        image.clipsToBounds = true
+        image.layer.borderWidth = 1.5
+        image.layer.borderColor = UIColor(named: "Border")?.cgColor
     }
 
     private func applyGradientColors() {
