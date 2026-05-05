@@ -9,16 +9,55 @@ class FavoriteViewController: UIViewController {
     
     var presenter: FavoritePresenterProtocol!
     private var isPerformingBatchDelete = false
-    
-    private let emptyStateLabel: UILabel = {
-        let label = UILabel()
-        label.text = L10n.Favorites.empty
-        label.textAlignment = .center
-        label.textColor = .gray
-        label.font = .systemFont(ofSize: 18, weight: .medium)
-        label.isHidden = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+
+    // MARK: – Empty State
+    private lazy var emptyStateView: UIView = {
+        let container = UIView()
+        container.isHidden = true
+        container.translatesAutoresizingMaskIntoConstraints = false
+
+        // Icon
+        let iconConfig = UIImage.SymbolConfiguration(pointSize: 72, weight: .thin)
+        let iconImage = UIImage(systemName: "star.slash.fill", withConfiguration: iconConfig)
+        let iconView = UIImageView(image: iconImage)
+        iconView.tintColor = UIColor(named: "Primary")
+        iconView.contentMode = .scaleAspectFit
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+
+        // Title
+        let titleLabel = UILabel()
+        titleLabel.text = L10n.Favorites.emptyTitle
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = UIColor(named: "Text Primary")
+        titleLabel.font = .systemFont(ofSize: 22, weight: .semibold)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        // Subtitle
+        let subtitleLabel = UILabel()
+        subtitleLabel.text = L10n.Favorites.emptySubtitle
+        subtitleLabel.textAlignment = .center
+        subtitleLabel.textColor = UIColor(named: "Text Sec")
+        subtitleLabel.font = .systemFont(ofSize: 15, weight: .regular)
+        subtitleLabel.numberOfLines = 2
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        // Stack
+        let stack = UIStackView(arrangedSubviews: [iconView, titleLabel, subtitleLabel])
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.spacing = 12
+        stack.translatesAutoresizingMaskIntoConstraints = false
+
+        container.addSubview(stack)
+        NSLayoutConstraint.activate([
+            iconView.heightAnchor.constraint(equalToConstant: 80),
+            stack.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 32),
+            stack.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -32),
+            stack.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+            stack.centerXAnchor.constraint(equalTo: container.centerXAnchor)
+        ])
+
+        return container
     }()
 
     override func viewDidLoad() {
@@ -52,10 +91,12 @@ class FavoriteViewController: UIViewController {
         favoriteTableView.separatorStyle = .none
         favoriteTableView.register(UINib(nibName: "LeagueTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
 
-        view.addSubview(emptyStateLabel)
+        view.addSubview(emptyStateView)
         NSLayoutConstraint.activate([
-            emptyStateLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emptyStateLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            emptyStateView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emptyStateView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            emptyStateView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            emptyStateView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }
@@ -67,7 +108,7 @@ extension FavoriteViewController: FavoriteViewProtocol {
     }
     
     func toggleEmptyState(visible: Bool) {
-        emptyStateLabel.isHidden = !visible
+        emptyStateView.isHidden = !visible
         favoriteTableView.isHidden = visible
     }
 }
@@ -143,7 +184,7 @@ extension FavoriteViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter.filterFavorites(by: searchText)
     }
-
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()

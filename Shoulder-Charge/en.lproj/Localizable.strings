@@ -77,4 +77,5 @@
 "playerDetails.prize"         = "Prize";
 "playerDetails.country"       = "Country";
 "playerDetails.birthdate"     = "Born";
-"favorites.empty" = "No favorite leagues yet.";
+"favorites.empty.title"    = "No Favorites Yet";
+"favorites.empty.subtitle" = "Star a league to find it here";

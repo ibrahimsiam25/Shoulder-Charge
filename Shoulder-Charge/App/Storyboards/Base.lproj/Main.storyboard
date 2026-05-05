@@ -204,6 +204,12 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="shU-Qi-0Yr" secondAttribute="trailing" constant="20" symbolic="YES" id="zO6-98-2UA"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fav-TL-001">
+                                <rect key="frame" x="16" y="117.99999999999999" width="353.66666666666669" height="51.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for leagues..." translatesAutoresizingMaskIntoConstraints="NO" id="fav-SB-001">
                                 <rect key="frame" x="0.0" y="100" width="393" height="56"/>
                                 <color key="barTintColor" name="Background"/>
@@ -226,7 +232,10 @@
                             <constraint firstItem="47q-7m-vtI" firstAttribute="bottom" secondItem="gv6-oD-ujy" secondAttribute="bottom" id="dJx-uV-HYU"/>
                             <constraint firstAttribute="top" secondItem="xwr-bI-dmI" secondAttribute="top" id="myH-9W-Ee7"/>
                             <constraint firstItem="xwr-bI-dmI" firstAttribute="width" secondItem="fbU-5n-Zad" secondAttribute="width" id="u2m-XR-YH3"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="top" secondItem="xwr-bI-dmI" secondAttribute="bottom" id="fav-SB-top"/>
+                            <constraint firstItem="fav-TL-001" firstAttribute="leading" secondItem="47q-7m-vtI" secondAttribute="leading" constant="16" id="fav-TL-lead"/>
+                            <constraint firstItem="fav-TL-001" firstAttribute="top" secondItem="xwr-bI-dmI" secondAttribute="bottom" constant="18" id="fav-TL-top"/>
+                            <constraint firstItem="fav-TL-001" firstAttribute="width" secondItem="fbU-5n-Zad" secondAttribute="width" multiplier="0.9" id="fav-TL-w"/>
+                            <constraint firstItem="fav-SB-001" firstAttribute="top" secondItem="fav-TL-001" secondAttribute="bottom" constant="4" id="fav-SB-top"/>
                             <constraint firstItem="fav-SB-001" firstAttribute="leading" secondItem="47q-7m-vtI" secondAttribute="leading" id="fav-SB-lead"/>
                             <constraint firstItem="fav-SB-001" firstAttribute="trailing" secondItem="47q-7m-vtI" secondAttribute="trailing" id="fav-SB-trail"/>
                             <constraint firstItem="fav-SB-001" firstAttribute="height" constant="56" id="fav-SB-h"/>
