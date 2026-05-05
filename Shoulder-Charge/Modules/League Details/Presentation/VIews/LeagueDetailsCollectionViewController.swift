@@ -63,7 +63,7 @@ class LeagueDetailsCollectionViewController: UICollectionViewController, LeagueD
         logoImageView.layer.borderWidth = 1
         logoImageView.layer.borderColor = UIColor.gray.withAlphaComponent(0.3).cgColor
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.sd_setImage(with: presenter.getLeagueLogo(), placeholderImage: UIImage(systemName: "circle.fill"))
+        logoImageView.sd_setImage(with: presenter.getLeagueLogo(), placeholderImage: UIImage(named: "LeagueLogo"))
 
         let titleLabel = UILabel()
         titleLabel.text = presenter.getLeagueName()
