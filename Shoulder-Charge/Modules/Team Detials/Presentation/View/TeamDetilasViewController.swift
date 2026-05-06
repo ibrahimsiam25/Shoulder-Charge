@@ -3,13 +3,8 @@ import SDWebImage
 
 class TeamDetilasViewController: UIViewController, TeamDetailsViewProtocol {
 
-    typealias Player = PlayerItem
-
     var presenter: TeamDetailsPresenterProtocol!
-    private var substitutePlayers: [PlayerItem] = []
-    private var substituteSections: [PlayerSection] = []
-    private var validImagePlayerKeys = Set<Int>()
-    private let imageValidator = TeamPlayerImageValidator()
+    private var substituteSections: [PlayerSectionViewModel] = []
     private let loadingIndicator = UIActivityIndicatorView(style: .large)
 
     @IBOutlet weak var tableView: UITableView!
@@ -100,52 +95,11 @@ class TeamDetilasViewController: UIViewController, TeamDetailsViewProtocol {
         teamNameLabel.text = team.teamName
         coachNameLabel.text = "Coach: \(team.coachName)"
         teamLogoImageView.sd_setImage(with: team.teamLogoURL)
-
-        toggleLoading(true)
-        imageValidator.validate(players: team.players) { [weak self] validImagePlayerKeys in
-            guard let self else { return }
-            self.toggleLoading(false)
-            self.validImagePlayerKeys = validImagePlayerKeys
-            self.configureLineup(players: team.players)
-        }
     }
 
-    func configureLineup(players: [Player]) {
-        resetLineupCards()
-
-        let goalkeepers = sortedPlayersByImagePreference(
-            players.filter { $0.positionLine == .goalkeeper }
-        )
-        let defenders = sortedPlayersByImagePreference(
-            players.filter { $0.positionLine == .defender }
-        )
-        let midfielders = sortedPlayersByImagePreference(
-            players.filter { $0.positionLine == .midfielder }
-        )
-        var forwards = sortedPlayersByImagePreference(
-            players.filter { $0.positionLine == .forward || $0.positionLine == .striker }
-        )
-
-        let striker = pickStriker(from: &forwards)
-        var assignedKeys = Set<Int>()
-
-        if let goalkeeper = goalkeepers.first {
-            apply(player: goalkeeper, to: gkView, positionTitle: "GK")
-            assignedKeys.insert(goalkeeper.playerKey)
-        }
-
-        assign(players: defenders, to: defenderViews, positionTitle: "DEF", assignedKeys: &assignedKeys)
-        assign(players: midfielders, to: midfielderViews, positionTitle: "MID", assignedKeys: &assignedKeys)
-
-        if let striker {
-            apply(player: striker, to: stView, positionTitle: "ST")
-            assignedKeys.insert(striker.playerKey)
-        }
-
-        assign(players: forwards, to: forwardViews, positionTitle: "FWD", assignedKeys: &assignedKeys)
-
-        substitutePlayers = players.filter { !assignedKeys.contains($0.playerKey) }
-        substituteSections = makeSubstituteSections(from: substitutePlayers)
+    func showLineup(_ lineup: LineupViewModel, substituteSections: [PlayerSectionViewModel]) {
+        applyLineup(lineup)
+        self.substituteSections = substituteSections
         tableView.reloadData()
     }
 
@@ -153,18 +107,6 @@ class TeamDetilasViewController: UIViewController, TeamDetailsViewProtocol {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
-    }
-
-    private var defenderViews: [PlayerCardView] {
-        [def1View, def2View, def3View, def4View]
-    }
-
-    private var midfielderViews: [PlayerCardView] {
-        [mid1View, mid2View, mid3View]
-    }
-
-    private var forwardViews: [PlayerCardView] {
-        [fwd1View, fwd2View]
     }
 
     private var allCardViews: [PlayerCardView] {
@@ -190,84 +132,33 @@ class TeamDetilasViewController: UIViewController, TeamDetailsViewProtocol {
         }
     }
 
-    private func assign(
-        players: [Player],
-        to views: [PlayerCardView],
-        positionTitle: String,
-        assignedKeys: inout Set<Int>
-    ) {
-        for (view, player) in zip(views, players) {
-            apply(player: player, to: view, positionTitle: positionTitle)
-            assignedKeys.insert(player.playerKey)
-        }
+    private func applyLineup(_ lineup: LineupViewModel) {
+        resetLineupCards()
+        applyLineupCard(lineup.gk, to: gkView)
+        applyLineupCard(lineup.def1, to: def1View)
+        applyLineupCard(lineup.def2, to: def2View)
+        applyLineupCard(lineup.def3, to: def3View)
+        applyLineupCard(lineup.def4, to: def4View)
+        applyLineupCard(lineup.mid1, to: mid1View)
+        applyLineupCard(lineup.mid2, to: mid2View)
+        applyLineupCard(lineup.mid3, to: mid3View)
+        applyLineupCard(lineup.fwd1, to: fwd1View)
+        applyLineupCard(lineup.fwd2, to: fwd2View)
+        applyLineupCard(lineup.st, to: stView)
     }
 
-    private func apply(player: Player, to view: PlayerCardView, positionTitle: String) {
-        view.config(
-            imageURL: player.imageURL?.absoluteString,
-            playerName: player.name,
-            playerPosition: positionTitle,
-            playerNumber: player.number
-        )
+    private func applyLineupCard(_ viewModel: LineupCardViewModel?, to view: PlayerCardView) {
+        if let viewModel {
+            view.config(
+                imageURL: viewModel.imageURL?.absoluteString,
+                playerName: viewModel.name,
+                playerPosition: viewModel.positionTitle,
+                playerNumber: viewModel.number
+            )
+        } else {
+            view.config(imageURL: nil, playerName: nil, playerPosition: nil, playerNumber: nil)
+        }
         view.isHidden = false
-    }
-
-    private func pickStriker(from forwards: inout [Player]) -> Player? {
-        if let index = forwards.firstIndex(where: {
-            Int($0.number.trimmingCharacters(in: .whitespacesAndNewlines)) == 10
-        }) {
-            return forwards.remove(at: index)
-        }
-
-        return forwards.isEmpty ? nil : forwards.removeFirst()
-    }
-
-    private func sortedPlayersByImagePreference(_ players: [Player]) -> [Player] {
-        players.enumerated().sorted { lhs, rhs in
-            let lhsValid = hasValidImage(lhs.element)
-            let rhsValid = hasValidImage(rhs.element)
-
-            if lhsValid != rhsValid {
-                return lhsValid
-            }
-
-            let lhsHasImage = lhs.element.imageURL != nil
-            let rhsHasImage = rhs.element.imageURL != nil
-
-            if lhsHasImage != rhsHasImage {
-                return lhsHasImage
-            }
-
-            return lhs.offset < rhs.offset
-        }.map { $0.element }
-    }
-
-    private func hasValidImage(_ player: Player) -> Bool {
-        validImagePlayerKeys.contains(player.playerKey)
-    }
-
-    private func makeSubstituteSections(from players: [Player]) -> [PlayerSection] {
-        let sections: [(PositionLine, String)] = [
-            (.goalkeeper, L10n.TeamDetails.goalkeepers),
-            (.defender, L10n.TeamDetails.defenders),
-            (.midfielder, L10n.TeamDetails.midfielders),
-            (.forward, L10n.TeamDetails.forwards)
-        ]
-
-        return sections.compactMap { line, title in
-            let sectionPlayers = players.filter {
-                if line == .forward {
-                    return $0.positionLine == .forward || $0.positionLine == .striker
-                }
-                return $0.positionLine == line
-            }
-            return sectionPlayers.isEmpty ? nil : PlayerSection(title: title, players: sectionPlayers)
-        }
-    }
-
-    private struct PlayerSection {
-        let title: String
-        let players: [Player]
     }
 }
 

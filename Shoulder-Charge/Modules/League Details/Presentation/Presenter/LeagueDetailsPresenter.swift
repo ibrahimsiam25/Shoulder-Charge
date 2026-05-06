@@ -153,21 +153,17 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         let participant = participants[index]
         guard let participantId = participant.key else { return }
         
-        if sport == .tennis {
-            router.navigateToPlayerDetails(
-                playerId: String(participantId),
+     
+            router.navigateToParticipantDetails(
+                participantId: String(participantId),
                 leagueId: leagueId,
                 leagueName: leagueName,
                 sport: sport,
                 from: view
             )
-        } else {
-            router.navigateToTeamDetails(
-                teamId: String(participantId),
-                leagueId: leagueId,
-                sport: sport,
-                from: view
-            )
+       
+           
         }
-    }
+    
 }
+

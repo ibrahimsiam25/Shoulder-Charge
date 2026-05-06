@@ -56,9 +56,9 @@ class PlayerListTableViewCell: UITableViewCell {
         positionLabel.font = .systemFont(ofSize: 13, weight: .medium)
     }
 
-    func configure(with player: PlayerItem) {
-        nameLabel.text = player.name
-        positionLabel.text = player.position
-        playerImageView.sd_setImage(with: player.imageURL, placeholderImage: UIImage(named: "player"))
+    func configure(with viewModel: PlayerRowViewModel) {
+        nameLabel.text = viewModel.name
+        positionLabel.text = viewModel.position
+        playerImageView.sd_setImage(with: viewModel.imageURL, placeholderImage: UIImage(named: "player"))
     }
 }
