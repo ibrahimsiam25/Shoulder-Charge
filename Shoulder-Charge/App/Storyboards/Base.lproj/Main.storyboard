@@ -224,12 +224,12 @@
                             <constraint firstItem="xwr-bI-dmI" firstAttribute="leading" secondItem="47q-7m-vtI" secondAttribute="leading" id="9HL-3K-ywT"/>
                             <constraint firstItem="gv6-oD-ujy" firstAttribute="width" secondItem="fbU-5n-Zad" secondAttribute="width" id="XBP-In-PmB"/>
                             <constraint firstItem="47q-7m-vtI" firstAttribute="bottom" secondItem="gv6-oD-ujy" secondAttribute="bottom" id="dJx-uV-HYU"/>
+                            <constraint firstItem="fav-SB-001" firstAttribute="height" constant="56" id="fav-SB-h"/>
+                            <constraint firstItem="fav-SB-001" firstAttribute="leading" secondItem="47q-7m-vtI" secondAttribute="leading" id="fav-SB-lead"/>
+                            <constraint firstItem="fav-SB-001" firstAttribute="top" secondItem="xwr-bI-dmI" secondAttribute="bottom" id="fav-SB-top"/>
+                            <constraint firstItem="fav-SB-001" firstAttribute="trailing" secondItem="47q-7m-vtI" secondAttribute="trailing" id="fav-SB-trail"/>
                             <constraint firstAttribute="top" secondItem="xwr-bI-dmI" secondAttribute="top" id="myH-9W-Ee7"/>
                             <constraint firstItem="xwr-bI-dmI" firstAttribute="width" secondItem="fbU-5n-Zad" secondAttribute="width" id="u2m-XR-YH3"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="top" secondItem="xwr-bI-dmI" secondAttribute="bottom" id="fav-SB-top"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="leading" secondItem="47q-7m-vtI" secondAttribute="leading" id="fav-SB-lead"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="trailing" secondItem="47q-7m-vtI" secondAttribute="trailing" id="fav-SB-trail"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="height" constant="56" id="fav-SB-h"/>
                             <constraint firstItem="gv6-oD-ujy" firstAttribute="top" secondItem="fav-SB-001" secondAttribute="bottom" id="xoP-Lf-wfU"/>
                         </constraints>
                     </view>
@@ -360,6 +360,159 @@ high-fidelity sports action.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fS8-zp-Dzi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4143" y="-535"/>
+        </scene>
+        <!--Team Detilas View Controller-->
+        <scene sceneID="gRY-yK-Nc5">
+            <objects>
+                <viewController storyboardIdentifier="TeamDetilasViewController" id="cF3-EH-RnE" customClass="TeamDetilasViewController" customModule="Shoulder_Charge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R6c-DA-GHv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="table-id">
+                                <rect key="frame" x="0.0" y="118" width="393" height="666"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="content-view-id">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="850"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="team-logo-id">
+                                            <rect key="frame" x="156.66666666666666" y="20" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="h-id"/>
+                                                <constraint firstAttribute="width" constant="80" id="w-id"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="team-name-id">
+                                            <rect key="frame" x="20" y="112" width="353" height="28.666666666666657"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coach Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coach-name-id">
+                                            <rect key="frame" x="149" y="144.66666666666666" width="95" height="19.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <color key="textColor" name="Primary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stadium-container-id">
+                                            <rect key="frame" x="0.0" y="194" width="393" height="600"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stadium" translatesAutoresizingMaskIntoConstraints="NO" id="stadium-img-id">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="600"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="card-0" customClass="PlayerCardView" customModule="Shoulder_Charge" customModuleProvider="target">
+                                                    <rect key="frame" x="146.66666666666666" y="440" width="100" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="card-1" customClass="PlayerCardView" customModule="Shoulder_Charge" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="320" width="100" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="card-2" customClass="PlayerCardView" customModule="Shoulder_Charge" customModuleProvider="target">
+                                                    <rect key="frame" x="100" y="320" width="100" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="card-3" customClass="PlayerCardView" customModule="Shoulder_Charge" customModuleProvider="target">
+                                                    <rect key="frame" x="195" y="320" width="100" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="card-4" customClass="PlayerCardView" customModule="Shoulder_Charge" customModuleProvider="target">
+                                                    <rect key="frame" x="290" y="320" width="100" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view tag="5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="card-5" customClass="PlayerCardView" customModule="Shoulder_Charge" customModuleProvider="target">
+                                                    <rect key="frame" x="30" y="170" width="100" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view tag="6" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="card-6" customClass="PlayerCardView" customModule="Shoulder_Charge" customModuleProvider="target">
+                                                    <rect key="frame" x="146.66666666666666" y="170" width="100" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view tag="7" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="card-7" customClass="PlayerCardView" customModule="Shoulder_Charge" customModuleProvider="target">
+                                                    <rect key="frame" x="265" y="170" width="100" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view tag="8" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="card-8" customClass="PlayerCardView" customModule="Shoulder_Charge" customModuleProvider="target">
+                                                    <rect key="frame" x="30" y="20" width="100" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view tag="9" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="card-9" customClass="PlayerCardView" customModule="Shoulder_Charge" customModuleProvider="target">
+                                                    <rect key="frame" x="146.66666666666666" y="5" width="100" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <view tag="10" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="card-10" customClass="PlayerCardView" customModule="Shoulder_Charge" customModuleProvider="target">
+                                                    <rect key="frame" x="265" y="20" width="100" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="stadium-img-id" firstAttribute="bottom" secondItem="stadium-container-id" secondAttribute="bottom" id="s-b-id"/>
+                                                <constraint firstItem="stadium-img-id" firstAttribute="leading" secondItem="stadium-container-id" secondAttribute="leading" id="s-l-id"/>
+                                                <constraint firstItem="stadium-img-id" firstAttribute="trailing" secondItem="stadium-container-id" secondAttribute="trailing" id="s-r-id"/>
+                                                <constraint firstItem="stadium-img-id" firstAttribute="top" secondItem="stadium-container-id" secondAttribute="top" id="s-t-id"/>
+                                                <constraint firstAttribute="height" constant="600" id="stadium-h-id"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="coach-name-id" firstAttribute="centerX" secondItem="content-view-id" secondAttribute="centerX" id="cn-c-id"/>
+                                        <constraint firstItem="coach-name-id" firstAttribute="top" secondItem="team-name-id" secondAttribute="bottom" constant="4" id="cn-t-id"/>
+                                        <constraint firstItem="stadium-container-id" firstAttribute="leading" secondItem="content-view-id" secondAttribute="leading" id="sc-l-id"/>
+                                        <constraint firstAttribute="trailing" secondItem="stadium-container-id" secondAttribute="trailing" id="sc-r-id"/>
+                                        <constraint firstItem="stadium-container-id" firstAttribute="top" secondItem="coach-name-id" secondAttribute="bottom" constant="30" id="sc-t-id"/>
+                                        <constraint firstItem="team-logo-id" firstAttribute="centerX" secondItem="content-view-id" secondAttribute="centerX" id="tl-c-id"/>
+                                        <constraint firstItem="team-logo-id" firstAttribute="top" secondItem="content-view-id" secondAttribute="top" constant="20" id="tl-t-id"/>
+                                        <constraint firstItem="team-name-id" firstAttribute="leading" secondItem="content-view-id" secondAttribute="leading" constant="20" id="tn-l-id"/>
+                                        <constraint firstAttribute="trailing" secondItem="team-name-id" secondAttribute="trailing" constant="20" id="tn-r-id"/>
+                                        <constraint firstItem="team-name-id" firstAttribute="top" secondItem="team-logo-id" secondAttribute="bottom" constant="12" id="tn-t-id"/>
+                                    </constraints>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JVC-jW-iYg"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="table-id" firstAttribute="bottom" secondItem="JVC-jW-iYg" secondAttribute="bottom" id="sv-b-id-main"/>
+                            <constraint firstItem="table-id" firstAttribute="leading" secondItem="JVC-jW-iYg" secondAttribute="leading" id="sv-l-id-main"/>
+                            <constraint firstItem="table-id" firstAttribute="trailing" secondItem="JVC-jW-iYg" secondAttribute="trailing" id="sv-r-id-main"/>
+                            <constraint firstItem="table-id" firstAttribute="top" secondItem="JVC-jW-iYg" secondAttribute="top" id="sv-t-id-main"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="coachNameLabel" destination="coach-name-id" id="coach-out"/>
+                        <outlet property="def1View" destination="card-1" id="def1-out"/>
+                        <outlet property="def2View" destination="card-2" id="def2-out"/>
+                        <outlet property="def3View" destination="card-3" id="def3-out"/>
+                        <outlet property="def4View" destination="card-4" id="def4-out"/>
+                        <outlet property="fwd1View" destination="card-8" id="fwd1-out"/>
+                        <outlet property="fwd2View" destination="card-10" id="fwd2-out"/>
+                        <outlet property="gkView" destination="card-0" id="gk-out"/>
+                        <outlet property="mid1View" destination="card-5" id="mid1-out"/>
+                        <outlet property="mid2View" destination="card-6" id="mid2-out"/>
+                        <outlet property="mid3View" destination="card-7" id="mid3-out"/>
+                        <outlet property="stadiumImageView" destination="stadium-img-id" id="stadium-out"/>
+                        <outlet property="stView" destination="card-9" id="st-out"/>
+                        <outlet property="tableView" destination="table-id" id="table-out"/>
+                        <outlet property="teamLogoImageView" destination="team-logo-id" id="logo-out"/>
+                        <outlet property="teamNameLabel" destination="team-name-id" id="name-out"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klQ-fz-5a9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4901.5267175572517" y="-217.60563380281693"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Ksd-Fh-ST0">
@@ -532,7 +685,7 @@ high-fidelity sports action.</string>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdv-fr-001" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5800" y="-535"/>
+            <point key="canvasLocation" x="4888" y="-886"/>
         </scene>
     </scenes>
     <resources>
@@ -540,6 +693,7 @@ high-fidelity sports action.</string>
         <image name="SplashCenter" width="185" height="188"/>
         <image name="SplashLeft" width="136" height="253"/>
         <image name="SplashRight" width="131" height="243"/>
+        <image name="Stadium" width="748" height="1120"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="globe" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>

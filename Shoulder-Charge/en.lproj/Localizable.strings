@@ -75,3 +75,8 @@
 "playerDetails.country"       = "Country";
 "playerDetails.birthdate"     = "Born";
 "favorites.empty" = "No favorite leagues yet.";
+"teamDetails.otherPlayers" = "Other Players";
+"teamDetails.goalkeepers" = "Goalkeepers";
+"teamDetails.defenders" = "Defenders";
+"teamDetails.midfielders" = "Midfielders";
+"teamDetails.forwards" = "Forwards";

@@ -17,7 +17,6 @@ class LeagueDetailsCollectionViewController: UICollectionViewController, LeagueD
 
     private let activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .large)
-        indicator.hidesWhenStopped = true
         indicator.translatesAutoresizingMaskIntoConstraints = false
         return indicator
     }()
@@ -134,10 +133,11 @@ class LeagueDetailsCollectionViewController: UICollectionViewController, LeagueD
     }
 
     private func setupLoadingIndicator() {
-        view.addSubview(activityIndicator)
+        activityIndicator.color = UIColor(named: "Primary")
+        collectionView.addSubview(activityIndicator)
         NSLayoutConstraint.activate([
-            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            activityIndicator.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor)
         ])
     }
 
