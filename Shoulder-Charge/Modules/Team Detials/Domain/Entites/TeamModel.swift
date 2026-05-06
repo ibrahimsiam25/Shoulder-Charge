@@ -20,4 +20,5 @@ struct PlayerItem {
     let name: String
     let imageURL: URL?
     let position: String
+    let number:String
 }

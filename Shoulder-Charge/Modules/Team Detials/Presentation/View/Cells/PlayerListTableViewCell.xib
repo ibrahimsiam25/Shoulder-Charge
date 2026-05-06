@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerListCell" rowHeight="82" id="cell-id" customClass="PlayerListTableViewCell" customModule="Shoulder_Charge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="470" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cell-id" id="content-id">
+                <rect key="frame" x="0.0" y="0.0" width="470" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="container-id" userLabel="Container View">
+                        <rect key="frame" x="16" y="8" width="438" height="66"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="border-id" userLabel="Image Border View">
+                                <rect key="frame" x="12" y="6" width="54" height="54"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="image-id" userLabel="Player Image">
+                                        <rect key="frame" x="2" y="2" width="50" height="50"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="border-height"/>
+                                    <constraint firstAttribute="width" constant="54" id="border-width"/>
+                                    <constraint firstAttribute="bottom" secondItem="image-id" secondAttribute="bottom" constant="2" id="img-bottom"/>
+                                    <constraint firstItem="image-id" firstAttribute="leading" secondItem="border-id" secondAttribute="leading" constant="2" id="img-leading"/>
+                                    <constraint firstItem="image-id" firstAttribute="top" secondItem="border-id" secondAttribute="top" constant="2" id="img-top"/>
+                                    <constraint firstAttribute="trailing" secondItem="image-id" secondAttribute="trailing" constant="2" id="img-trailing"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="name-id" userLabel="Name Label">
+                                <rect key="frame" x="82" y="12" width="344" height="19"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" name="Text Primary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="position-id" userLabel="Position Label">
+                                <rect key="frame" x="82" y="35" width="344" height="19"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" name="Primary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Surface"/>
+                        <constraints>
+                            <constraint firstItem="border-id" firstAttribute="centerY" secondItem="container-id" secondAttribute="centerY" id="border-centerY"/>
+                            <constraint firstItem="border-id" firstAttribute="leading" secondItem="container-id" secondAttribute="leading" constant="12" id="border-leading"/>
+                            <constraint firstItem="name-id" firstAttribute="leading" secondItem="border-id" secondAttribute="trailing" constant="16" id="name-leading"/>
+                            <constraint firstItem="name-id" firstAttribute="top" secondItem="container-id" secondAttribute="top" constant="12" id="name-top"/>
+                            <constraint firstAttribute="trailing" secondItem="name-id" secondAttribute="trailing" constant="12" id="name-trailing"/>
+                            <constraint firstAttribute="bottom" secondItem="position-id" secondAttribute="bottom" constant="12" id="position-bottom"/>
+                            <constraint firstItem="position-id" firstAttribute="leading" secondItem="border-id" secondAttribute="trailing" constant="16" id="position-leading"/>
+                            <constraint firstItem="position-id" firstAttribute="top" secondItem="name-id" secondAttribute="bottom" constant="4" id="position-top"/>
+                            <constraint firstAttribute="trailing" secondItem="position-id" secondAttribute="trailing" constant="12" id="position-trailing"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="container-id" secondAttribute="bottom" constant="8" id="container-bottom"/>
+                    <constraint firstItem="container-id" firstAttribute="leading" secondItem="content-id" secondAttribute="leading" constant="16" id="container-leading"/>
+                    <constraint firstItem="container-id" firstAttribute="top" secondItem="content-id" secondAttribute="top" constant="8" id="container-top"/>
+                    <constraint firstAttribute="trailing" secondItem="container-id" secondAttribute="trailing" constant="16" id="container-trailing"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="safe-area-id"/>
+            <connections>
+                <outlet property="containerView" destination="container-id" id="container-out"/>
+                <outlet property="imageBorderView" destination="border-id" id="border-out"/>
+                <outlet property="nameLabel" destination="name-id" id="name-out"/>
+                <outlet property="playerImageView" destination="image-id" id="image-out"/>
+                <outlet property="positionLabel" destination="position-id" id="position-out"/>
+            </connections>
+            <point key="canvasLocation" x="149" y="120"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Primary">
+            <color red="0.47058823529411764" green="0.78431372549019607" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Surface">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text Primary">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

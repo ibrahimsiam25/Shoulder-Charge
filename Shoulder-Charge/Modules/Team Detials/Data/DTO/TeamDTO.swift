@@ -79,7 +79,8 @@ struct FootballPlayerDTO: Decodable {
             playerKey: playerKey ?? 0,
             name: playerName?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "",
             imageURL: playerImage.flatMap { URL(string: $0) },
-            position: playerType ?? ""
+            position: playerType ?? "",
+            number:  playerNumber ?? ""
         )
     }
 }
