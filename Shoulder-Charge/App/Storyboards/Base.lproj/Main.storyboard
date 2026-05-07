@@ -230,10 +230,6 @@
                             <constraint firstItem="xwr-bI-dmI" firstAttribute="leading" secondItem="47q-7m-vtI" secondAttribute="leading" id="9HL-3K-ywT"/>
                             <constraint firstItem="gv6-oD-ujy" firstAttribute="width" secondItem="fbU-5n-Zad" secondAttribute="width" id="XBP-In-PmB"/>
                             <constraint firstItem="47q-7m-vtI" firstAttribute="bottom" secondItem="gv6-oD-ujy" secondAttribute="bottom" id="dJx-uV-HYU"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="height" constant="56" id="fav-SB-h"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="leading" secondItem="47q-7m-vtI" secondAttribute="leading" id="fav-SB-lead"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="top" secondItem="xwr-bI-dmI" secondAttribute="bottom" id="fav-SB-top"/>
-                            <constraint firstItem="fav-SB-001" firstAttribute="trailing" secondItem="47q-7m-vtI" secondAttribute="trailing" id="fav-SB-trail"/>
                             <constraint firstAttribute="top" secondItem="xwr-bI-dmI" secondAttribute="top" id="myH-9W-Ee7"/>
                             <constraint firstItem="xwr-bI-dmI" firstAttribute="width" secondItem="fbU-5n-Zad" secondAttribute="width" id="u2m-XR-YH3"/>
                             <constraint firstItem="fav-TL-001" firstAttribute="leading" secondItem="47q-7m-vtI" secondAttribute="leading" constant="16" id="fav-TL-lead"/>
