@@ -37,8 +37,6 @@ final class LocalizationManager {
           UISegmentedControl.appearance().semanticContentAttribute = attribute
           UITableView.appearance().semanticContentAttribute = attribute
           UICollectionView.appearance().semanticContentAttribute = attribute
-
-        
           let backChevron = UIImage(systemName: isRTL ? "chevron.forward" : "chevron.backward")
           
           let navAppearance = UINavigationBarAppearance()

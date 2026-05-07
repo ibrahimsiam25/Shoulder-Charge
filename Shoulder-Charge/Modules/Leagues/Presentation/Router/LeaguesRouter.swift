@@ -23,6 +23,12 @@ class LeaguesRouter : LeaguesRouterProtocol{
     }
     
     func navigateToLeagueDetails(with leagueId: Int, sport: SportType, leagueName: String, leagueLogo: URL?, from view: LeaguesViewProtocol) {
+        guard NetworkMonitor.shared.isConnected else {
+            if let vc = view as? UIViewController {
+                vc.showNoInternetAlert()
+            }
+            return
+        }
         let detailVC = LeagueDetailsRouter.build(leagueId: String(leagueId), sport: sport, leagueName: leagueName, leagueLogo: leagueLogo)
         if let vc = view as? UIViewController {
             vc.navigationController?.pushViewController(detailVC, animated: true)

@@ -9,6 +9,12 @@ class FavoriteRouter: FavoriteRouterProtocol {
     
  
     func navigateToLeagueDetails(with league: UnifiedLeagueModel, from view: FavoriteViewProtocol?) {
+        guard NetworkMonitor.shared.isConnected else {
+            if let vc = view as? UIViewController {
+                vc.showNoInternetAlert()
+            }
+            return
+        }
         let detailVC = LeagueDetailsRouter.build(
             leagueId: "\(league.id)",
             sport: league.sport,

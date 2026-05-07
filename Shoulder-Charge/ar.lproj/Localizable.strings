@@ -20,6 +20,11 @@
 "common.cancel"             = "إلغاء";
 "common.save"               = "حفظ";
 "common.appName"            = "شولدر تشارج";
+"common.ok"                 = "موافق";
+
+/* Network */
+"network.noInternet.title" = "لا يوجد اتصال بالإنترنت";
+"network.noInternet.message" = "يرجى التحقق من إعدادات الشبكة والمحاولة مرة أخرى.";
 
 /* Onboarding */
 "onboarding.slide1.titleWhite"   = "اشعر بـ";

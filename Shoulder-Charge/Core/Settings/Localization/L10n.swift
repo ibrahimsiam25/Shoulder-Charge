@@ -68,7 +68,14 @@ enum L10n {
         static var cancel: String { "common.cancel".localized }
         static var save:   String { "common.save".localized }
         static var appName: String { "common.appName".localized }
+        static var ok:     String { "common.ok".localized }
     }
+
+    enum Network {
+        static var noInternetTitle:   String { "network.noInternet.title".localized }
+        static var noInternetMessage: String { "network.noInternet.message".localized }
+    }
+
     enum Home {
         static var soccer: String { "home.soccer".localized }
         static var basket: String { "home.basket".localized }

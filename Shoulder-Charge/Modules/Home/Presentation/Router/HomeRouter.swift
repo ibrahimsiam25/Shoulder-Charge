@@ -2,7 +2,7 @@
 //  HomeRouter.swift
 //  Shoulder-Charge
 //
-//  Created by antigravity on 03/05/2026.
+//  Created by Eslam Elnady on 03/05/2026.
 //
 
 import UIKit
@@ -28,6 +28,12 @@ class HomeRouter: HomeRouterProtocol {
     }
     
     func navigateToLeagues(with sportType: SportType, from view: HomeViewProtocol) {
+        guard NetworkMonitor.shared.isConnected else {
+            if let vc = view as? UIViewController {
+                vc.showNoInternetAlert()
+            }
+            return
+        }
         let leaguesVC = LeaguesRouter.createModule(sportType: sportType)
         if let vc = view as? UIViewController {
             vc.navigationController?.pushViewController(leaguesVC, animated: true)

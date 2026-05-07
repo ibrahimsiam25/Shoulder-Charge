@@ -20,6 +20,11 @@
 "common.cancel"             = "Cancel";
 "common.save"               = "Save";
 "common.appName"            = "Shoulder Charge";
+"common.ok"                 = "OK";
+
+/* Network */
+"network.noInternet.title" = "No Internet Connection";
+"network.noInternet.message" = "Please check your network settings and try again.";
 
 /* Onboarding */
 "onboarding.slide1.titleWhite"   = "Feel The";

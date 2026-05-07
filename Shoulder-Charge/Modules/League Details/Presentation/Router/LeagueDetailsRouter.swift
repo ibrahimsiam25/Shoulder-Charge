@@ -35,6 +35,12 @@ class LeagueDetailsRouter: LeagueDetailsRouterProtocol {
     }
     
     func navigateToParticipantDetails( participantId: String, leagueId: String, leagueName: String, sport: SportType, from view: LeagueDetailsViewProtocol) {
+        guard NetworkMonitor.shared.isConnected else {
+            if let vc = view as? UIViewController {
+                vc.showNoInternetAlert()
+            }
+            return
+        }
         switch sport {
         case .tennis:
             let playerVC = PlayerDetailsRouter.build(sport: sport, playerId:  participantId, leagueId: leagueId, leagueName: leagueName)
