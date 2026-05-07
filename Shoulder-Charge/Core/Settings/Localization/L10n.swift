@@ -111,4 +111,12 @@ enum L10n {
         static var country:     String { "playerDetails.country".localized }
         static var birthdate:   String { "playerDetails.birthdate".localized }
     }
+
+    enum TeamDetails {
+        static var otherPlayers: String { "teamDetails.otherPlayers".localized }
+        static var goalkeepers: String { "teamDetails.goalkeepers".localized }
+        static var defenders: String { "teamDetails.defenders".localized }
+        static var midfielders: String { "teamDetails.midfielders".localized }
+        static var forwards: String { "teamDetails.forwards".localized }
+    }
 }

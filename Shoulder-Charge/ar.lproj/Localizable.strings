@@ -82,3 +82,8 @@
 "playerDetails.prize"         = "الجائزة";
 "playerDetails.country"       = "الدولة";
 "playerDetails.birthdate"     = "تاريخ الميلاد";
+"teamDetails.otherPlayers" = "لاعبون آخرون";
+"teamDetails.goalkeepers" = "حراس المرمى";
+"teamDetails.defenders" = "المدافعون";
+"teamDetails.midfielders" = "لاعبي الوسط";
+"teamDetails.forwards" = "المهاجمون";

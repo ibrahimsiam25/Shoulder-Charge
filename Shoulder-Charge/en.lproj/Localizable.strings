@@ -83,3 +83,8 @@
 "playerDetails.birthdate"     = "Born";
 "favorites.empty.title"    = "No Favorites Yet";
 "favorites.empty.subtitle" = "Star a league to find it here";
+"teamDetails.otherPlayers" = "Other Players";
+"teamDetails.goalkeepers" = "Goalkeepers";
+"teamDetails.defenders" = "Defenders";
+"teamDetails.midfielders" = "Midfielders";
+"teamDetails.forwards" = "Forwards";

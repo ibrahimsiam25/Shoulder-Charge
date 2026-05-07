@@ -125,15 +125,20 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     }
 
     func didSelectParticipant(at index: Int, from view: LeagueDetailsViewProtocol) {
-        guard sport == .tennis else { return }
         let participant = participants[index]
-        guard let playerId = participant.key else { return }
-        router.navigateToPlayerDetails(
-            playerId: String(playerId),
-            leagueId: leagueId,
-            leagueName: leagueName,
-            sport: sport,
-            from: view
-        )
-    }
+        guard let participantId = participant.key else { return }
+        
+     
+            router.navigateToParticipantDetails(
+                participantId: String(participantId),
+                leagueId: leagueId,
+                leagueName: leagueName,
+                sport: sport,
+                from: view
+            )
+       
+           
+        }
+    
 }
+
