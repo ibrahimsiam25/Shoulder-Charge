@@ -4,8 +4,13 @@
 //
 
 import Alamofire
-
-class NetworkClient {
+protocol NetworkClientProtocol {
+    func request<T: Decodable>(
+        url: String,
+        queryParams: LeagueQueryParams
+    ) async throws -> T
+}
+class NetworkClient:NetworkClientProtocol {
 
     static let shared = NetworkClient()
     private init() {}
@@ -24,9 +29,9 @@ class NetworkClient {
         case .success(let value):
             return value
         case .failure(let error):
-            print("❌ [NetworkClient] URL: \(url)")
-            print("❌ [NetworkClient] Params: \(queryParams.asDictionary)")
-            print("❌ [NetworkClient] Error: \(error)")
+            print("[NetworkClient] URL: \(url)")
+            print("[NetworkClient] Params: \(queryParams.asDictionary)")
+            print("NetworkClient] Error: \(error)")
             throw error
         }
     }
