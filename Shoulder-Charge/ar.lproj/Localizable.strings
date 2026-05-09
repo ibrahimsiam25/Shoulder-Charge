@@ -68,8 +68,11 @@
 "leagueDetails.noUpcomingEvents.subtitle" = "ستظهر المباريات الجديدة هنا عند جدولتها.";
 "leagueDetails.noFinishedEvents.title" = "لا توجد مباريات منتهية";
 "leagueDetails.noFinishedEvents.subtitle" = "ستظهر المباريات المكتملة هنا بعد لعبها.";
+"leagueDetails.feature_coming_soon_title" = "قريبًا";
+"leagueDetails.feature_coming_soon_message" = "هذه الميزة سيتم إضافتها قريبًا.";
 "favorites.empty.title"    = "لا توجد مفضلات بعد";
 "favorites.empty.subtitle" = "أضف دوريات إلى مفضلتك لتجدها هنا";
+
 /* شاشة تفاصيل اللاعب */
 "playerDetails.stats"         = "الإحصائيات";
 "playerDetails.tournaments"   = "البطولات";

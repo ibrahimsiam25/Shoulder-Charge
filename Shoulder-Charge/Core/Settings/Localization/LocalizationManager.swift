@@ -27,6 +27,7 @@ final class LocalizationManager {
     // MARK: - Layout Direction
     func applyLayoutDirection() {
         let isRTL = Locale.characterDirection(forLanguage: currentLanguage) == .rightToLeft
+        
           let attribute: UISemanticContentAttribute = isRTL ? .forceRightToLeft : .forceLeftToRight
           
           UIView.appearance().semanticContentAttribute = attribute
@@ -90,4 +91,6 @@ final class LocalizationManager {
         
         return appearance
     }
+    
+    
 }

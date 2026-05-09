@@ -2,6 +2,8 @@
 //  LeagueDetailsRouter.swift
 //  Shoulder-Charge
 //
+//  Created by siam on 05/05/2026.
+//
 
 import UIKit
 protocol LeagueDetailsRouterProtocol {
@@ -54,7 +56,9 @@ class LeagueDetailsRouter: LeagueDetailsRouterProtocol {
                 vc.navigationController?.pushViewController(teamVC, animated: true)
             }
         default:
-            return
+            if let vc = view as? LeagueDetailsCollectionViewController {
+                vc.showComingSoonAlert()
+            }
         }
         
         

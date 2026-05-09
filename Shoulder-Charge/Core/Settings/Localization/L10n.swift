@@ -93,6 +93,8 @@ enum L10n {
         static var noUpcomingEventsSubtitle: String { "leagueDetails.noUpcomingEvents.subtitle".localized }
         static var noFinishedEventsTitle: String { "leagueDetails.noFinishedEvents.title".localized }
         static var noFinishedEventsSubtitle: String { "leagueDetails.noFinishedEvents.subtitle".localized }
+        static var featureComingSoonTitle: String{"leagueDetails.feature_coming_soon_title".localized}
+        static var featureComingSoonMessage: String{"leagueDetails.feature_coming_soon_message".localized}
     }
     enum Favorites {
         static var title:         String { "favorites.title".localized }

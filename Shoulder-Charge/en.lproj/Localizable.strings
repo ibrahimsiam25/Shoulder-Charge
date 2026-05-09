@@ -67,7 +67,8 @@
 "leagueDetails.noUpcomingEvents.subtitle" = "New matches will appear here once they are scheduled.";
 "leagueDetails.noFinishedEvents.title" = "No finished events";
 "leagueDetails.noFinishedEvents.subtitle" = "Completed matches will appear here after they are played.";
-
+"leagueDetails.feature_coming_soon_title" = "Coming Soon";
+"leagueDetails.feature_coming_soon_message" = "This feature will be available soon.";
 
 /* Player Details Screen */
 "playerDetails.stats"         = "Statistics";
