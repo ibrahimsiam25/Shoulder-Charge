@@ -14,9 +14,9 @@ A multi-sport iOS application that lets users browse leagues, view fixtures and 
 |:---:|:---:|
 | ![Team Lineup](Screenshots/team_lineup.png) | ![Squad](Screenshots/squad.png) |
 
-| Localisation (AR) | Settings |
+| Localisation — AR, Light Mode | Settings |
 |:---:|:---:|
-| ![Localisation](Screenshots/home_arabic.png) | ![Settings](Screenshots/settings.png) |
+| ![Localisation](Screenshots/home_arabic_light_mode.png) | ![Settings](Screenshots/settings.png) |
 
 | Player Profile | Player Tournaments | Favourites |
 |:---:|:---:|:---:|
@@ -116,13 +116,28 @@ Run all tests with `Cmd + U` in Xcode.
 2. **Resolve Swift Package dependencies**
    Open `Shoulder-Charge.xcodeproj` in Xcode — packages resolve automatically.
 
-3. **Add your API key**
-   Replace the value of `apiKey` in `Constants.swift`:
-   ```swift
-   static let apiKey = "YOUR_ALLSPORTS_API_KEY"
-   ```
+3. **Add your API key (never commit this)**
 
-4. **Run on a simulator or device** (iOS 26.0+).
+   Copy the example config file and fill in your own key:
+   ```bash
+   cp Secrets.xcconfig.example Secrets.xcconfig
+   ```
+   Then open `Secrets.xcconfig` and replace the placeholder:
+   ```
+   API_KEY = your_actual_key_here
+   ```
+   Get a free key at [allsportsapi.com](https://allsportsapi.com/).
+
+   > ⚠️ `Secrets.xcconfig` is listed in `.gitignore` — it will never be committed.
+
+4. **Wire the config to Xcode**
+
+   - Open `Shoulder-Charge.xcodeproj`.
+   - Click the **project** (blue icon) → **Info** tab → **Configurations**.
+   - For both **Debug** and **Release**, set the `Shoulder-Charge` target to use **`Secrets`**.
+   - Clean (`Cmd+Shift+K`) and rebuild.
+
+5. **Run on a simulator or device** (iOS 26.0+).
 
 ---
 
