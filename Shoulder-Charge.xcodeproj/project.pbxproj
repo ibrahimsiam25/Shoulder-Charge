@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0829F1F72FA0F1E200D4A704 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0829F1F62FA0F1E200D4A704 /* SDWebImage */; };
 		0829F1FA2FA0F20700D4A704 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 0829F1F92FA0F20700D4A704 /* Localize_Swift */; };
+		0840D7722FB00879000132DF /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0840D7712FB00879000132DF /* Secrets.xcconfig */; };
 		15BA6ACD2FA81B3800386366 /* FavoriteLeagues+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BA6ACC2FA81B3800386366 /* FavoriteLeagues+CoreDataProperties.swift */; };
 		15BA6ACE2FA81B3800386366 /* FavoriteLeagues+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BA6ACB2FA81B3800386366 /* FavoriteLeagues+CoreDataClass.swift */; };
 		15D239472FA3ADBF003AF853 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 15D239462FA3ADBF003AF853 /* Alamofire */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0840D7712FB00879000132DF /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		08AEE2C22FA0C95F00920AED /* Shoulder-Charge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shoulder-Charge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08AEE2DB2FA0C96200920AED /* Shoulder-ChargeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shoulder-ChargeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BA6ACB2FA81B3800386366 /* FavoriteLeagues+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteLeagues+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				08AEE2C42FA0C95F00920AED /* Shoulder-Charge */,
 				08AEE2DE2FA0C96200920AED /* Shoulder-ChargeTests */,
 				08AEE2C32FA0C95F00920AED /* Products */,
+				0840D7712FB00879000132DF /* Secrets.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0840D7722FB00879000132DF /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +309,7 @@
 		};
 		08AEE2F12FA0C96200920AED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0840D7712FB00879000132DF /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -369,6 +374,7 @@
 		};
 		08AEE2F22FA0C96200920AED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0840D7712FB00879000132DF /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
