@@ -78,7 +78,7 @@ Modules/
 
 | Category | Details |
 |---|---|
-| **Language** | Swift 5.0 |
+| **Language** | Swift 6.2 |
 | **UI Framework** | UIKit (Storyboards + programmatic) |
 | **Minimum iOS** | iOS 26.0 |
 | **Architecture** | Clean Architecture + MVP |
