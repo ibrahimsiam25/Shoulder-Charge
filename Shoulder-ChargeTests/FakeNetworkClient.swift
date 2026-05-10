@@ -11,6 +11,7 @@ import Foundation
 class FakeNetworkClient: NetworkClientProtocol {
     var shouldReturnWithError: Bool
     var loadWasCalled = false 
+    var mockedJSONString: String = "{}"
 
     init(shouldReturnWithError: Bool) {
         self.shouldReturnWithError = shouldReturnWithError
@@ -23,7 +24,7 @@ class FakeNetworkClient: NetworkClientProtocol {
             throw NSError(domain: "FakeError", code: 0)
         }
       
-        let emptyJSON = "[]".data(using: .utf8)!
-        return try JSONDecoder().decode(T.self, from: emptyJSON)
+        let data = mockedJSONString.data(using: .utf8)!
+        return try JSONDecoder().decode(T.self, from: data)
     }
 }

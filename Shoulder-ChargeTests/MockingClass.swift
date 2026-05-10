@@ -15,7 +15,7 @@ final class MockingClass: XCTestCase {
     func testMockingAPI() async {
         // Given
         let url = " "
-        let params = LeagueQueryParams(met: "Leagues")
+        let params = await LeagueQueryParams(met: "Leagues")
         
         // When
         do {

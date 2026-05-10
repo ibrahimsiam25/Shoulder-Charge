@@ -5,9 +5,9 @@
 
 class LeaguesAPIDataSource {
 
-    private let client: NetworkClient
+    private let client: NetworkClientProtocol
 
-    init(client: NetworkClient = .shared) {
+    init(client: NetworkClientProtocol = NetworkClient.shared) {
         self.client = client
     }
 
