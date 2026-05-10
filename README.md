@@ -165,6 +165,29 @@ Supported sport paths: `football`, `basketball`, `cricket`, `tennis`.
 
 ---
 
+## 🗂️ Task Breakdown
+
+### Ibrahim Siam
+- Splash screen & Onboarding flow
+- Home screen (programmatic + compositional layout)
+- League Details screen (programmatic + compositional layout — UI)
+- Team Details (cells, UI, logic)
+- Favourites view
+- Core Data integration
+- Handle empty / no-players API response
+
+### Eslam Elnady
+- Theming (dark / light / system) & Localisation (EN / AR, RTL)
+- Application infrastructure — networking layer (`NetworkClient`, query params)
+- Leagues module (cells, UI, logic)
+- League Details (cells, logic)
+- Tennis Player Details (UI, logic, compositional layout)
+- No internet connection handling
+- Empty favourites state and Split favourites list into sport sections
+- Search functionality (leagues & favourites)
+
+---
+
 ## 📄 License
 
 This project was built as part of the **ITI (Information Technology Institute)** iOS training programme.
