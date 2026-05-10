@@ -160,8 +160,8 @@ Supported sport paths: `football`, `basketball`, `cricket`, `tennis`.
 
 | Name | GitHub | LinkedIn |
 |---|---|---|
-| **Eslam Elnady** | [GitHub](#) | [LinkedIn](#) |
-| **Ibrahim Siam** | [GitHub](#) | [LinkedIn](#) |
+| **Eslam Elnady** | [GitHub](https://github.com/EslamElnady0) | [LinkedIn](https://www.linkedin.com/in/eslam-elnady-58062b25a/) |
+| **Ibrahim Siam** | [GitHub](https://github.com/ibrahimsiam25) | [LinkedIn](https://www.linkedin.com/in/ibrahim-siam/) |
 
 ---
 
