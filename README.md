@@ -6,7 +6,21 @@ A multi-sport iOS application that lets users browse leagues, view fixtures and 
 
 ## 📱 Screenshots
 
-> _Add screenshots here_
+| Home | Leagues | League Details |
+|:---:|:---:|:---:|
+| ![Home](Screenshots/home.png) | ![Leagues](Screenshots/leagues.png) | ![League Details](Screenshots/league_details.png) |
+
+| Team Lineup | Squad List |
+|:---:|:---:|
+| ![Team Lineup](Screenshots/team_lineup.png) | ![Squad](Screenshots/squad.png) |
+
+| Localisation (AR) | Settings |
+|:---:|:---:|
+| ![Localisation](Screenshots/home_arabic.png) | ![Settings](Screenshots/settings.png) |
+
+| Player Profile | Player Tournaments | Favourites |
+|:---:|:---:|:---:|
+| ![Player Profile](Screenshots/player_profile.png) | ![Player Tournaments](Screenshots/player_tournaments.png) | ![Favourites](Screenshots/favourites.png) |
 
 ---
 
